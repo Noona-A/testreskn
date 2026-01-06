@@ -1,14 +1,16 @@
-import { useEffect, useRef, RefObject } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, RefObject } from "react";
+import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+const showElementNow = (el: HTMLElement) => {
+  el.style.opacity = "1";
+  el.style.transform = "none";
+  el.style.filter = "none";
+};
 
-// Check for reduced motion preference
-const prefersReducedMotion = () => {
-  if (typeof window === "undefined") return false;
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const showNodeListNow = (nodes: NodeListOf<Element>) => {
+  nodes.forEach((n) => {
+    if (n instanceof HTMLElement) showElementNow(n);
+  });
 };
 
 // Hero parallax animation hook
@@ -19,10 +21,15 @@ export const useHeroParallax = (
   useEffect(() => {
     if (prefersReducedMotion() || !containerRef.current) return;
 
+    const api = getGSAP();
+    if (!api) return;
+
+    const { gsap } = api;
+
     const ctx = gsap.context(() => {
       layers.forEach(({ ref, speed }) => {
         if (!ref.current) return;
-        
+
         gsap.to(ref.current, {
           yPercent: speed * 50,
           ease: "none",
@@ -41,22 +48,30 @@ export const useHeroParallax = (
 };
 
 // Scroll reveal animation hook
-export const useScrollReveal = (ref: RefObject<HTMLElement>, options?: {
-  y?: number;
-  duration?: number;
-  delay?: number;
-  stagger?: number;
-  blur?: boolean;
-}) => {
+export const useScrollReveal = (
+  ref: RefObject<HTMLElement>,
+  options?: {
+    y?: number;
+    duration?: number;
+    delay?: number;
+    stagger?: number;
+    blur?: boolean;
+  }
+) => {
   useEffect(() => {
+    // Reduced motion: show content normally
     if (prefersReducedMotion() || !ref.current) {
-      // Show content immediately for reduced motion
-      if (ref.current) {
-        gsap.set(ref.current, { opacity: 1, y: 0, filter: "blur(0px)" });
-      }
+      if (ref.current) showElementNow(ref.current);
       return;
     }
 
+    const api = getGSAP();
+    if (!api) {
+      showElementNow(ref.current);
+      return;
+    }
+
+    const { gsap } = api;
     const { y = 60, duration = 1, delay = 0, blur = true } = options || {};
 
     const ctx = gsap.context(() => {
@@ -94,17 +109,24 @@ export const useStaggerReveal = (
   options?: { stagger?: number; y?: number; duration?: number }
 ) => {
   useEffect(() => {
-    if (prefersReducedMotion() || !containerRef.current) {
-      // Show content immediately for reduced motion
-      if (containerRef.current) {
-        const children = containerRef.current.querySelectorAll(childSelector);
-        gsap.set(children, { opacity: 1, y: 0 });
-      }
+    if (!containerRef.current) return;
+
+    const children = containerRef.current.querySelectorAll(childSelector);
+
+    // Reduced motion: show content normally
+    if (prefersReducedMotion()) {
+      showNodeListNow(children);
       return;
     }
 
+    const api = getGSAP();
+    if (!api) {
+      showNodeListNow(children);
+      return;
+    }
+
+    const { gsap } = api;
     const { stagger = 0.15, y = 40, duration = 0.8 } = options || {};
-    const children = containerRef.current.querySelectorAll(childSelector);
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -130,27 +152,42 @@ export const useStaggerReveal = (
 };
 
 // Text split and animate hook
-export const useTextReveal = (ref: RefObject<HTMLElement>, options?: {
-  delay?: number;
-  duration?: number;
-  stagger?: number;
-}) => {
+export const useTextReveal = (
+  ref: RefObject<HTMLElement>,
+  options?: {
+    delay?: number;
+    duration?: number;
+    stagger?: number;
+  }
+) => {
   useEffect(() => {
-    if (prefersReducedMotion() || !ref.current) {
-      if (ref.current) {
-        gsap.set(ref.current, { opacity: 1 });
-      }
+    if (!ref.current) return;
+
+    // Reduced motion: show content normally
+    if (prefersReducedMotion()) {
+      showElementNow(ref.current);
       return;
     }
 
+    const api = getGSAP();
+    if (!api) {
+      showElementNow(ref.current);
+      return;
+    }
+
+    const { gsap } = api;
     const { delay = 0, duration = 0.8, stagger = 0.05 } = options || {};
+
     const element = ref.current;
-    const text = element.textContent || "";
-    
+    const originalText = element.textContent || "";
+
     // Split into words
-    const words = text.split(" ");
+    const words = originalText.split(" ");
     element.innerHTML = words
-      .map((word) => `<span class="inline-block overflow-hidden"><span class="inline-block">${word}</span></span>`)
+      .map(
+        (word) =>
+          `<span class="inline-block overflow-hidden"><span class="inline-block">${word}</span></span>`
+      )
       .join(" ");
 
     const innerSpans = element.querySelectorAll("span > span");
@@ -177,20 +214,27 @@ export const useTextReveal = (ref: RefObject<HTMLElement>, options?: {
 
     return () => {
       ctx.revert();
-      element.textContent = text; // Restore original text
+      element.textContent = originalText;
     };
   }, [ref, options]);
 };
 
 // Floating animation for decorative elements
-export const useFloatingAnimation = (ref: RefObject<HTMLElement>, options?: {
-  yAmount?: number;
-  duration?: number;
-  delay?: number;
-}) => {
+export const useFloatingAnimation = (
+  ref: RefObject<HTMLElement>,
+  options?: {
+    yAmount?: number;
+    duration?: number;
+    delay?: number;
+  }
+) => {
   useEffect(() => {
     if (prefersReducedMotion() || !ref.current) return;
 
+    const api = getGSAP();
+    if (!api) return;
+
+    const { gsap } = api;
     const { yAmount = 20, duration = 3, delay = 0 } = options || {};
 
     const ctx = gsap.context(() => {
@@ -212,6 +256,11 @@ export const useFloatingAnimation = (ref: RefObject<HTMLElement>, options?: {
 export const useShimmerAnimation = (ref: RefObject<HTMLElement>) => {
   useEffect(() => {
     if (prefersReducedMotion() || !ref.current) return;
+
+    const api = getGSAP();
+    if (!api) return;
+
+    const { gsap } = api;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -239,8 +288,15 @@ export const useShimmerAnimation = (ref: RefObject<HTMLElement>) => {
 export const buttonHoverGlow = {
   onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
     if (prefersReducedMotion()) return;
+
+    const api = getGSAP();
+    if (!api) return;
+
+    const { gsap } = api;
+
     gsap.to(e.currentTarget, {
-      boxShadow: "0 0 30px rgba(74, 144, 123, 0.5)",
+      // uses semantic tokens (HSL)
+      boxShadow: "0 0 30px hsl(var(--primary) / 0.35)",
       scale: 1.02,
       duration: 0.3,
       ease: "power2.out",
@@ -248,8 +304,14 @@ export const buttonHoverGlow = {
   },
   onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
     if (prefersReducedMotion()) return;
+
+    const api = getGSAP();
+    if (!api) return;
+
+    const { gsap } = api;
+
     gsap.to(e.currentTarget, {
-      boxShadow: "0 0 0px rgba(74, 144, 123, 0)",
+      boxShadow: "0 0 0px hsl(var(--primary) / 0)",
       scale: 1,
       duration: 0.3,
       ease: "power2.out",
@@ -261,18 +323,30 @@ export const buttonHoverGlow = {
 export const cardHoverLift = {
   onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
     if (prefersReducedMotion()) return;
+
+    const api = getGSAP();
+    if (!api) return;
+
+    const { gsap } = api;
+
     gsap.to(e.currentTarget, {
       y: -8,
-      boxShadow: "0 20px 40px -12px rgba(74, 144, 123, 0.2)",
+      boxShadow: "0 20px 40px -12px hsl(var(--primary) / 0.14)",
       duration: 0.4,
       ease: "power2.out",
     });
   },
   onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
     if (prefersReducedMotion()) return;
+
+    const api = getGSAP();
+    if (!api) return;
+
+    const { gsap } = api;
+
     gsap.to(e.currentTarget, {
       y: 0,
-      boxShadow: "0 4px 20px -4px rgba(38, 70, 83, 0.05)",
+      boxShadow: "0 4px 20px -4px hsl(var(--foreground) / 0.06)",
       duration: 0.4,
       ease: "power2.out",
     });
@@ -281,5 +355,7 @@ export const cardHoverLift = {
 
 // Initialize all ScrollTriggers (call once in app)
 export const refreshScrollTrigger = () => {
-  ScrollTrigger.refresh();
+  const api = getGSAP();
+  api?.ScrollTrigger?.refresh?.();
 };
+

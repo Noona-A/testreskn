@@ -2,11 +2,8 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { buttonHoverGlow } from "@/hooks/useGSAPAnimations";
-
-gsap.registerPlugin(ScrollTrigger);
+import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -20,8 +17,11 @@ const HeroSection = () => {
   const badgeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion || !sectionRef.current) return;
+    if (prefersReducedMotion() || !sectionRef.current) return;
+
+    const api = getGSAP();
+    if (!api) return;
+    const { gsap } = api;
 
     const ctx = gsap.context(() => {
       // Parallax layers on scroll
