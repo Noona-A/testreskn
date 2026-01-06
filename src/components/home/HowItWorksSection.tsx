@@ -1,5 +1,10 @@
 import { useEffect, useRef } from "react";
 import { ClipboardList, Video, FileText, RefreshCw } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { cardHoverLift } from "@/hooks/useGSAPAnimations";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
@@ -26,33 +31,100 @@ const steps = [
 
 const HowItWorksSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || !sectionRef.current) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
+    const ctx = gsap.context(() => {
+      // Heading animation
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Connecting line animation
+      if (lineRef.current) {
+        gsap.fromTo(
+          lineRef.current,
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            duration: 1.5,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: "top 75%",
+              toggleActions: "play none none none",
+            },
           }
-        });
-      },
-      { threshold: 0.1 }
-    );
+        );
+      }
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+      // Cards stagger animation
+      const cards = cardsRef.current?.querySelectorAll(".step-card");
+      if (cards) {
+        gsap.fromTo(
+          cards,
+          { opacity: 0, y: 60, scale: 0.95 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: "top 75%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
 
-    return () => observer.disconnect();
+        // Step numbers animation
+        const numbers = cardsRef.current?.querySelectorAll(".step-number");
+        gsap.fromTo(
+          numbers,
+          { scale: 0, rotate: -180 },
+          {
+            scale: 1,
+            rotate: 0,
+            duration: 0.6,
+            stagger: 0.2,
+            delay: 0.3,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: "top 75%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-paradise-gradient reveal-section">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-paradise-gradient">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className="text-center mb-16 opacity-0">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4">
             How It Works
           </h2>
@@ -63,21 +135,22 @@ const HowItWorksSection = () => {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Connecting Line */}
-          <div className="absolute top-24 left-0 right-0 h-0.5 bg-border hidden lg:block">
-            <div className="shimmer-line h-full" />
-          </div>
+          <div 
+            ref={lineRef}
+            className="absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 hidden lg:block origin-left"
+          />
 
           {/* Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-children">
+          <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <div key={step.title} className="relative">
+              <div key={step.title} className="relative step-card opacity-0" {...cardHoverLift}>
                 {/* Step Number */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold z-10">
+                <div className="step-number absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold z-10">
                   {index + 1}
                 </div>
 
                 {/* Card */}
-                <div className="card-luxury p-8 h-full">
+                <div className="card-luxury p-8 h-full transition-shadow duration-300">
                   <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6">
                     <step.icon size={28} className="text-primary" />
                   </div>
