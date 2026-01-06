@@ -2,6 +2,11 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Video, MapPin, Pill, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { buttonHoverGlow, cardHoverLift } from "@/hooks/useGSAPAnimations";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
@@ -35,33 +40,62 @@ const services = [
 
 const ServicesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || !sectionRef.current) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
+    const ctx = gsap.context(() => {
+      // Heading animation
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, y: 40, filter: "blur(8px)" },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Cards animation
+      const cards = cardsRef.current?.querySelectorAll(".service-card");
+      if (cards) {
+        gsap.fromTo(
+          cards,
+          { opacity: 0, y: 60, rotateX: 15 },
+          {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            duration: 0.9,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
           }
-        });
-      },
-      { threshold: 0.1 }
-    );
+        );
+      }
+    }, sectionRef);
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-muted/30 reveal-section">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className="text-center mb-16 opacity-0">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4">
             Our Services
           </h2>
@@ -70,9 +104,13 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
+        <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" style={{ perspective: "1000px" }}>
           {services.map((service) => (
-            <div key={service.title} className="card-luxury p-8 flex flex-col">
+            <div 
+              key={service.title} 
+              className="service-card card-luxury p-8 flex flex-col opacity-0"
+              {...cardHoverLift}
+            >
               <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6">
                 <service.icon size={28} className="text-primary" />
               </div>
@@ -92,7 +130,11 @@ const ServicesSection = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild className="btn-luxury text-primary-foreground flex-1">
+                <Button 
+                  asChild 
+                  className="btn-luxury text-primary-foreground flex-1"
+                  {...buttonHoverGlow}
+                >
                   <a href={service.bookingLink} target="_blank" rel="noopener noreferrer">
                     Book Now
                   </a>
