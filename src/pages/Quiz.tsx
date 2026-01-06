@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 
@@ -28,16 +26,13 @@ const Quiz = () => {
     if (step < questions.length - 1) {
       setStep(step + 1);
     } else {
-      // Calculate profile
       let profile = "combination";
-      const booking = "online-skin-consultation";
-      
       if (newAnswers.oiliness === 0 && newAnswers.breakouts <= 1) profile = "oily-acne";
       else if (newAnswers.sensitivity <= 1 || newAnswers.redness <= 1) profile = "sensitive-redness";
       else if (newAnswers.pigmentation <= 1) profile = "pigmentation";
       else if (newAnswers.oiliness >= 2 && newAnswers.breakouts >= 2) profile = "dry-dehydrated";
       
-      navigate(`/quiz/results?profile=${profile}&booking=${booking}`);
+      navigate(`/quiz/results?profile=${profile}`);
     }
   };
 
@@ -45,26 +40,22 @@ const Quiz = () => {
   const current = questions[step];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="pt-24 pb-16 min-h-screen flex items-center">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <Progress value={progress} className="mb-8 h-2" />
-          <p className="text-sm text-muted-foreground mb-2">Question {step + 1} of {questions.length}</p>
-          <h1 className="font-serif text-2xl md:text-3xl mb-8">{current.question}</h1>
-          <div className="space-y-3">
-            {current.options.map((option, i) => (
-              <Button key={i} variant="outline" className="w-full justify-start text-left h-auto py-4 px-6" onClick={() => handleAnswer(i)}>
-                {option}
-              </Button>
-            ))}
-          </div>
-          {step > 0 && (
-            <Button variant="ghost" className="mt-6" onClick={() => setStep(step - 1)}>Back</Button>
-          )}
+    <div className="pt-24 pb-16 min-h-[80vh] flex items-center">
+      <div className="container mx-auto px-4 max-w-2xl">
+        <Progress value={progress} className="mb-8 h-2" />
+        <p className="text-sm text-muted-foreground mb-2">Question {step + 1} of {questions.length}</p>
+        <h1 className="font-serif text-2xl md:text-3xl mb-8">{current.question}</h1>
+        <div className="space-y-3">
+          {current.options.map((option, i) => (
+            <Button key={i} variant="outline" className="w-full justify-start text-left h-auto py-4 px-6" onClick={() => handleAnswer(i)}>
+              {option}
+            </Button>
+          ))}
         </div>
-      </main>
-      <Footer />
+        {step > 0 && (
+          <Button variant="ghost" className="mt-6" onClick={() => setStep(step - 1)}>Back</Button>
+        )}
+      </div>
     </div>
   );
 };
