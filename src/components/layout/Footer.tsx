@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-foreground text-background">
+  return <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -19,13 +16,7 @@ const Footer = () => {
               Personalised skin plans, evidence-informed guidance, and curated treatments. Your skin health journey starts here.
             </p>
             <div className="flex gap-4">
-              <a
-                href="https://instagram.com/resknclinic"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="Follow us on Instagram"
-              >
+              <a href="https://instagram.com/resknclinic" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Follow us on Instagram">
                 <Instagram size={18} />
               </a>
             </div>
@@ -51,12 +42,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="https://app.cal.eu/resknclinic"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-background/70 hover:text-primary transition-colors text-sm"
-                >
+                <a href="https://app.cal.eu/resknclinic" target="_blank" rel="noopener noreferrer" className="text-background/70 hover:text-primary transition-colors text-sm">
                   Book Online
                 </a>
               </li>
@@ -107,21 +93,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary flex-shrink-0" />
-                <a
-                  href="mailto:hello@resknclinic.co.uk"
-                  className="text-background/70 hover:text-primary transition-colors text-sm"
-                >
+                <a href="mailto:hello@resknclinic.co.uk" className="text-background/70 hover:text-primary transition-colors text-sm">
                   hello@resknclinic.co.uk
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary flex-shrink-0" />
-                <a
-                  href="tel:+441234567890"
-                  className="text-background/70 hover:text-primary transition-colors text-sm"
-                >
-                  +44 (0) 1234 567 890
-                </a>
+                <a href="tel:+441234567890" className="text-background/70 hover:text-primary transition-colors text-sm">+44 (0) 7887630676</a>
               </li>
             </ul>
           </div>
@@ -144,8 +122,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
