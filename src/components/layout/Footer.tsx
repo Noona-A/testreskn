@@ -38,9 +38,9 @@ const Footer = () => {
                 
               </li>
               <li>
-                <a href="https://app.cal.eu/resknclinic" target="_blank" rel="noopener noreferrer" className="text-background/70 hover:text-primary transition-colors text-sm">
+                <Link to="/booking" className="text-background/70 hover:text-primary transition-colors text-sm">
                   Book Online
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
