@@ -20,9 +20,7 @@ import ServicesHub from "./pages/services/ServicesHub";
 import OnlineConsultation from "./pages/services/OnlineConsultation";
 import InClinicConsultation from "./pages/services/InClinicConsultation";
 import PrescriptionAcne from "./pages/services/PrescriptionAcne";
-import TreatmentsHub from "./pages/treatments/TreatmentsHub";
 import LaserHairRemoval from "./pages/LaserHairRemoval";
-import LaserHairRemovalOld from "./pages/treatments/LaserHairRemoval";
 import IngredientsHub from "./pages/ingredients/IngredientsHub";
 import CentellaAsiatica from "./pages/ingredients/CentellaAsiatica";
 import Niacinamide from "./pages/ingredients/Niacinamide";
@@ -72,9 +70,8 @@ const App = () => (
               <Route path="/services/online-consultation" element={<OnlineConsultation />} />
               <Route path="/services/in-clinic-consultation" element={<InClinicConsultation />} />
               <Route path="/services/prescription-acne" element={<PrescriptionAcne />} />
-              <Route path="/treatments" element={<TreatmentsHub />} />
-              <Route path="/treatments/laser-hair-removal" element={<LaserHairRemovalOld />} />
               <Route path="/laser-hair-removal" element={<LaserHairRemoval />} />
+              <Route path="/treatments/laser-hair-removal" element={<LaserHairRemoval />} />
               <Route path="/ingredients" element={<IngredientsHub />} />
               <Route path="/ingredients/centella-asiatica" element={<CentellaAsiatica />} />
               <Route path="/ingredients/niacinamide" element={<Niacinamide />} />
