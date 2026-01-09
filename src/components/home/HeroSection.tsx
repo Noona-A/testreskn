@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buttonHoverGlow } from "@/hooks/useGSAPAnimations";
 import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
 import heroImage from "@/assets/hero-consultation.jpg";
+import laserImage from "@/assets/laser-treatment.jpg";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -125,60 +126,72 @@ const HeroSection = () => {
 
       {/* Content */}
       <div ref={contentRef} className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
           <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange/20 backdrop-blur-sm border border-orange/30 mb-8">
             <Sparkles size={16} className="text-orange" />
             <span className="text-sm font-medium text-white">
-              Now offering online consultations
+              Skin consultations & laser hair removal
             </span>
           </div>
 
           {/* Headline */}
           <h1 ref={headlineRef} className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-6">
-            Personalised skin plans — online & in Windsor
+            Your best skin starts here
           </h1>
 
           {/* Subheadline */}
-          <p ref={subheadRef} className="text-lg md:text-xl text-white/80 mb-10">
-            acne • pigmentation • sensitivity • ingrowns • glow • laser hair removal
+          <p ref={subheadRef} className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto">
+            Personalised skin plans & medical-grade laser treatments. Expert care by a UK-registered pharmacist in Windsor.
           </p>
 
-          {/* CTAs */}
-          <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="btn-luxury text-white px-8 py-6 text-base"
-              {...buttonHoverGlow}
-            >
-              <Link to="/quiz">
-                Take the Skin Quiz
-                <ArrowRight className="ml-2" size={18} />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="px-8 py-6 text-base border-white/30 text-white hover:bg-white/10 hover:text-white"
-            >
-              <a href="https://app.cal.eu/resknclinic/online-skin-consultation" target="_blank" rel="noopener noreferrer">
-                Book a Consultation
-              </a>
-            </Button>
-          </div>
-
-          {/* Explore Link */}
-          <div className="mt-8">
+          {/* Two Service Cards */}
+          <div ref={ctaRef} className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
             <Link
-              to="/concerns"
-              className="inline-flex items-center gap-2 text-white/70 hover:text-orange transition-colors text-sm"
+              to="/booking"
+              className="group p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all text-left"
             >
-              Explore Skin Concerns
-              <ArrowRight size={14} />
+              <div className="w-12 h-12 rounded-xl bg-purple/20 flex items-center justify-center mb-4 group-hover:bg-purple/30 transition-colors">
+                <Video size={24} className="text-purple-light" />
+              </div>
+              <h3 className="font-semibold text-white text-lg mb-1">Skin Consultation</h3>
+              <p className="text-white/70 text-sm mb-3">
+                Acne • Pigmentation • Sensitivity • Anti-ageing
+              </p>
+              <span className="text-orange text-sm font-medium flex items-center gap-1">
+                From £20 <ArrowRight size={14} />
+              </span>
+            </Link>
+
+            <Link
+              to="/booking"
+              className="group p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all text-left"
+            >
+              <div className="w-12 h-12 rounded-xl bg-orange/20 flex items-center justify-center mb-4 group-hover:bg-orange/30 transition-colors">
+                <Sparkles size={24} className="text-orange" />
+              </div>
+              <h3 className="font-semibold text-white text-lg mb-1">Laser Hair Removal</h3>
+              <p className="text-white/70 text-sm mb-3">
+                Face • Body • Bikini • Full body packages
+              </p>
+              <span className="text-orange text-sm font-medium flex items-center gap-1">
+                From £25 <ArrowRight size={14} />
+              </span>
             </Link>
           </div>
+
+          {/* Main CTA */}
+          <Button
+            asChild
+            size="lg"
+            className="btn-luxury text-white px-10 py-6 text-base"
+            {...buttonHoverGlow}
+          >
+            <Link to="/booking">
+              Book Now
+              <ArrowRight className="ml-2" size={18} />
+            </Link>
+          </Button>
         </div>
       </div>
 

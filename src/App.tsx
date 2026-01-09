@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Index from "./pages/Index";
+import Booking from "./pages/Booking";
 import Quiz from "./pages/Quiz";
 import QuizResults from "./pages/QuizResults";
 import ConcernsHub from "./pages/concerns/ConcernsHub";
@@ -39,6 +40,7 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/booking" element={<Booking />} />
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/quiz/results" element={<QuizResults />} />
               <Route path="/concerns" element={<ConcernsHub />} />
