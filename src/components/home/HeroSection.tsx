@@ -19,11 +19,11 @@ const HeroSection = () => {
       </div>
 
       {/* Soft gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent" />
+      <div className="absolute inset-0 bg-white/40" />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 backdrop-blur-sm border border-purple/20 mb-8">
             <Sparkles size={16} className="text-purple" />
@@ -43,7 +43,7 @@ const HeroSection = () => {
           </p>
 
           {/* Two Service Cards */}
-          <div className="grid sm:grid-cols-2 gap-4 max-w-xl mb-8">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-8">
             <Link
               to="/booking"
               className="group p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-purple/20 hover:bg-white hover:border-purple/40 hover:shadow-lg transition-all text-left"
