@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Droplets, Sun, Flame, Scissors, Clock } from "lucide-react";
-import { cardHoverLift } from "@/hooks/useGSAPAnimations";
 
 const concerns = [
-  { icon: Droplets, title: "Acne", description: "Breakouts, blemishes, and oily skin management", href: "/concerns/acne", iconBg: "bg-orange/10", iconColor: "text-orange" },
-  { icon: Sun, title: "Pigmentation", description: "Dark spots, uneven tone, and sun damage", href: "/concerns/pigmentation", iconBg: "bg-orange-light/10", iconColor: "text-orange-light" },
-  { icon: Flame, title: "Sensitivity & Redness", description: "Reactive skin, rosacea, and inflammation", href: "/concerns/sensitivity", iconBg: "bg-burgundy-light/10", iconColor: "text-burgundy-light" },
-  { icon: Scissors, title: "Ingrown Hairs", description: "Bumps, irritation from shaving or waxing", href: "/concerns/ingrowns", iconBg: "bg-purple-light/10", iconColor: "text-purple-light" },
-  { icon: Clock, title: "Anti-Ageing", description: "Fine lines, texture, and skin firmness", href: "/concerns/anti-ageing", iconBg: "bg-purple/10", iconColor: "text-purple" },
+  { icon: Droplets, title: "Acne", description: "Breakouts, blemishes, and oily skin management", href: "/concerns/acne" },
+  { icon: Sun, title: "Pigmentation", description: "Dark spots, uneven tone, and sun damage", href: "/concerns/pigmentation" },
+  { icon: Flame, title: "Sensitivity & Redness", description: "Reactive skin, rosacea, and inflammation", href: "/concerns/sensitivity" },
+  { icon: Scissors, title: "Ingrown Hairs", description: "Bumps, irritation from shaving or waxing", href: "/concerns/ingrowns" },
+  { icon: Clock, title: "Anti-Ageing", description: "Fine lines, texture, and skin firmness", href: "/concerns/anti-ageing" },
 ];
 
 const ConcernsSection = () => {
@@ -28,10 +27,9 @@ const ConcernsSection = () => {
             <Link
               key={concern.title}
               to={concern.href}
-              className="card-luxury p-6 group"
-              {...cardHoverLift}
+              className="card-luxury p-6 group hover:shadow-lg transition-all"
             >
-              <div className={`w-12 h-12 rounded-xl ${concern.iconBg} ${concern.iconColor} flex items-center justify-center mb-4 transition-transform group-hover:scale-110`}>
+              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
                 <concern.icon size={24} />
               </div>
               <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">

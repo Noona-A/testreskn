@@ -1,5 +1,4 @@
 import { ClipboardList, Video, FileText, RefreshCw } from "lucide-react";
-import { cardHoverLift } from "@/hooks/useGSAPAnimations";
 
 const steps = [
   { icon: ClipboardList, title: "Take the Quiz", description: "Answer a few questions about your skin to discover your skin profile and get personalised recommendations." },
@@ -20,9 +19,9 @@ const HowItWorksSection = () => {
           <div className="absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 hidden lg:block" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <div key={step.title} className="relative" {...cardHoverLift}>
+              <div key={step.title} className="relative">
                 <div className="step-number absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold z-10">{index + 1}</div>
-                <div className="card-luxury p-8 h-full">
+                <div className="card-luxury p-8 h-full hover:shadow-lg transition-shadow">
                   <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6"><step.icon size={28} className="text-primary" /></div>
                   <h3 className="font-serif text-xl font-semibold text-foreground mb-3">{step.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>

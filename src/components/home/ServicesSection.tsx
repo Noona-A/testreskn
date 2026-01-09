@@ -1,9 +1,6 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Video, MapPin, Pill, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { buttonHoverGlow, cardHoverLift } from "@/hooks/useGSAPAnimations";
-import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 const services = [
   {
@@ -36,66 +33,10 @@ const services = [
 ];
 
 const ServicesSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (prefersReducedMotion() || !sectionRef.current) return;
-
-    const api = getGSAP();
-    if (!api) return;
-    const { gsap } = api;
-
-    const ctx = gsap.context(() => {
-      // Heading animation
-      gsap.fromTo(
-        headingRef.current,
-        { opacity: 0, y: 40, filter: "blur(8px)" },
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: headingRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      // Cards animation
-      const cards = cardsRef.current?.querySelectorAll(".service-card");
-      if (cards) {
-        gsap.fromTo(
-          cards,
-          { opacity: 0, y: 60, rotateX: 15 },
-          {
-            opacity: 1,
-            y: 0,
-            rotateX: 0,
-            duration: 0.9,
-            stagger: 0.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: cardsRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-muted/30">
+    <section className="py-24 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div ref={headingRef} className="text-center mb-16 opacity-0">
+        <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4">
             Our Services
           </h2>
@@ -104,12 +45,11 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" style={{ perspective: "1000px" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service) => (
             <div 
               key={service.title} 
-              className="service-card card-luxury p-8 flex flex-col opacity-0"
-              {...cardHoverLift}
+              className="service-card card-luxury p-8 flex flex-col hover:shadow-lg transition-shadow"
             >
               <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6">
                 <service.icon size={28} className="text-primary" />
@@ -133,7 +73,6 @@ const ServicesSection = () => {
                 <Button 
                   asChild 
                   className="btn-luxury text-white flex-1"
-                  {...buttonHoverGlow}
                 >
                   <a href={service.bookingLink} target="_blank" rel="noopener noreferrer">
                     Book Now
