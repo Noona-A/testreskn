@@ -9,6 +9,7 @@ const Header = () => {
 
   const navLinks = [
     { href: "/quiz", label: "Skin Quiz" },
+    { href: "/laser-hair-removal", label: "Laser Hair Removal" },
     { href: "/concerns", label: "Skin Concerns" },
     { href: "/ingredients", label: "Ingredients" },
     { href: "/about", label: "About" },
