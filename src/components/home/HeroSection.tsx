@@ -4,12 +4,13 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buttonHoverGlow } from "@/hooks/useGSAPAnimations";
 import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
+import heroImage from "@/assets/hero-consultation.jpg";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const bgGradientRef = useRef<HTMLDivElement>(null);
-  const bokehRef = useRef<HTMLDivElement>(null);
-  const palmRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subheadRef = useRef<HTMLParagraphElement>(null);
@@ -25,36 +26,9 @@ const HeroSection = () => {
 
     const ctx = gsap.context(() => {
       // Parallax layers on scroll
-      if (bgGradientRef.current) {
-        gsap.to(bgGradientRef.current, {
-          yPercent: 30,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      }
-
-      if (bokehRef.current) {
-        gsap.to(bokehRef.current, {
-          yPercent: 50,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      }
-
-      if (palmRef.current) {
-        gsap.to(palmRef.current, {
+      if (imageRef.current) {
+        gsap.to(imageRef.current, {
           yPercent: 20,
-          xPercent: 5,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -65,20 +39,18 @@ const HeroSection = () => {
         });
       }
 
-      // Floating bokeh particles
-      const particles = bokehRef.current?.querySelectorAll(".bokeh-particle");
-      particles?.forEach((particle, i) => {
-        gsap.to(particle, {
-          y: "random(-30, 30)",
-          x: "random(-20, 20)",
-          scale: "random(0.8, 1.2)",
-          duration: "random(4, 6)",
-          delay: i * 0.5,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: -1,
+      if (overlayRef.current) {
+        gsap.to(overlayRef.current, {
+          opacity: 0.8,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
         });
-      });
+      }
 
       // Content entrance animations
       const tl = gsap.timeline({ delay: 0.3 });
@@ -93,7 +65,6 @@ const HeroSection = () => {
 
       if (headlineRef.current) {
         // Split headline into words for stagger
-        const text = headlineRef.current.innerHTML;
         const words = headlineRef.current.textContent?.split(" ") || [];
         headlineRef.current.innerHTML = words
           .map((word) => `<span class="inline-block overflow-hidden"><span class="inline-block hero-word">${word}</span></span>`)
@@ -134,40 +105,42 @@ const HeroSection = () => {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Background Gradient Layer */}
-      <div ref={bgGradientRef} className="absolute inset-0 bg-hero-gradient will-change-transform" />
-
-      {/* Bokeh Particles Layer */}
-      <div ref={bokehRef} className="absolute inset-0 overflow-hidden pointer-events-none will-change-transform">
-        <div className="bokeh-particle absolute w-32 h-32 top-[15%] left-[8%] rounded-full bg-gradient-radial from-bokeh-glow/40 to-transparent" />
-        <div className="bokeh-particle absolute w-48 h-48 top-[55%] right-[12%] rounded-full bg-gradient-radial from-tropical-teal-light/30 to-transparent" />
-        <div className="bokeh-particle absolute w-24 h-24 top-[25%] right-[25%] rounded-full bg-gradient-radial from-golden-hour/20 to-transparent" />
-        <div className="bokeh-particle absolute w-40 h-40 bottom-[25%] left-[18%] rounded-full bg-gradient-radial from-bokeh-glow/35 to-transparent" />
-        <div className="bokeh-particle absolute w-20 h-20 top-[45%] left-[45%] rounded-full bg-gradient-radial from-tropical-teal-light/25 to-transparent" />
-        <div className="bokeh-particle absolute w-36 h-36 top-[70%] left-[60%] rounded-full bg-gradient-radial from-golden-hour/15 to-transparent" />
+      {/* Background Image Layer */}
+      <div ref={imageRef} className="absolute inset-0 will-change-transform">
+        <img
+          src={heroImage}
+          alt="Skin consultation at ReSKN Clinic"
+          className="w-full h-full object-cover scale-110"
+        />
       </div>
 
-      {/* Palm Shadow Overlay Layer */}
-      <div ref={palmRef} className="palm-shadow-overlay will-change-transform" />
+      {/* Gradient Overlay */}
+      <div 
+        ref={overlayRef}
+        className="absolute inset-0 bg-gradient-to-r from-burgundy-deep/90 via-burgundy/80 to-burgundy-deep/70"
+      />
+
+      {/* Purple accent gradient at top */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-purple/30 to-transparent" />
 
       {/* Content */}
       <div ref={contentRef} className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/80 backdrop-blur-sm border border-primary/20 mb-8">
-            <Sparkles size={16} className="text-primary" />
-            <span className="text-sm font-medium text-accent-foreground">
+          <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange/20 backdrop-blur-sm border border-orange/30 mb-8">
+            <Sparkles size={16} className="text-orange" />
+            <span className="text-sm font-medium text-white">
               Now offering online consultations
             </span>
           </div>
 
           {/* Headline */}
-          <h1 ref={headlineRef} className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-tight mb-6">
+          <h1 ref={headlineRef} className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-6">
             Personalised skin plans — online & in Windsor
           </h1>
 
           {/* Subheadline */}
-          <p ref={subheadRef} className="text-lg md:text-xl text-muted-foreground mb-10">
+          <p ref={subheadRef} className="text-lg md:text-xl text-white/80 mb-10">
             acne • pigmentation • sensitivity • ingrowns • glow • laser hair removal
           </p>
 
@@ -176,7 +149,7 @@ const HeroSection = () => {
             <Button
               asChild
               size="lg"
-              className="btn-luxury text-primary-foreground px-8 py-6 text-base"
+              className="btn-luxury text-white px-8 py-6 text-base"
               {...buttonHoverGlow}
             >
               <Link to="/quiz">
@@ -188,7 +161,7 @@ const HeroSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="px-8 py-6 text-base border-primary/30 hover:bg-accent"
+              className="px-8 py-6 text-base border-white/30 text-white hover:bg-white/10 hover:text-white"
             >
               <a href="https://app.cal.eu/resknclinic/online-skin-consultation" target="_blank" rel="noopener noreferrer">
                 Book a Consultation
@@ -200,7 +173,7 @@ const HeroSection = () => {
           <div className="mt-8">
             <Link
               to="/concerns"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
+              className="inline-flex items-center gap-2 text-white/70 hover:text-orange transition-colors text-sm"
             >
               Explore Skin Concerns
               <ArrowRight size={14} />
@@ -211,8 +184,8 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2">
-          <div className="w-1 h-2 bg-primary/50 rounded-full animate-pulse" />
+        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
+          <div className="w-1 h-2 bg-orange rounded-full animate-pulse" />
         </div>
       </div>
     </section>
