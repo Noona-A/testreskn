@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Video, CheckCircle, Star, Shield, Heart, MapPin } from "lucide-react";
+import { ArrowRight, Sparkles, Video, CheckCircle, Star, Shield, Heart, MapPin, Droplets, Sun, Flame, Scissors, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const SkinClinic = () => {
@@ -32,11 +32,11 @@ const SkinClinic = () => {
   ];
 
   const concerns = [
-    { title: "Acne", description: "Breakouts, blemishes, and oily skin management", link: "/concerns/acne" },
-    { title: "Pigmentation", description: "Dark spots, uneven tone, and sun damage", link: "/concerns/pigmentation" },
-    { title: "Sensitivity & Redness", description: "Reactive skin, rosacea, and inflammation", link: "/concerns/sensitivity" },
-    { title: "Ingrown Hairs", description: "Bumps, irritation from shaving or waxing", link: "/concerns/ingrowns" },
-    { title: "Anti-Ageing", description: "Fine lines, texture, and skin firmness", link: "/concerns/anti-ageing" }
+    { icon: Droplets, title: "Acne", description: "Breakouts, blemishes, and oily skin management", link: "/concerns/acne" },
+    { icon: Sun, title: "Pigmentation", description: "Dark spots, uneven tone, and sun damage", link: "/concerns/pigmentation" },
+    { icon: Flame, title: "Sensitivity & Redness", description: "Reactive skin, rosacea, and inflammation", link: "/concerns/sensitivity" },
+    { icon: Scissors, title: "Ingrown Hairs", description: "Bumps, irritation from shaving or waxing", link: "/concerns/ingrowns" },
+    { icon: Clock, title: "Anti-Ageing", description: "Fine lines, texture, and skin firmness", link: "/concerns/anti-ageing" }
   ];
 
   const benefits = [
@@ -104,33 +104,37 @@ const SkinClinic = () => {
         </div>
       </section>
 
-      {/* Our Services */}
+      {/* Skin Concerns We Treat */}
       <section className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Our Services
+              Skin Concerns We Treat
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Two focused services designed to help you look and feel your best
+              Whatever your skin is telling you, we're here to listen and help
             </p>
           </div>
 
-          <div className="max-w-md mx-auto">
-            <div className="p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-purple/10 flex items-center justify-center mb-4">
-                <Video size={24} className="text-purple" />
-              </div>
-              <h3 className="font-serif font-semibold text-foreground text-xl mb-2">Skin Consultations</h3>
-              <p className="text-muted-foreground mb-4">
-                Personalised, evidence-informed skincare for acne, pigmentation, sensitivity, and ageing.
-              </p>
-              <Button asChild variant="outline" className="border-purple text-purple hover:bg-purple/10">
-                <Link to="/quiz">
-                  Take the Skin Quiz <ArrowRight className="ml-2" size={16} />
-                </Link>
-              </Button>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl mx-auto">
+            {concerns.map((concern, index) => (
+              <Link
+                key={index}
+                to={concern.link}
+                className="group p-6 rounded-2xl bg-card border border-border hover:border-purple/30 hover:shadow-lg transition-all"
+              >
+                <div className="w-12 h-12 rounded-xl bg-purple/10 text-purple flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
+                  <concern.icon size={24} />
+                </div>
+                <h3 className="font-serif font-semibold text-foreground text-lg mb-2 group-hover:text-purple transition-colors">
+                  {concern.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mb-4">{concern.description}</p>
+                <span className="text-purple text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Learn more <ArrowRight size={14} />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -161,48 +165,8 @@ const SkinClinic = () => {
         </div>
       </section>
 
-      {/* Skin Concerns */}
-      <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Skin Concerns We Treat
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Whatever your skin is telling you, we're here to listen and help
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {concerns.map((concern, index) => (
-              <Link
-                key={index}
-                to={concern.link}
-                className="group p-6 rounded-2xl bg-card border border-border hover:border-purple/30 hover:shadow-lg transition-all"
-              >
-                <h3 className="font-serif font-semibold text-foreground text-lg mb-2 group-hover:text-purple transition-colors">
-                  {concern.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4">{concern.description}</p>
-                <span className="text-purple text-sm font-medium flex items-center gap-1">
-                  Learn more <ArrowRight size={14} />
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Button asChild variant="outline" className="border-purple text-purple hover:bg-purple/10">
-              <Link to="/concerns">
-                View all skin concerns <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Why ReSKN */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
@@ -225,7 +189,7 @@ const SkinClinic = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 md:py-28 bg-muted/30">
+      <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">

@@ -8,9 +8,9 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { href: "/quiz", label: "Skin Quiz" },
+    { href: "/services", label: "Skin Clinic" },
     { href: "/laser-hair-removal", label: "Laser Hair Removal" },
-    { href: "/concerns", label: "Skin Concerns" },
+    { href: "/quiz", label: "Skin Quiz" },
     { href: "/ingredients", label: "Ingredients" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
