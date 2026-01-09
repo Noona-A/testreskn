@@ -32,14 +32,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-background/70 hover:text-primary transition-colors text-sm">
-                  Services
-                </Link>
+                
               </li>
               <li>
-                <Link to="/treatments" className="text-background/70 hover:text-primary transition-colors text-sm">
-                  Treatments
-                </Link>
+                
               </li>
               <li>
                 <a href="https://app.cal.eu/resknclinic" target="_blank" rel="noopener noreferrer" className="text-background/70 hover:text-primary transition-colors text-sm">
