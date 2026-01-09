@@ -1,18 +1,15 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Droplets, Sun, Flame, Scissors, Clock } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cardHoverLift } from "@/hooks/useGSAPAnimations";
-
-gsap.registerPlugin(ScrollTrigger);
+import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 const concerns = [
-  { icon: Droplets, title: "Acne", description: "Breakouts, blemishes, and oily skin management", href: "/concerns/acne", iconBg: "bg-blue-50", iconColor: "text-blue-600" },
-  { icon: Sun, title: "Pigmentation", description: "Dark spots, uneven tone, and sun damage", href: "/concerns/pigmentation", iconBg: "bg-amber-50", iconColor: "text-amber-600" },
-  { icon: Flame, title: "Sensitivity & Redness", description: "Reactive skin, rosacea, and inflammation", href: "/concerns/sensitivity", iconBg: "bg-rose-50", iconColor: "text-rose-600" },
-  { icon: Scissors, title: "Ingrown Hairs", description: "Bumps, irritation from shaving or waxing", href: "/concerns/ingrowns", iconBg: "bg-emerald-50", iconColor: "text-emerald-600" },
-  { icon: Clock, title: "Anti-Ageing", description: "Fine lines, texture, and skin firmness", href: "/concerns/anti-ageing", iconBg: "bg-purple-50", iconColor: "text-purple-600" },
+  { icon: Droplets, title: "Acne", description: "Breakouts, blemishes, and oily skin management", href: "/concerns/acne", iconBg: "bg-orange/10", iconColor: "text-orange" },
+  { icon: Sun, title: "Pigmentation", description: "Dark spots, uneven tone, and sun damage", href: "/concerns/pigmentation", iconBg: "bg-orange-light/10", iconColor: "text-orange-light" },
+  { icon: Flame, title: "Sensitivity & Redness", description: "Reactive skin, rosacea, and inflammation", href: "/concerns/sensitivity", iconBg: "bg-burgundy-light/10", iconColor: "text-burgundy-light" },
+  { icon: Scissors, title: "Ingrown Hairs", description: "Bumps, irritation from shaving or waxing", href: "/concerns/ingrowns", iconBg: "bg-purple-light/10", iconColor: "text-purple-light" },
+  { icon: Clock, title: "Anti-Ageing", description: "Fine lines, texture, and skin firmness", href: "/concerns/anti-ageing", iconBg: "bg-purple/10", iconColor: "text-purple" },
 ];
 
 const ConcernsSection = () => {
@@ -21,8 +18,11 @@ const ConcernsSection = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion || !sectionRef.current) return;
+    if (prefersReducedMotion() || !sectionRef.current) return;
+
+    const api = getGSAP();
+    if (!api) return;
+    const { gsap } = api;
 
     const ctx = gsap.context(() => {
       // Heading animation with blur

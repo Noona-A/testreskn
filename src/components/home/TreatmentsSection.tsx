@@ -2,22 +2,22 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Sparkles, Shield, Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { buttonHoverGlow } from "@/hooks/useGSAPAnimations";
-
-gsap.registerPlugin(ScrollTrigger);
+import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
+import laserImage from "@/assets/laser-treatment.jpg";
 
 const TreatmentsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
   const floatingCardRef = useRef<HTMLDivElement>(null);
-  const sparkleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion || !sectionRef.current) return;
+    if (prefersReducedMotion() || !sectionRef.current) return;
+
+    const api = getGSAP();
+    if (!api) return;
+    const { gsap } = api;
 
     const ctx = gsap.context(() => {
       // Content reveal
@@ -84,18 +84,6 @@ const TreatmentsSection = () => {
           yoyo: true,
           repeat: -1,
           delay: 1.5,
-        });
-      }
-
-      // Sparkle icon animation
-      if (sparkleRef.current) {
-        gsap.to(sparkleRef.current, {
-          y: -15,
-          rotate: 10,
-          duration: 2.5,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: -1,
         });
       }
 
@@ -169,7 +157,7 @@ const TreatmentsSection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   asChild 
-                  className="btn-luxury text-primary-foreground"
+                  className="btn-luxury text-white"
                   {...buttonHoverGlow}
                 >
                   <a href="https://app.cal.eu/resknclinic/laser-patch-test" target="_blank" rel="noopener noreferrer">
@@ -187,27 +175,14 @@ const TreatmentsSection = () => {
 
             {/* Visual */}
             <div ref={visualRef} className="relative opacity-0">
-              <div className="aspect-[4/5] rounded-3xl bg-paradise-gradient overflow-hidden relative">
-                {/* Decorative elements */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-48 h-48 rounded-full bg-primary/10 animate-pulse" />
-                </div>
-                
-                {/* Floating bokeh */}
-                <div className="absolute w-24 h-24 top-[20%] left-[20%] rounded-full bg-gradient-radial from-bokeh-glow/40 to-transparent" />
-                <div className="absolute w-32 h-32 bottom-[30%] right-[20%] rounded-full bg-gradient-radial from-tropical-teal-light/30 to-transparent" />
-
-                {/* Content overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div ref={sparkleRef}>
-                      <Sparkles size={64} className="text-primary mx-auto mb-4" />
-                    </div>
-                    <p className="font-serif text-2xl text-foreground/80">
-                      Smooth, lasting results
-                    </p>
-                  </div>
-                </div>
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl">
+                <img
+                  src={laserImage}
+                  alt="Laser hair removal treatment"
+                  className="w-full h-full object-cover"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/60 via-transparent to-purple/20" />
               </div>
 
               {/* Floating card */}

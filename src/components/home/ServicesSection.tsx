@@ -2,11 +2,8 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Video, MapPin, Pill, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { buttonHoverGlow, cardHoverLift } from "@/hooks/useGSAPAnimations";
-
-gsap.registerPlugin(ScrollTrigger);
+import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 const services = [
   {
@@ -44,8 +41,11 @@ const ServicesSection = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion || !sectionRef.current) return;
+    if (prefersReducedMotion() || !sectionRef.current) return;
+
+    const api = getGSAP();
+    if (!api) return;
+    const { gsap } = api;
 
     const ctx = gsap.context(() => {
       // Heading animation
@@ -132,7 +132,7 @@ const ServicesSection = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button 
                   asChild 
-                  className="btn-luxury text-primary-foreground flex-1"
+                  className="btn-luxury text-white flex-1"
                   {...buttonHoverGlow}
                 >
                   <a href={service.bookingLink} target="_blank" rel="noopener noreferrer">
