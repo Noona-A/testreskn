@@ -4,120 +4,133 @@
 
 /* ReSKN Clinic Design System
    Brand Colors:
-   - Primary: Deep burgundy/maroon (hero backgrounds)
-   - Accent: Warm orange (buttons, CTAs)
-   - Secondary: Purple gradient (header accents)
+   - Primary: Soft purple/lavender (brand color)
+   - Accent: Purple (buttons, CTAs)
+   - Background: Light lavender/pink tones
    All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Light mode - clean & professional */
-    --background: 0 0% 100%;
-    --foreground: 350 30% 15%;
+    /* Light mode - soft, luxurious, spa-like */
+    --background: 280 30% 99%;
+    --foreground: 270 40% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 350 30% 15%;
+    --card-foreground: 270 40% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 350 30% 15%;
+    --popover-foreground: 270 40% 20%;
 
-    /* Primary: Warm orange (buttons, CTAs) */
-    --primary: 25 85% 55%;
+    /* Primary: Soft purple (buttons, CTAs) */
+    --primary: 270 50% 55%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Deep burgundy/maroon */
-    --secondary: 350 45% 25%;
+    /* Secondary: Deep purple */
+    --secondary: 270 45% 35%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted: Soft warm gray */
-    --muted: 30 10% 96%;
-    --muted-foreground: 350 15% 45%;
+    /* Muted: Soft lavender gray */
+    --muted: 270 20% 96%;
+    --muted-foreground: 270 20% 45%;
 
-    /* Accent: Light warm tone */
-    --accent: 25 30% 95%;
-    --accent-foreground: 350 30% 20%;
+    /* Accent: Light lavender tone */
+    --accent: 280 40% 95%;
+    --accent-foreground: 270 40% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 90%;
-    --input: 30 20% 90%;
-    --ring: 25 85% 55%;
+    --border: 270 25% 90%;
+    --input: 270 25% 90%;
+    --ring: 270 50% 55%;
 
     --radius: 0.5rem;
 
-    /* Custom brand colors */
-    --burgundy: 350 45% 25%;
-    --burgundy-deep: 350 50% 18%;
-    --burgundy-light: 350 35% 35%;
-    --orange: 25 85% 55%;
-    --orange-light: 25 80% 65%;
-    --orange-glow: 25 90% 60%;
-    --purple: 280 35% 40%;
-    --purple-light: 280 30% 55%;
-    --cream: 35 30% 97%;
-    --warm-white: 30 20% 98%;
+    /* Custom brand colors - Purple/Lavender theme */
+    --purple: 270 50% 55%;
+    --purple-deep: 270 55% 40%;
+    --purple-light: 280 45% 70%;
+    --lavender: 280 40% 85%;
+    --lavender-light: 280 35% 92%;
+    --lavender-glow: 280 50% 75%;
+    --blush: 340 35% 90%;
+    --cream: 280 20% 98%;
+    --warm-white: 280 15% 99%;
+
+    /* Legacy mappings for compatibility */
+    --burgundy: 270 50% 55%;
+    --burgundy-deep: 270 55% 40%;
+    --burgundy-light: 280 45% 70%;
+    --orange: 270 50% 55%;
+    --orange-light: 280 45% 70%;
+    --orange-glow: 280 50% 75%;
 
     /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 350 30% 25%;
-    --sidebar-primary: 25 85% 55%;
+    --sidebar-background: 280 20% 98%;
+    --sidebar-foreground: 270 40% 25%;
+    --sidebar-primary: 270 50% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 25 30% 95%;
-    --sidebar-accent-foreground: 350 30% 20%;
-    --sidebar-border: 30 20% 90%;
-    --sidebar-ring: 25 85% 55%;
+    --sidebar-accent: 280 40% 95%;
+    --sidebar-accent-foreground: 270 40% 25%;
+    --sidebar-border: 270 25% 90%;
+    --sidebar-ring: 270 50% 55%;
   }
 
   .dark {
-    --background: 350 50% 8%;
-    --foreground: 30 20% 95%;
+    --background: 270 40% 8%;
+    --foreground: 280 20% 95%;
 
-    --card: 350 45% 12%;
-    --card-foreground: 30 20% 95%;
+    --card: 270 35% 12%;
+    --card-foreground: 280 20% 95%;
 
-    --popover: 350 45% 12%;
-    --popover-foreground: 30 20% 95%;
+    --popover: 270 35% 12%;
+    --popover-foreground: 280 20% 95%;
 
-    --primary: 25 85% 55%;
+    --primary: 270 50% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 350 40% 20%;
-    --secondary-foreground: 30 20% 95%;
+    --secondary: 270 40% 25%;
+    --secondary-foreground: 280 20% 95%;
 
-    --muted: 350 35% 18%;
-    --muted-foreground: 30 15% 65%;
+    --muted: 270 30% 18%;
+    --muted-foreground: 280 15% 65%;
 
-    --accent: 350 40% 20%;
-    --accent-foreground: 30 20% 95%;
+    --accent: 270 35% 20%;
+    --accent-foreground: 280 20% 95%;
 
     --destructive: 0 62.8% 40%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 350 35% 20%;
-    --input: 350 35% 20%;
-    --ring: 25 85% 55%;
+    --border: 270 30% 20%;
+    --input: 270 30% 20%;
+    --ring: 270 50% 60%;
 
-    --burgundy: 350 45% 30%;
-    --burgundy-deep: 350 50% 20%;
-    --burgundy-light: 350 35% 45%;
-    --orange: 25 85% 55%;
-    --orange-light: 25 80% 65%;
-    --orange-glow: 25 90% 60%;
-    --purple: 280 35% 50%;
-    --purple-light: 280 30% 60%;
-    --cream: 35 20% 15%;
-    --warm-white: 30 15% 12%;
+    --purple: 270 50% 60%;
+    --purple-deep: 270 55% 45%;
+    --purple-light: 280 45% 70%;
+    --lavender: 280 35% 30%;
+    --lavender-light: 280 30% 20%;
+    --lavender-glow: 280 45% 50%;
+    --blush: 340 25% 25%;
+    --cream: 270 20% 15%;
+    --warm-white: 270 15% 12%;
 
-    --sidebar-background: 350 50% 10%;
-    --sidebar-foreground: 30 20% 95%;
-    --sidebar-primary: 25 85% 55%;
+    --burgundy: 270 50% 60%;
+    --burgundy-deep: 270 55% 45%;
+    --burgundy-light: 280 45% 70%;
+    --orange: 270 50% 60%;
+    --orange-light: 280 45% 70%;
+    --orange-glow: 280 45% 50%;
+
+    --sidebar-background: 270 40% 10%;
+    --sidebar-foreground: 280 20% 95%;
+    --sidebar-primary: 270 50% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 350 40% 18%;
-    --sidebar-accent-foreground: 30 20% 95%;
-    --sidebar-border: 350 35% 20%;
-    --sidebar-ring: 25 85% 55%;
+    --sidebar-accent: 270 35% 18%;
+    --sidebar-accent-foreground: 280 20% 95%;
+    --sidebar-border: 270 30% 20%;
+    --sidebar-ring: 270 50% 60%;
   }
 }
 
@@ -137,22 +150,22 @@
 }
 
 @layer components {
-  /* Gradient backgrounds */
+  /* Gradient backgrounds - Purple/Lavender theme */
   .bg-hero-gradient {
     background: linear-gradient(
       135deg,
-      hsl(var(--burgundy-deep)) 0%,
-      hsl(var(--burgundy)) 40%,
-      hsl(var(--burgundy-light)) 100%
+      hsl(var(--purple-deep)) 0%,
+      hsl(var(--purple)) 40%,
+      hsl(var(--purple-light)) 100%
     );
   }
 
   .bg-header-gradient {
     background: linear-gradient(
       90deg,
-      hsl(var(--purple)) 0%,
-      hsl(var(--burgundy)) 50%,
-      hsl(var(--orange) / 0.8) 100%
+      hsl(var(--purple-deep)) 0%,
+      hsl(var(--purple)) 50%,
+      hsl(var(--purple-light)) 100%
     );
   }
 
@@ -164,38 +177,38 @@
     );
   }
 
-  /* Luxury button styles */
+  /* Luxury button styles - Purple theme */
   .btn-luxury {
     @apply relative overflow-hidden;
     background: linear-gradient(
       135deg,
-      hsl(var(--orange)) 0%,
-      hsl(var(--orange-light)) 100%
+      hsl(var(--purple)) 0%,
+      hsl(var(--purple-light)) 100%
     );
     box-shadow: 
-      0 4px 15px hsl(var(--orange) / 0.3),
-      inset 0 1px 0 hsl(var(--orange-light) / 0.5);
+      0 4px 15px hsl(var(--purple) / 0.3),
+      inset 0 1px 0 hsl(var(--purple-light) / 0.5);
     transition: all 0.3s ease;
   }
 
   .btn-luxury:hover {
     box-shadow: 
-      0 8px 25px hsl(var(--orange) / 0.4),
-      inset 0 1px 0 hsl(var(--orange-light) / 0.5);
+      0 8px 25px hsl(var(--purple) / 0.4),
+      inset 0 1px 0 hsl(var(--purple-light) / 0.5);
     transform: translateY(-2px);
   }
 
   /* Card hover effects */
   .card-luxury {
     @apply bg-card border border-border rounded-xl;
-    box-shadow: 0 4px 20px hsl(var(--burgundy) / 0.05);
+    box-shadow: 0 4px 20px hsl(var(--purple) / 0.05);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card-luxury:hover {
     box-shadow: 
-      0 12px 40px hsl(var(--burgundy) / 0.12),
-      0 4px 15px hsl(var(--orange) / 0.08);
+      0 12px 40px hsl(var(--purple) / 0.12),
+      0 4px 15px hsl(var(--lavender-glow) / 0.08);
     transform: translateY(-4px);
   }
 
@@ -205,8 +218,8 @@
     background: linear-gradient(
       90deg,
       transparent,
-      hsl(var(--orange) / 0.5),
-      hsl(var(--purple) / 0.5),
+      hsl(var(--purple-light) / 0.5),
+      hsl(var(--lavender-glow) / 0.5),
       transparent
     );
   }
@@ -215,20 +228,23 @@
   .text-gradient-brand {
     background: linear-gradient(
       135deg,
-      hsl(var(--orange)) 0%,
-      hsl(var(--burgundy-light)) 100%
+      hsl(var(--purple)) 0%,
+      hsl(var(--purple-light)) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Palm shadow overlay for hero */
+  /* Soft overlay for hero */
   .palm-shadow-overlay {
     @apply absolute inset-0 pointer-events-none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3ClinearGradient id='palmGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23000;stop-opacity:0.15'/%3E%3Cstop offset='100%25' style='stop-color:%23000;stop-opacity:0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M-100 200 Q200 300 100 600 Q50 800 -50 1000' stroke='url(%23palmGrad)' stroke-width='80' fill='none' opacity='0.3'/%3E%3Cpath d='M1100 100 Q800 200 900 500 Q950 700 1050 900' stroke='url(%23palmGrad)' stroke-width='60' fill='none' opacity='0.25'/%3E%3C/svg%3E");
-    background-size: cover;
-    opacity: 0.4;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--lavender) / 0.2) 0%,
+      transparent 50%,
+      hsl(var(--blush) / 0.15) 100%
+    );
   }
 
   /* Radial gradient for bokeh effects */
@@ -240,7 +256,7 @@
 /* Custom color utilities for bokeh particles */
 @layer utilities {
   .from-bokeh-glow {
-    --tw-gradient-from: hsl(var(--orange-glow));
+    --tw-gradient-from: hsl(var(--lavender-glow));
   }
   
   .from-tropical-teal-light {
@@ -248,6 +264,6 @@
   }
   
   .from-golden-hour {
-    --tw-gradient-from: hsl(var(--orange-light));
+    --tw-gradient-from: hsl(var(--lavender));
   }
 }

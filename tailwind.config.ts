@@ -57,7 +57,21 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Brand colors
+        // Brand colors - Purple/Lavender theme
+        purple: {
+          DEFAULT: "hsl(var(--purple))",
+          deep: "hsl(var(--purple-deep))",
+          light: "hsl(var(--purple-light))",
+        },
+        lavender: {
+          DEFAULT: "hsl(var(--lavender))",
+          light: "hsl(var(--lavender-light))",
+          glow: "hsl(var(--lavender-glow))",
+        },
+        blush: "hsl(var(--blush))",
+        cream: "hsl(var(--cream))",
+        "warm-white": "hsl(var(--warm-white))",
+        // Legacy compatibility
         burgundy: {
           DEFAULT: "hsl(var(--burgundy))",
           deep: "hsl(var(--burgundy-deep))",
@@ -68,12 +82,6 @@ export default {
           light: "hsl(var(--orange-light))",
           glow: "hsl(var(--orange-glow))",
         },
-        purple: {
-          DEFAULT: "hsl(var(--purple))",
-          light: "hsl(var(--purple-light))",
-        },
-        cream: "hsl(var(--cream))",
-        "warm-white": "hsl(var(--warm-white))",
       },
       borderRadius: {
         lg: "var(--radius)",
