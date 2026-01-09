@@ -48,7 +48,7 @@ const LaserHairRemoval = () => {
                   Book Laser Hair Removal
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+              <Button asChild size="lg" className="btn-luxury text-white">
                 <a href="https://app.cal.eu/resknclinic/laser-patch-test" target="_blank" rel="noopener noreferrer">
                   Book Patch Test
                 </a>
