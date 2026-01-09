@@ -30,7 +30,7 @@ const CTASection = () => {
               <Link to="/quiz">Take the Skin Quiz</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-              <a href="https://app.cal.eu/resknclinic" target="_blank" rel="noopener noreferrer">Book Consultation</a>
+              <Link to="/booking">Book Consultation</Link>
             </Button>
           </div>
         </div>
