@@ -50,7 +50,7 @@ const HeroSection = () => {
             size="lg"
             className="btn-luxury text-white px-12 py-7 text-lg font-medium min-w-[200px]"
           >
-            <Link to="/services">
+            <Link to="/skin-clinic">
               Skin Clinic
             </Link>
           </Button>
