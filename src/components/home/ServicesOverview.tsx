@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Zap } from "lucide-react";
-import { cardHoverLift } from "@/hooks/useGSAPAnimations";
 
 const services = [
   {
@@ -30,17 +29,15 @@ const ServicesOverview = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service) => (
-            <div key={service.title} {...cardHoverLift}>
-              <div className="card-luxury p-8 md:p-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6">
-                  <service.icon size={28} className="text-primary" />
-                </div>
-                <h3 className="font-serif text-2xl font-semibold text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
-                <Button asChild className="btn-luxury text-white w-full sm:w-auto">
-                  <Link to={service.link}>{service.cta}</Link>
-                </Button>
+            <div key={service.title} className="card-luxury p-8 md:p-10 h-full flex flex-col hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6">
+                <service.icon size={28} className="text-primary" />
               </div>
+              <h3 className="font-serif text-2xl font-semibold text-foreground mb-3">{service.title}</h3>
+              <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
+              <Button asChild className="btn-luxury text-white w-full sm:w-auto">
+                <Link to={service.link}>{service.cta}</Link>
+              </Button>
             </div>
           ))}
         </div>

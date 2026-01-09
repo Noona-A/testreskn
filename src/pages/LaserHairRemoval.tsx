@@ -1,9 +1,6 @@
-import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ClipboardCheck, Zap, Calendar, RefreshCw, Check, AlertCircle, Users, ShieldCheck } from "lucide-react";
-import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
-import { cardHoverLift, buttonHoverGlow } from "@/hooks/useGSAPAnimations";
 import laserTreatmentImg from "@/assets/laser-treatment.jpg";
 
 const steps = [
@@ -25,45 +22,17 @@ const suitability = [
 ];
 
 const LaserHairRemoval = () => {
-  const heroRef = useRef<HTMLElement>(null);
-  const heroContentRef = useRef<HTMLDivElement>(null);
-  const stepsRef = useRef<HTMLDivElement>(null);
-  const timelineRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     document.title = "Laser Hair Removal | ReSKN Clinic Windsor";
-  }, []);
-
-  useEffect(() => {
-    if (prefersReducedMotion()) return;
-    const api = getGSAP();
-    if (!api) return;
-    const { gsap } = api;
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(heroContentRef.current, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, ease: "power3.out" });
-      
-      const stepCards = stepsRef.current?.querySelectorAll(".step-card");
-      if (stepCards) {
-        gsap.fromTo(stepCards, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out", scrollTrigger: { trigger: stepsRef.current, start: "top 80%" } });
-      }
-
-      const timelineCards = timelineRef.current?.querySelectorAll(".timeline-card");
-      if (timelineCards) {
-        gsap.fromTo(timelineCards, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: timelineRef.current, start: "top 80%" } });
-      }
-    });
-
-    return () => ctx.revert();
   }, []);
 
   return (
     <>
       {/* Hero Section */}
-      <section ref={heroRef} className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-hero-gradient overflow-hidden">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-hero-gradient overflow-hidden">
         <div className="palm-shadow-overlay" />
         <div className="container mx-auto px-4 relative z-10">
-          <div ref={heroContentRef} className="max-w-3xl mx-auto text-center opacity-0">
+          <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-white/10 text-white/90 rounded-full backdrop-blur-sm">
               Medical-Grade Laser Treatment
             </span>
@@ -74,7 +43,7 @@ const LaserHairRemoval = () => {
               Medical-grade laser treatments for long-lasting, smoother skin — delivered safely by a UK-registered pharmacist.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-              <Button asChild size="lg" className="btn-luxury text-white" {...buttonHoverGlow}>
+              <Button asChild size="lg" className="btn-luxury text-white">
                 <a href="https://app.cal.eu/resknclinic/laser-hair-removal" target="_blank" rel="noopener noreferrer">
                   Book Laser Hair Removal
                 </a>
@@ -97,13 +66,13 @@ const LaserHairRemoval = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">How It Works</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">Your journey to smooth, hair-free skin</p>
           </div>
-          <div ref={stepsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {steps.map((step, index) => (
-              <div key={step.title} className="relative step-card" {...cardHoverLift}>
+              <div key={step.title} className="relative step-card">
                 <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold z-10">
                   {index + 1}
                 </div>
-                <div className="card-luxury p-6 h-full">
+                <div className="card-luxury p-6 h-full hover:shadow-lg transition-shadow">
                   <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-5">
                     <step.icon size={24} className="text-primary" />
                   </div>
@@ -123,7 +92,7 @@ const LaserHairRemoval = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">What to Expect</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">Realistic expectations for your laser hair removal journey</p>
           </div>
-          <div ref={timelineRef} className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-4">
             {timeline.map((item, index) => (
               <div key={index} className="timeline-card card-luxury p-6 flex items-start gap-5">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -199,12 +168,12 @@ const LaserHairRemoval = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-secondary via-burgundy-deep to-secondary">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-secondary via-purple-deep to-secondary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-medium text-white mb-4">Ready to Start Your Laser Journey?</h2>
           <p className="text-white/80 mb-8 max-w-xl mx-auto">Book your patch test or treatment session today</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="btn-luxury text-white" {...buttonHoverGlow}>
+            <Button asChild size="lg" className="btn-luxury text-white">
               <a href="https://app.cal.eu/resknclinic/laser-hair-removal" target="_blank" rel="noopener noreferrer">
                 Book Laser Hair Removal
               </a>

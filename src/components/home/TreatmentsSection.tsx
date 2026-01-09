@@ -1,124 +1,16 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Sparkles, Shield, Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { buttonHoverGlow } from "@/hooks/useGSAPAnimations";
-import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
 import laserImage from "@/assets/laser-treatment.jpg";
 
 const TreatmentsSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const visualRef = useRef<HTMLDivElement>(null);
-  const floatingCardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (prefersReducedMotion() || !sectionRef.current) return;
-
-    const api = getGSAP();
-    if (!api) return;
-    const { gsap } = api;
-
-    const ctx = gsap.context(() => {
-      // Content reveal
-      gsap.fromTo(
-        contentRef.current,
-        { opacity: 0, x: -60 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      // Visual reveal
-      gsap.fromTo(
-        visualRef.current,
-        { opacity: 0, x: 60, scale: 0.95 },
-        {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 1,
-          delay: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      // Floating card animation
-      if (floatingCardRef.current) {
-        gsap.fromTo(
-          floatingCardRef.current,
-          { opacity: 0, y: 40, scale: 0.8 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            delay: 0.6,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 70%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-
-        // Continuous gentle float
-        gsap.to(floatingCardRef.current, {
-          y: -10,
-          duration: 2,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: -1,
-          delay: 1.5,
-        });
-      }
-
-      // Feature items stagger
-      const features = contentRef.current?.querySelectorAll(".feature-item");
-      if (features) {
-        gsap.fromTo(
-          features,
-          { opacity: 0, x: -30 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: contentRef.current,
-              start: "top 75%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-background overflow-hidden">
+    <section className="py-24 md:py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
-            <div ref={contentRef} className="opacity-0">
+            <div>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-primary/20 mb-6">
                 <Sparkles size={16} className="text-primary" />
                 <span className="text-sm font-medium text-accent-foreground">Featured Treatment</span>
@@ -134,7 +26,7 @@ const TreatmentsSection = () => {
               </p>
 
               <div className="space-y-4 mb-8">
-                <div className="feature-item flex items-start gap-4 opacity-0">
+                <div className="feature-item flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
                     <Zap size={20} className="text-primary" />
                   </div>
@@ -143,7 +35,7 @@ const TreatmentsSection = () => {
                     <p className="text-muted-foreground text-sm">Triple-wavelength system for maximum efficacy and comfort</p>
                   </div>
                 </div>
-                <div className="feature-item flex items-start gap-4 opacity-0">
+                <div className="feature-item flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
                     <Shield size={20} className="text-primary" />
                   </div>
@@ -158,7 +50,6 @@ const TreatmentsSection = () => {
                 <Button 
                   asChild 
                   className="btn-luxury text-white"
-                  {...buttonHoverGlow}
                 >
                   <a href="https://app.cal.eu/resknclinic/laser-patch-test" target="_blank" rel="noopener noreferrer">
                     Book Free Patch Test
@@ -174,7 +65,7 @@ const TreatmentsSection = () => {
             </div>
 
             {/* Visual */}
-            <div ref={visualRef} className="relative opacity-0">
+            <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl">
                 <img
                   src={laserImage}
@@ -182,13 +73,12 @@ const TreatmentsSection = () => {
                   className="w-full h-full object-cover"
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/60 via-transparent to-purple/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-deep/60 via-transparent to-purple/20" />
               </div>
 
               {/* Floating card */}
               <div 
-                ref={floatingCardRef}
-                className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-4 shadow-lg border border-border max-w-[200px] opacity-0"
+                className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-4 shadow-lg border border-border max-w-[200px]"
               >
                 <p className="text-sm font-medium text-foreground mb-1">Patch test</p>
                 <p className="text-2xl font-serif font-semibold text-primary">Free</p>
