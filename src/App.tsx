@@ -21,6 +21,22 @@ import InClinicConsultation from "./pages/services/InClinicConsultation";
 import PrescriptionAcne from "./pages/services/PrescriptionAcne";
 import TreatmentsHub from "./pages/treatments/TreatmentsHub";
 import LaserHairRemoval from "./pages/treatments/LaserHairRemoval";
+import IngredientsHub from "./pages/ingredients/IngredientsHub";
+import CentellaAsiatica from "./pages/ingredients/CentellaAsiatica";
+import Niacinamide from "./pages/ingredients/Niacinamide";
+import HyaluronicAcid from "./pages/ingredients/HyaluronicAcid";
+import Ceramides from "./pages/ingredients/Ceramides";
+import AzelaicAcid from "./pages/ingredients/AzelaicAcid";
+import SalicylicAcid from "./pages/ingredients/SalicylicAcid";
+import LacticAcid from "./pages/ingredients/LacticAcid";
+import VitaminC from "./pages/ingredients/VitaminC";
+import TranexamicAcid from "./pages/ingredients/TranexamicAcid";
+import Panthenol from "./pages/ingredients/Panthenol";
+import Squalane from "./pages/ingredients/Squalane";
+import Peptides from "./pages/ingredients/Peptides";
+import SnailMucin from "./pages/ingredients/SnailMucin";
+import Propolis from "./pages/ingredients/Propolis";
+import GreenTeaExtract from "./pages/ingredients/GreenTeaExtract";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
@@ -55,6 +71,22 @@ const App = () => (
               <Route path="/services/prescription-acne" element={<PrescriptionAcne />} />
               <Route path="/treatments" element={<TreatmentsHub />} />
               <Route path="/treatments/laser-hair-removal" element={<LaserHairRemoval />} />
+              <Route path="/ingredients" element={<IngredientsHub />} />
+              <Route path="/ingredients/centella-asiatica" element={<CentellaAsiatica />} />
+              <Route path="/ingredients/niacinamide" element={<Niacinamide />} />
+              <Route path="/ingredients/hyaluronic-acid" element={<HyaluronicAcid />} />
+              <Route path="/ingredients/ceramides" element={<Ceramides />} />
+              <Route path="/ingredients/azelaic-acid" element={<AzelaicAcid />} />
+              <Route path="/ingredients/salicylic-acid" element={<SalicylicAcid />} />
+              <Route path="/ingredients/lactic-acid" element={<LacticAcid />} />
+              <Route path="/ingredients/vitamin-c" element={<VitaminC />} />
+              <Route path="/ingredients/tranexamic-acid" element={<TranexamicAcid />} />
+              <Route path="/ingredients/panthenol" element={<Panthenol />} />
+              <Route path="/ingredients/squalane" element={<Squalane />} />
+              <Route path="/ingredients/peptides" element={<Peptides />} />
+              <Route path="/ingredients/snail-mucin" element={<SnailMucin />} />
+              <Route path="/ingredients/propolis" element={<Propolis />} />
+              <Route path="/ingredients/green-tea-extract" element={<GreenTeaExtract />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
