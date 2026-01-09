@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Index from "./pages/Index";
+import SkinClinic from "./pages/SkinClinic";
 import Booking from "./pages/Booking";
 import Quiz from "./pages/Quiz";
 import QuizResults from "./pages/QuizResults";
@@ -66,7 +67,8 @@ const App = () => (
               <Route path="/concerns/sensitivity" element={<Sensitivity />} />
               <Route path="/concerns/ingrowns" element={<Ingrowns />} />
               <Route path="/concerns/anti-ageing" element={<AntiAgeing />} />
-              <Route path="/services" element={<ServicesHub />} />
+              <Route path="/skin-clinic" element={<SkinClinic />} />
+              <Route path="/services" element={<SkinClinic />} />
               <Route path="/services/online-consultation" element={<OnlineConsultation />} />
               <Route path="/services/in-clinic-consultation" element={<InClinicConsultation />} />
               <Route path="/services/prescription-acne" element={<PrescriptionAcne />} />
