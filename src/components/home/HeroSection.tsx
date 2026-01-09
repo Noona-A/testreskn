@@ -38,7 +38,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl">
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl mx-auto">
             Personalised skin plans & medical-grade laser treatments. Expert care by a UK-registered pharmacist in Windsor.
           </p>
 
