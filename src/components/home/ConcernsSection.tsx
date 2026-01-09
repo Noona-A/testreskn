@@ -1,8 +1,6 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Droplets, Sun, Flame, Scissors, Clock } from "lucide-react";
 import { cardHoverLift } from "@/hooks/useGSAPAnimations";
-import { getGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 const concerns = [
   { icon: Droplets, title: "Acne", description: "Breakouts, blemishes, and oily skin management", href: "/concerns/acne", iconBg: "bg-orange/10", iconColor: "text-orange" },
@@ -13,86 +11,10 @@ const concerns = [
 ];
 
 const ConcernsSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (prefersReducedMotion() || !sectionRef.current) return;
-
-    const api = getGSAP();
-    if (!api) return;
-    const { gsap } = api;
-
-    const ctx = gsap.context(() => {
-      // Heading animation with blur
-      gsap.fromTo(
-        headingRef.current,
-        { opacity: 0, y: 40, filter: "blur(8px)" },
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: headingRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      // Cards stagger with scale
-      const cards = cardsRef.current?.querySelectorAll(".concern-card");
-      if (cards) {
-        gsap.fromTo(
-          cards,
-          { opacity: 0, y: 50, scale: 0.9 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.7,
-            stagger: 0.1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: cardsRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-
-        // Icons pop animation
-        const icons = cardsRef.current?.querySelectorAll(".concern-icon");
-        gsap.fromTo(
-          icons,
-          { scale: 0, rotate: -45 },
-          {
-            scale: 1,
-            rotate: 0,
-            duration: 0.5,
-            stagger: 0.1,
-            delay: 0.3,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-              trigger: cardsRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-background">
+    <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4">
-        <div ref={headingRef} className="text-center mb-16 opacity-0">
+        <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4">
             Skin Concerns We Treat
           </h2>
@@ -101,15 +23,15 @@ const ConcernsSection = () => {
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {concerns.map((concern) => (
             <Link
               key={concern.title}
               to={concern.href}
-              className="concern-card card-luxury p-6 group opacity-0"
+              className="card-luxury p-6 group"
               {...cardHoverLift}
             >
-              <div className={`concern-icon w-12 h-12 rounded-xl ${concern.iconBg} ${concern.iconColor} flex items-center justify-center mb-4 transition-transform group-hover:scale-110`}>
+              <div className={`w-12 h-12 rounded-xl ${concern.iconBg} ${concern.iconColor} flex items-center justify-center mb-4 transition-transform group-hover:scale-110`}>
                 <concern.icon size={24} />
               </div>
               <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
