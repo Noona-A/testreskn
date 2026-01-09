@@ -160,7 +160,7 @@ const Booking = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -181,6 +181,28 @@ const Booking = () => {
                   </span>
                 </motion.button>
 
+                <motion.a
+                  href="https://app.cal.eu/resknclinic/patchtest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group p-8 rounded-2xl border-2 border-border hover:border-primary/50 bg-card hover:bg-accent/30 transition-all text-left"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <Check size={28} className="text-primary" />
+                  </div>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                    Patch Test
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Required before your first laser session. Fee redeemable.
+                  </p>
+                  <span className="text-primary text-sm font-medium flex items-center gap-2">
+                    £25 <ArrowRight size={14} />
+                  </span>
+                </motion.a>
+
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -200,22 +222,6 @@ const Booking = () => {
                     From £25 <ArrowRight size={14} />
                   </span>
                 </motion.button>
-              </div>
-
-              {/* Patch Test Note */}
-              <div className="text-center max-w-md mx-auto">
-                <p className="text-xs text-muted-foreground">
-                  New to laser? A{" "}
-                  <a
-                    href="https://app.cal.eu/resknclinic/patchtest"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    patch test (£25)
-                  </a>{" "}
-                  is required before your first treatment. The fee is redeemable against your first session.
-                </p>
               </div>
             </motion.div>
           )}
