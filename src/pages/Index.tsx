@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import HeroSection from "@/components/home/HeroSection";
 import EscapeSection from "@/components/home/EscapeSection";
+import ServicesOverview from "@/components/home/ServicesOverview";
 import HowItWorksSection from "@/components/home/HowItWorksSection";
 import ConcernsSection from "@/components/home/ConcernsSection";
 import WhyReSKNSection from "@/components/home/WhyReSKNSection";
@@ -29,6 +30,7 @@ const Index = () => {
       }} />
       <HeroSection />
       <EscapeSection />
+      <ServicesOverview />
       <HowItWorksSection />
       <ConcernsSection />
       <WhyReSKNSection />
