@@ -3,8 +3,6 @@ import HeroSection from "@/components/home/HeroSection";
 import EscapeSection from "@/components/home/EscapeSection";
 import HowItWorksSection from "@/components/home/HowItWorksSection";
 import ConcernsSection from "@/components/home/ConcernsSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import TreatmentsSection from "@/components/home/TreatmentsSection";
 import WhyReSKNSection from "@/components/home/WhyReSKNSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import FAQSection from "@/components/home/FAQSection";
@@ -33,8 +31,6 @@ const Index = () => {
       <EscapeSection />
       <HowItWorksSection />
       <ConcernsSection />
-      <ServicesSection />
-      <TreatmentsSection />
       <WhyReSKNSection />
       <TestimonialsSection />
       <FAQSection />
