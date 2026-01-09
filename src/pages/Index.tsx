@@ -1,13 +1,5 @@
 import { useEffect } from "react";
 import HeroSection from "@/components/home/HeroSection";
-import EscapeSection from "@/components/home/EscapeSection";
-import ServicesOverview from "@/components/home/ServicesOverview";
-import HowItWorksSection from "@/components/home/HowItWorksSection";
-import ConcernsSection from "@/components/home/ConcernsSection";
-import WhyReSKNSection from "@/components/home/WhyReSKNSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import FAQSection from "@/components/home/FAQSection";
-import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
   useEffect(() => {
@@ -29,14 +21,6 @@ const Index = () => {
         })
       }} />
       <HeroSection />
-      <EscapeSection />
-      <ServicesOverview />
-      <HowItWorksSection />
-      <ConcernsSection />
-      <WhyReSKNSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
     </>
   );
 };
