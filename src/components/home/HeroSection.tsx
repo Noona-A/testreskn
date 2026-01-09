@@ -112,6 +112,9 @@ const HeroSection = () => {
           src={heroImage}
           alt="Skin consultation at ReSKN Clinic"
           className="w-full h-full object-cover scale-110"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
       </div>
 
