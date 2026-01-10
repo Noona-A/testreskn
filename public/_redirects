@@ -1,3 +1,0 @@
-# Cloudflare Pages Configuration
-# SPA routing is handled by the Cloudflare Functions middleware at /functions/_middleware.ts
-# This ensures all routes are properly served without infinite loop warnings
