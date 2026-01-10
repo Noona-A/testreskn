@@ -13,7 +13,24 @@ const ingredient: IngredientData = {
   bestFor: ["Dull skin", "Sun-damaged skin", "Hyperpigmentation", "Ageing concerns", "Prevention-focused routines"],
   howItsUsed: "Vitamin C serums are typically applied in the morning before SPF. Concentrations range from 5-20% — start lower if new to vitamin C. Look for dark, airtight packaging as vitamin C oxidises quickly. If it turns brown/orange, it's no longer effective. Some forms (like ascorbyl glucoside) are more stable but may be less potent.",
   pairsWellWith: ["Vitamin E", "Ferulic acid", "Hyaluronic acid", "SPF", "Niacinamide"],
-  clinicNote: "Vitamin C is excellent for prevention and brightening, but choosing the right form matters. For sensitive skin, we often recommend gentler derivatives like ascorbyl glucoside or magnesium ascorbyl phosphate. L-ascorbic acid at higher concentrations can cause tingling or irritation — if this persists, consider a gentler alternative rather than pushing through."
+  clinicNote: "Vitamin C is excellent for prevention and brightening, but choosing the right form matters. For sensitive skin, we often recommend gentler derivatives like ascorbyl glucoside or magnesium ascorbyl phosphate. L-ascorbic acid at higher concentrations can cause tingling or irritation — if this persists, consider a gentler alternative rather than pushing through.",
+  productExamples: [
+    {
+      name: "Brightening Vitamin C Serum",
+      description: "Potent antioxidant serum formulated to protect against environmental damage and enhance skin radiance.",
+      link: "#"
+    },
+    {
+      name: "Daily Radiance Booster",
+      description: "Lightweight formula that helps fade dark spots and improve overall skin luminosity over time.",
+      link: "#"
+    },
+    {
+      name: "Vitamin C + E Defence Serum",
+      description: "Synergistic blend of vitamins C and E to provide comprehensive antioxidant protection and visible brightening.",
+      link: "#"
+    }
+  ]
 };
 
 const VitaminC = () => <IngredientPageTemplate ingredient={ingredient} />;

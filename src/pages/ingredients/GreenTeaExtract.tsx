@@ -13,7 +13,24 @@ const ingredient: IngredientData = {
   bestFor: ["Oily skin", "Sensitive skin", "Ageing concerns", "Environmental protection", "Acne-prone skin"],
   howItsUsed: "Green tea extract appears in cleansers, toners, serums, moisturisers, and masks. It's extremely well-tolerated and can be used twice daily. For maximum antioxidant benefit, look for products packaged in opaque containers to protect the active compounds from light degradation.",
   pairsWellWith: ["Vitamin C", "Niacinamide", "Hyaluronic acid", "Vitamin E", "Caffeine"],
-  clinicNote: "Green tea extract is an excellent daily antioxidant for almost everyone. It's particularly valuable for clients with oily or acne-prone skin who want antioxidant protection without the potential irritation of vitamin C. The calming properties also make it suitable for rosacea-prone skin. Think of it as gentle but effective environmental defence."
+  clinicNote: "Green tea extract is an excellent daily antioxidant for almost everyone. It's particularly valuable for clients with oily or acne-prone skin who want antioxidant protection without the potential irritation of vitamin C. The calming properties also make it suitable for rosacea-prone skin. Think of it as gentle but effective environmental defence.",
+  productExamples: [
+    {
+      name: "Antioxidant Green Tea Serum",
+      description: "Protective serum that defends against environmental damage while calming redness and inflammation.",
+      link: "#"
+    },
+    {
+      name: "Green Tea Mattifying Moisturiser",
+      description: "Lightweight formula designed to hydrate while helping regulate excess oil production.",
+      link: "#"
+    },
+    {
+      name: "Clarifying Tea Tree Cleanser",
+      description: "Gentle cleanser combining green tea antioxidants with purifying properties for clearer skin.",
+      link: "#"
+    }
+  ]
 };
 
 const GreenTeaExtract = () => <IngredientPageTemplate ingredient={ingredient} />;

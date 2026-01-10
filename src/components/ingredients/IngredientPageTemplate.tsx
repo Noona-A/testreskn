@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Beaker, Target, Users, Sparkles, Heart, Stethoscope } from "lucide-react";
+import { ArrowLeft, Beaker, Target, Users, Sparkles, Heart, Stethoscope, Package, ArrowRight } from "lucide-react";
+
+export interface ProductExample {
+  name: string;
+  description: string;
+  link: string;
+}
 
 export interface IngredientData {
   name: string;
@@ -10,6 +16,7 @@ export interface IngredientData {
   howItsUsed: string;
   pairsWellWith: string[];
   clinicNote: string;
+  productExamples?: ProductExample[];
 }
 
 interface IngredientPageTemplateProps {
@@ -108,7 +115,7 @@ const IngredientPageTemplate = ({ ingredient }: IngredientPageTemplateProps) => 
         </div>
 
         {/* Clinic Note */}
-        <div className="card-luxury p-8 mb-10 bg-gradient-to-br from-secondary/5 to-primary/5">
+        <div className="card-luxury p-8 mb-6 bg-gradient-to-br from-secondary/5 to-primary/5">
           <div className="flex items-center gap-3 mb-4">
             <Stethoscope className="w-5 h-5 text-primary" />
             <h2 className="font-serif text-xl">Clinic note</h2>
@@ -117,6 +124,39 @@ const IngredientPageTemplate = ({ ingredient }: IngredientPageTemplateProps) => 
             {ingredient.clinicNote}
           </p>
         </div>
+
+        {/* Product Examples Section */}
+        {ingredient.productExamples && ingredient.productExamples.length > 0 && (
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-6">
+              <Package className="w-5 h-5 text-primary" />
+              <h2 className="font-serif text-xl">Ingredient-focused product examples</h2>
+            </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              Clinically curated examples featuring this ingredient. These are optional references to help guide your product research.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {ingredient.productExamples.map((product, index) => (
+                <div key={index} className="card-luxury p-5 flex flex-col">
+                  <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center">
+                    <Package className="w-12 h-12 text-muted-foreground/40" />
+                  </div>
+                  <h3 className="font-medium text-sm mb-2">{product.name}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed flex-grow mb-4">
+                    {product.description}
+                  </p>
+                  <a 
+                    href={product.link} 
+                    className="inline-flex items-center text-xs text-primary hover:text-primary/80 transition-colors group"
+                  >
+                    View product
+                    <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* CTA Section */}
         <div className="text-center">

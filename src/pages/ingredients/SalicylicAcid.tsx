@@ -13,7 +13,24 @@ const ingredient: IngredientData = {
   bestFor: ["Oily skin", "Acne-prone skin", "Blackheads and whiteheads", "Congested pores", "Keratosis pilaris"],
   howItsUsed: "Available in cleansers, toners, serums, and spot treatments at concentrations of 0.5-2%. Start with lower concentrations and use 2-3 times per week, building up as tolerated. Always use SPF as salicylic acid can increase sun sensitivity.",
   pairsWellWith: ["Niacinamide", "Hyaluronic acid", "Azelaic acid", "Centella asiatica", "Tea tree oil"],
-  clinicNote: "Salicylic acid is our top recommendation for clients dealing with blackheads and persistent congestion. Its ability to work inside the pore makes it more effective than surface-level exfoliants for these concerns. However, more isn't always better — over-exfoliation can actually trigger more oil production and breakouts."
+  clinicNote: "Salicylic acid is our top recommendation for clients dealing with blackheads and persistent congestion. Its ability to work inside the pore makes it more effective than surface-level exfoliants for these concerns. However, more isn't always better — over-exfoliation can actually trigger more oil production and breakouts.",
+  productExamples: [
+    {
+      name: "Pore Clearing BHA Toner",
+      description: "Exfoliating toner that penetrates pores to dissolve congestion and prevent future blackheads and breakouts.",
+      link: "#"
+    },
+    {
+      name: "Targeted Blemish Treatment",
+      description: "Concentrated spot treatment designed to reduce the appearance of active breakouts and calm inflammation.",
+      link: "#"
+    },
+    {
+      name: "Deep Cleansing BHA Cleanser",
+      description: "Gentle foaming cleanser that helps remove excess oil and debris while keeping pores clear.",
+      link: "#"
+    }
+  ]
 };
 
 const SalicylicAcid = () => <IngredientPageTemplate ingredient={ingredient} />;

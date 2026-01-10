@@ -13,7 +13,24 @@ const ingredient: IngredientData = {
   bestFor: ["Acne-prone skin", "Sensitive skin", "Inflamed skin", "Those seeking natural antibacterial options", "Dull, tired skin"],
   howItsUsed: "Propolis is found in serums, ampoules, and moisturisers. Concentrations vary, but look for products where propolis is listed high in the ingredient list. It's well-tolerated by most skin types, though those with bee allergies should patch test first. Can be used morning and evening.",
   pairsWellWith: ["Honey", "Centella asiatica", "Niacinamide", "Hyaluronic acid", "Green tea extract"],
-  clinicNote: "Propolis is a wonderful option for clients who want to address acne or inflammation without harsh synthetic ingredients. Its natural antibacterial properties make it effective yet gentle. We often recommend propolis-based products for those who've found traditional acne treatments too drying or irritating. Always patch test if you have any history of bee allergies."
+  clinicNote: "Propolis is a wonderful option for clients who want to address acne or inflammation without harsh synthetic ingredients. Its natural antibacterial properties make it effective yet gentle. We often recommend propolis-based products for those who've found traditional acne treatments too drying or irritating. Always patch test if you have any history of bee allergies.",
+  productExamples: [
+    {
+      name: "Propolis Healing Ampoule",
+      description: "Concentrated formula that helps fight blemishes and calm inflammation using natural antibacterial properties.",
+      link: "#"
+    },
+    {
+      name: "Soothing Propolis Serum",
+      description: "Gentle serum designed to nourish sensitive skin while providing antioxidant protection.",
+      link: "#"
+    },
+    {
+      name: "Honey Propolis Glow Cream",
+      description: "Nourishing moisturiser that combines propolis with honey extracts for a healthy, radiant complexion.",
+      link: "#"
+    }
+  ]
 };
 
 const Propolis = () => <IngredientPageTemplate ingredient={ingredient} />;
