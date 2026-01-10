@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -47,15 +48,16 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <ScrollToTop />
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-1">
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <ScrollToTop />
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/booking" element={<Booking />} />
@@ -101,6 +103,7 @@ const App = () => (
       </TooltipProvider>
     </BrowserRouter>
   </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

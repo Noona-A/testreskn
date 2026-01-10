@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ClipboardCheck, Zap, Calendar, RefreshCw, Check, Shield, ShieldCheck, ArrowRight, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import laserHeroImg from "@/assets/laser-hero.jpg";
 
 const steps = [
@@ -39,12 +39,31 @@ const safetyPoints = [
 ];
 
 const LaserHairRemoval = () => {
-  useEffect(() => {
-    document.title = "Laser Hair Removal | ReSKN Clinic Windsor";
-  }, []);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Laser Hair Removal",
+    "provider": {
+      "@type": "MedicalBusiness",
+      "name": "ReSKN Clinic",
+      "alternateName": ["Re-SKN", "ReSKN"]
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Windsor"
+    },
+    "description": "Professional laser hair removal treatments using medical-grade technology at ReSKN Clinic in Windsor, Berkshire."
+  };
 
   return (
     <>
+      <SEO
+        title="Laser Hair Removal | ReSKN Clinic Windsor"
+        description="Professional laser hair removal in Windsor. Medical-grade technology, expert care by UK-registered pharmacist. Book your patch test at ReSKN Clinic today."
+        keywords="ReSKN, laser hair removal Windsor, laser hair removal Berkshire, ReSKN Clinic, permanent hair removal, medical grade laser"
+        canonical="https://resknclinic.co.uk/laser-hair-removal"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden">
         <div className="palm-shadow-overlay" />
