@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, MessageCircle, Search, ClipboardList, HeartHandshake, Shield, CheckCircle, Heart, BookOpen, Leaf, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import glowingSkinImg from "@/assets/glowing-skin.jpg";
+import skinClinicHeroImg from "@/assets/skin-clinic-hero.jpg";
 
 const SkinClinic = () => {
   useEffect(() => {
@@ -93,7 +93,7 @@ const SkinClinic = () => {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src={glowingSkinImg} 
+                    src={skinClinicHeroImg} 
                     alt="Glowing, healthy skin"
                     className="w-full h-full object-cover"
                   />

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ClipboardCheck, Zap, Calendar, RefreshCw, Check, Shield, ShieldCheck, ArrowRight, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import laserTreatmentImg from "@/assets/laser-treatment.jpg";
+import laserHeroImg from "@/assets/laser-hero.jpg";
 
 const steps = [
   { 
@@ -85,7 +85,7 @@ const LaserHairRemoval = () => {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src={laserTreatmentImg} 
+                    src={laserHeroImg} 
                     alt="Medical-grade laser treatment"
                     className="w-full h-full object-cover"
                   />
