@@ -40,19 +40,16 @@ const ingredient: IngredientData = {
   ],
   productExamples: [
     {
-      name: "Barrier Repair Cream",
-      description: "Lipid-rich moisturiser formulated with ceramides, cholesterol, and fatty acids to restore and protect the skin barrier.",
-      link: "#"
+      name: "Ceramide Power – Rebuilding Mask 50ml",
+      description: "Intensive overnight mask with Ceramides 6 and Yuzu plant ceramides to rebuild the skin's natural hydrolipid barrier. Enriched with peach oil, shea butter and neroli hydrolate for overnight recovery.",
+      link: "https://www.belantti.co.uk/products/ceramide-power-rebuilding-mask-50ml?_pos=1&_sid=febb3003b&_ss=r&variant=53019747713288&sca_ref=10398409.mtv59NQvcFqb1MU",
+      image: "https://www.belantti.co.uk/cdn/shop/files/ApisCeramidePowerRebuildingMask50ml.jpg?v=1748873571&width=600"
     },
     {
-      name: "Ceramide Shield Serum",
-      description: "Lightweight serum that reinforces the skin's natural defence system and prevents moisture loss.",
-      link: "#"
-    },
-    {
-      name: "Intensive Recovery Balm",
-      description: "Dense overnight treatment designed to deeply nourish compromised skin and support barrier restoration.",
-      link: "#"
+      name: "Highborn MOISTUREBURST Serum Ceramide Hydration",
+      description: "Ceramide-rich hydrating serum to restore moisture, strengthen the skin barrier and promote a youthful, dewy complexion. Vegan and cruelty-free formula with deep, long-lasting hydration.",
+      link: "https://www.belantti.co.uk/products/moistureburst-ceramide-serum?_pos=2&_sid=febb3003b&_ss=r&variant=52863925256456&sca_ref=10398409.mtv59NQvcFqb1MU",
+      image: "https://www.belantti.co.uk/cdn/shop/files/HighbornMoistureburstSerumCeramideHydration.webp?v=1746615953&width=600"
     }
   ]
 };

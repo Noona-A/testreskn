@@ -41,19 +41,16 @@ const ingredient: IngredientData = {
   ],
   productExamples: [
     {
-      name: "Hydrating Hyaluronic Serum",
-      description: "Multi-weight hyaluronic acid serum designed to deliver deep hydration and plump the appearance of fine lines.",
-      link: "#"
+      name: "BELANTTI Vitamin B5 Hydrating Serum 5% + Hyaluronic Acid 30ml",
+      description: "Combines 5% Panthenol with Hyaluronic Acid to support skin hydration, comfort and a smoother-looking texture. Lightweight formula designed for daily use across all skin types.",
+      link: "https://www.belantti.co.uk/products/belantti-hyaluronic-acid-vitamin-b5-serum-30ml?_pos=1&_sid=1eb9d0a3c&_ss=r&variant=51940686397704&sca_ref=10398409.mtv59NQvcFqb1MU",
+      image: "https://www.belantti.co.uk/cdn/shop/files/BELANTTIHyaluronicAcidSerumwithVitaminB5forDry_DehydratedSkin.jpg?v=1731604405&width=600"
     },
     {
-      name: "Intensive Moisture Ampoule",
-      description: "Concentrated hydrating treatment that helps restore moisture to dehydrated skin and improve suppleness.",
-      link: "#"
-    },
-    {
-      name: "HA Hydra-Boost Cream",
-      description: "Rich cream combining hyaluronic acid with occlusive agents to lock in moisture and maintain hydration throughout the day.",
-      link: "#"
+      name: "WELLAGE Hyaluronic Acid Ampoule – Intensive Hydration Serum",
+      description: "Fast-absorbing Korean skincare ampoule formulated to deliver intense hydration. Helps skin feel plumper and look smoother without heaviness. Suitable for dehydrated, tight-feeling or dull-looking skin.",
+      link: "https://www.belantti.co.uk/products/wellage-hyaluronic-acid-ampoule?_pos=2&_sid=1eb9d0a3c&_ss=r&variant=52534320890120&sca_ref=10398409.mtv59NQvcFqb1MU",
+      image: "https://www.belantti.co.uk/cdn/shop/files/WellageRealHyaluronicBlueAmpoule100ml-IntenseMoisture_HydrationAmpouleClearly.jpg?v=1738842116&width=600"
     }
   ]
 };
