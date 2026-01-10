@@ -2,18 +2,43 @@ import IngredientPageTemplate, { IngredientData } from "@/components/ingredients
 
 const ingredient: IngredientData = {
   name: "Propolis",
-  whatItIs: "Propolis is a resinous substance that bees create from tree buds and sap, mixed with their own enzymes. It's used to seal and protect the hive, and has been valued for centuries for its natural antimicrobial and healing properties. In skincare, propolis offers antibacterial, anti-inflammatory, and antioxidant benefits.",
+  whatItIs: "Propolis is a resinous substance produced by honeybees (Apis mellifera) from botanical exudates combined with bee enzymes and wax. Its composition varies by geographic origin but consistently contains flavonoids (particularly pinocembrin, galangin, and chrysin), phenolic acids (caffeic acid phenethyl ester/CAPE), terpenoids, and aromatic compounds. These constituents confer broad-spectrum antimicrobial activity, potent anti-inflammatory effects, and antioxidant properties that have been utilised therapeutically for millennia.",
   whatItHelpsWith: [
-    "Fighting acne-causing bacteria naturally",
-    "Soothing inflammation and redness",
-    "Supporting wound healing",
-    "Providing antioxidant protection",
-    "Nourishing and calming sensitive skin"
+    "Exerting antibacterial activity against acne-associated bacteria",
+    "Modulating inflammatory pathways to reduce lesion severity",
+    "Providing antioxidant protection against environmental oxidative stress",
+    "Supporting wound healing through antimicrobial and regenerative mechanisms",
+    "Calming and soothing irritated or inflamed skin",
+    "Nourishing the skin with bioactive compounds"
   ],
-  bestFor: ["Acne-prone skin", "Sensitive skin", "Inflamed skin", "Those seeking natural antibacterial options", "Dull, tired skin"],
-  howItsUsed: "Propolis is found in serums, ampoules, and moisturisers. Concentrations vary, but look for products where propolis is listed high in the ingredient list. It's well-tolerated by most skin types, though those with bee allergies should patch test first. Can be used morning and evening.",
-  pairsWellWith: ["Honey", "Centella asiatica", "Niacinamide", "Hyaluronic acid", "Green tea extract"],
-  clinicNote: "Propolis is a wonderful option for clients who want to address acne or inflammation without harsh synthetic ingredients. Its natural antibacterial properties make it effective yet gentle. We often recommend propolis-based products for those who've found traditional acne treatments too drying or irritating. Always patch test if you have any history of bee allergies.",
+  bestFor: ["Acne-prone skin", "Inflamed skin", "Sensitive skin", "Those seeking natural antimicrobial options", "Dull, stressed skin"],
+  howItsUsed: "Propolis is formulated in serums, ampoules, moisturisers, and spot treatments. Concentrations vary significantly; efficacy requires products with propolis extract listed prominently in the INCI. Apply to cleansed skin morning and evening. Patch testing is mandatory for individuals with known bee, honey, or bee product allergies. Effects are typically cumulative — consistent use over 4-8 weeks is advisable before assessing efficacy.",
+  pairsWellWith: ["Honey", "Centella asiatica", "Niacinamide", "Hyaluronic acid", "Green tea extract", "Royal jelly"],
+  clinicNote: "Propolis offers a valuable alternative for patients seeking to address inflammatory acne without conventional antibacterials or benzoyl peroxide. Its natural antimicrobial and anti-inflammatory properties can be particularly effective for mild to moderate presentations. We consistently emphasise the importance of patch testing given the meaningful incidence of contact allergy to bee products. For patients with confirmed tolerance, propolis-based products often deliver excellent outcomes with minimal irritation.",
+  clinicalSuitability: [
+    "Appropriate for patients preferring naturally-derived antimicrobial actives",
+    "Indicated for inflammatory acne where conventional treatments are not tolerated",
+    "Suitable for general skin health and antioxidant support",
+    "Beneficial for minor wound healing and skin recovery",
+    "Safe during pregnancy — though patch testing advisable for new users"
+  ],
+  useWithCaution: [
+    "Known allergy to bees, bee stings, honey, or bee products — contraindicated",
+    "History of contact dermatitis — propolis is a recognised allergen; always patch test",
+    "Those with pollen allergies may exhibit cross-reactivity"
+  ],
+  notIdealFor: [
+    "Individuals with confirmed hypersensitivity to bee products",
+    "Those requiring prescription-strength acne intervention",
+    "Patients with severe, nodular, or cystic acne — systemic treatment is appropriate"
+  ],
+  commonConcerns: [
+    "Inflammatory acne",
+    "Minor skin infections",
+    "General skin inflammation",
+    "Oxidative stress protection",
+    "Skin healing and recovery"
+  ],
   productExamples: [
     {
       name: "Propolis Healing Ampoule",
