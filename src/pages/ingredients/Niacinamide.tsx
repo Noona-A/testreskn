@@ -1,4 +1,6 @@
 import IngredientPageTemplate, { IngredientData } from "@/components/ingredients/IngredientPageTemplate";
+import hydromineralCream from "@/assets/products/hydromineral-cream-h2o.jpg";
+import niacinamideToner from "@/assets/products/niacinamide-hydrating-toner.png";
 
 const ingredient: IngredientData = {
   name: "Niacinamide",
@@ -16,19 +18,16 @@ const ingredient: IngredientData = {
   clinicNote: "Niacinamide is a true workhorse ingredient that we recommend to almost everyone. Its ability to address multiple concerns simultaneously — from oil control to barrier support — makes it exceptionally versatile. Unlike some actives, it rarely causes irritation and can be introduced at any stage of a skincare journey.",
   productExamples: [
     {
-      name: "Pore Refining Niacinamide Serum",
-      description: "Concentrated formula to help minimise the appearance of pores and balance sebum production for clearer-looking skin.",
-      link: "#"
+      name: "Hydromineral Cream H2O 50ml",
+      description: "Lightweight hydrating cream formulated to deliver deep moisture while supporting skin barrier function. Suitable for all skin types seeking balanced hydration.",
+      link: "https://www.belantti.co.uk/products/hydromineral-face-cream-h2o?sca_ref=10398409.mtv59NQvcFqb1MU",
+      image: hydromineralCream
     },
     {
-      name: "Brightening B3 Essence",
-      description: "Lightweight essence formulated to even out skin tone and reduce the appearance of redness over time.",
-      link: "#"
-    },
-    {
-      name: "Oil Control Moisturiser",
-      description: "Mattifying daily moisturiser with niacinamide to regulate shine while maintaining hydration balance.",
-      link: "#"
+      name: "SUGAR + PHA/AHA + Niacinamide – Mild Hydrating Toner 200ml",
+      description: "Gentle hydrating toner combining niacinamide with PHA and AHA acids to refine skin texture, minimise pores and maintain optimal moisture balance for face, neck and décolleté.",
+      link: "https://www.belantti.co.uk/products/sugar-pha-aha-niacinamide-hydrating-toner?sca_ref=10398409.mtv59NQvcFqb1MU",
+      image: niacinamideToner
     }
   ]
 };
