@@ -170,19 +170,52 @@ const LaserHairRemoval = () => {
         </div>
       </section>
 
-      {/* Testimonials Placeholder */}
+      {/* Testimonials */}
       <section className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
-              What Our Clients Say
-            </h2>
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={24} className="text-primary fill-primary" />
-              ))}
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
+                What Our Clients Say
+              </h2>
+              <div className="flex justify-center gap-1 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={24} className="text-primary fill-primary" />
+                ))}
+              </div>
             </div>
-            <p className="text-muted-foreground italic">Real reviews coming soon</p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="card-luxury p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed italic">
+                  "I love the new space. It feels like such a big step up from the previous clinic and you can really tell how much care has gone into it. The environment is calm and professional and the treatment itself was explained clearly and done with so much care. I felt very comfortable throughout."
+                </p>
+              </div>
+              <div className="card-luxury p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed italic">
+                  "I was quite nervous before my first laser session but I was put at ease straight away. Everything was explained in a way that made sense and I never felt rushed. The results so far have been better than I expected and I feel much more confident already."
+                </p>
+              </div>
+              <div className="card-luxury p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed italic">
+                  "The clinic is clean, welcoming and really well organised. Booking was easy and the appointment ran on time. I appreciated how honest and knowledgeable the practitioner was and how much attention was paid to safety and comfort."
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

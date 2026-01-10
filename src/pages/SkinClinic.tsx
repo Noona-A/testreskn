@@ -192,19 +192,52 @@ const SkinClinic = () => {
         </div>
       </section>
 
-      {/* Testimonials Placeholder */}
+      {/* Testimonials */}
       <section className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
-              What Our Clients Say
-            </h2>
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={24} className="text-primary fill-primary" />
-              ))}
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
+                What Our Clients Say
+              </h2>
+              <div className="flex justify-center gap-1 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={24} className="text-primary fill-primary" />
+                ))}
+              </div>
             </div>
-            <p className="text-muted-foreground italic">Real reviews coming soon</p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="card-luxury p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed italic">
+                  "I booked a skin consultation because I was confused by all the products I was using. The consultation helped me understand my skin properly for the first time. The advice felt realistic and tailored to me rather than being pushed to buy lots of products."
+                </p>
+              </div>
+              <div className="card-luxury p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed italic">
+                  "Since my consultation my skin has genuinely improved. I finally understand what ingredients work for me and why. It felt very personal and informative and I left feeling confident about my routine instead of overwhelmed."
+                </p>
+              </div>
+              <div className="card-luxury p-6">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed italic">
+                  "The whole experience was really calming and reassuring. It felt like a proper skin health consultation rather than a sales appointment. I felt listened to and supported and I would definitely recommend it to anyone unsure about their skin."
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
