@@ -1,5 +1,3 @@
-# Cloudflare Pages SPA Configuration
-# This ensures all routes are handled by React Router, not returning 404s
-
-# Serve index.html for all routes (SPA fallback)
-/*  /index.html  200
+# Cloudflare Pages Configuration
+# SPA routing is handled by the Cloudflare Functions middleware at /functions/_middleware.ts
+# This ensures all routes are properly served without infinite loop warnings
