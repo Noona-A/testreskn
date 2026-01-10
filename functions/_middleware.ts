@@ -5,17 +5,20 @@ export async function onRequest(context: any) {
   const url = new URL(context.request.url);
   const pathname = url.pathname;
 
-  // Serve static assets directly
+  // Serve index.html and static files directly to avoid infinite loops
   if (
+    pathname === '/' ||
+    pathname === '/index.html' ||
     pathname.startsWith('/assets/') ||
     pathname.startsWith('/_redirects') ||
     pathname.startsWith('/_headers') ||
-    pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|txt|xml)$/)
+    pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|txt|xml|html)$/)
   ) {
     return context.next();
   }
 
-  // For all other routes, serve index.html
-  const indexUrl = new URL('/index.html', context.request.url);
-  return context.env.ASSETS.fetch(indexUrl);
+  // For all other routes (like /ingredients), rewrite to serve index.html
+  // Use a rewrite, not a redirect, with the original URL preserved
+  const request = new Request(url.origin + '/index.html', context.request);
+  return context.env.ASSETS.fetch(request);
 }
