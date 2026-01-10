@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ReSKN Clinic</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // This script takes the current URL and redirects to index.html
+      // while preserving the path in sessionStorage for the app to handle
+      const path = window.location.pathname + window.location.search + window.location.hash;
+      sessionStorage.setItem('redirectPath', path);
+      window.location.replace('/');
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
