@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Video, CheckCircle, Star, Shield, Heart, MapPin, Droplets, Sun, Flame, Scissors, Clock } from "lucide-react";
+import { ArrowRight, Sparkles, MessageCircle, Search, ClipboardList, HeartHandshake, Shield, CheckCircle, Heart, BookOpen, Leaf, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import glowingSkinImg from "@/assets/glowing-skin.jpg";
 
 const SkinClinic = () => {
   useEffect(() => {
@@ -11,193 +12,196 @@ const SkinClinic = () => {
   const steps = [
     {
       number: "1",
-      title: "Take the Quiz",
-      description: "Answer a few questions about your skin to discover your skin profile and get personalised recommendations."
+      icon: MessageCircle,
+      title: "Consultation",
+      description: "We discuss your skin history, routine, lifestyle, and concerns."
     },
     {
       number: "2",
-      title: "Book a Consultation",
-      description: "Meet with our skin specialists online or at our Windsor clinic for an in-depth assessment."
+      icon: Search,
+      title: "Assessment",
+      description: "Your skin is assessed to identify underlying causes, not just symptoms."
     },
     {
       number: "3",
-      title: "Get Your Plan",
-      description: "Receive a tailored skincare routine and treatment plan designed specifically for your needs."
+      icon: ClipboardList,
+      title: "Personalised Plan",
+      description: "You receive clear product, ingredient, and treatment recommendations."
     },
     {
       number: "4",
-      title: "Review & Refine",
-      description: "Regular check-ins ensure your plan evolves with your skin, with ongoing support along the way."
+      icon: HeartHandshake,
+      title: "Follow-up Support",
+      description: "Optional ongoing reviews to adjust your routine as your skin improves."
     }
   ];
 
-  const concerns = [
-    { icon: Droplets, title: "Acne", description: "Breakouts, blemishes, and oily skin management", link: "/concerns/acne" },
-    { icon: Sun, title: "Pigmentation", description: "Dark spots, uneven tone, and sun damage", link: "/concerns/pigmentation" },
-    { icon: Flame, title: "Sensitivity & Redness", description: "Reactive skin, rosacea, and inflammation", link: "/concerns/sensitivity" },
-    { icon: Scissors, title: "Ingrown Hairs", description: "Bumps, irritation from shaving or waxing", link: "/concerns/ingrowns" },
-    { icon: Clock, title: "Anti-Ageing", description: "Fine lines, texture, and skin firmness", link: "/concerns/anti-ageing" }
+  const benefits = [
+    { icon: Shield, title: "Expert, pharmacist-led advice" },
+    { icon: ClipboardList, title: "Personalised skincare routine" },
+    { icon: BookOpen, title: "Ingredient education (what to use & avoid)" },
+    { icon: Leaf, title: "Product guidance with optional recommendations" },
+    { icon: CheckCircle, title: "Safe, evidence-based approach" }
   ];
 
-  const benefits = [
-    { icon: Shield, title: "Medical Professional Led", description: "Pharmacy-informed expertise you can trust" },
-    { icon: CheckCircle, title: "Evidence-Informed", description: "Routines backed by clinical research" },
-    { icon: Heart, title: "Tailored Plans", description: "Personalised care with ongoing support" },
-    { icon: MapPin, title: "Luxury Local Experience", description: "Premium clinic in Windsor, Berkshire" }
+  const concerns = [
+    "Acne & breakouts",
+    "Pigmentation & melasma",
+    "Sensitive or reactive skin",
+    "Dullness & dehydration",
+    "Early signs of ageing"
   ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-lavender-light to-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 border border-purple/20 mb-8">
-              <Sparkles size={16} className="text-purple" />
-              <span className="text-sm font-medium text-purple-deep">Skin consultations</span>
-            </div>
-            
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-semibold text-foreground leading-tight mb-6">
-              Your best skin starts here
-            </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Personalised skin plans & medical-grade treatments. Expert care by a UK-registered pharmacist in Windsor.
-            </p>
-
-            {/* Service Card */}
-            <div className="max-w-md mx-auto mb-8">
-              <div className="p-8 rounded-2xl bg-card border border-border shadow-lg">
-                <div className="w-14 h-14 rounded-xl bg-purple/10 flex items-center justify-center mb-6 mx-auto">
-                  <Video size={28} className="text-purple" />
+      <section className="relative py-20 md:py-28 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden">
+        <div className="palm-shadow-overlay" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                  <Sparkles size={16} className="text-primary" />
+                  <span className="text-sm font-medium text-secondary">Skin Consultations</span>
                 </div>
-                <h3 className="font-serif font-semibold text-foreground text-2xl mb-2">Skin Consultation</h3>
-                <p className="text-muted-foreground mb-4">
-                  Acne • Pigmentation • Sensitivity • Anti-ageing
+                
+                <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground leading-tight mb-6">
+                  Your best skin starts here
+                </h1>
+                
+                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
+                  Personalised skin consultations and evidence-based treatment plans, led by a UK-registered pharmacist.
                 </p>
-                <p className="text-purple text-lg font-medium mb-6">From £20</p>
-                <Button asChild size="lg" className="btn-luxury text-white w-full">
-                  <Link to="/booking">
-                    Book Now <ArrowRight className="ml-2" size={18} />
-                  </Link>
-                </Button>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button asChild size="lg" className="btn-luxury text-white px-8">
+                    <Link to="/booking">
+                      Book Skin Consultation <ArrowRight className="ml-2" size={18} />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 px-8">
+                    <Link to="/quiz">
+                      Take the Skin Quiz
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right Image */}
+              <div className="relative">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                  <img 
+                    src={glowingSkinImg} 
+                    alt="Glowing, healthy skin"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Escape Section */}
+      {/* What is a Skin Consultation */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-8">
-              Escape to better skin
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8 text-center">
+              What is a skin consultation?
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Picture your ideal skin — clear, calm, radiant. At ReSKN, we believe great skin starts with understanding yours. Through personalised consultations and evidence-informed routines, we'll guide you to confidence that glows from within.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              Whether you're tackling stubborn breakouts, evening out tone, or simply seeking that fresh, dewy look — your journey begins with a conversation.
-            </p>
-          </div>
-        </div>
-      </section>
+            <div className="text-center mb-12">
+              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
+                A one-to-one consultation designed to understand your skin, concerns, and goals.
+                You'll receive professional advice, ingredient guidance, and a personalised plan tailored to your skin — not trends.
+              </p>
+            </div>
 
-      {/* Skin Concerns We Treat */}
-      <section className="py-20 md:py-28 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Skin Concerns We Treat
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Whatever your skin is telling you, we're here to listen and help
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl mx-auto">
-            {concerns.map((concern, index) => (
-              <Link
-                key={index}
-                to={concern.link}
-                className="group p-6 rounded-2xl bg-card border border-border hover:border-purple/30 hover:shadow-lg transition-all"
-              >
-                <div className="w-12 h-12 rounded-xl bg-purple/10 text-purple flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
-                  <concern.icon size={24} />
-                </div>
-                <h3 className="font-serif font-semibold text-foreground text-lg mb-2 group-hover:text-purple transition-colors">
-                  {concern.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4">{concern.description}</p>
-                <span className="text-purple text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn more <ArrowRight size={14} />
-                </span>
-              </Link>
-            ))}
+            <div className="card-luxury p-8 md:p-10">
+              <h3 className="font-serif text-xl font-medium text-foreground mb-6 text-center">
+                Common concerns include:
+              </h3>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {concerns.map((concern, index) => (
+                  <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-accent/50">
+                    <CheckCircle size={20} className="text-primary flex-shrink-0" />
+                    <span className="text-foreground">{concern}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-20 md:py-28 bg-section-gradient">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              How It Works
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Your journey to healthier skin in four simple steps
-            </p>
-          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-14">
+              <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
+                How It Works
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                Your journey to healthier skin in four simple steps
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-purple/10 flex items-center justify-center mx-auto mb-6">
-                  <span className="text-2xl font-bold text-purple">{step.number}</span>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {steps.map((step, index) => (
+                <div key={index} className="relative">
+                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold z-10">
+                    {step.number}
+                  </div>
+                  <div className="card-luxury p-6 h-full">
+                    <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-5">
+                      <step.icon size={24} className="text-primary" />
+                    </div>
+                    <h3 className="font-serif text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+                  </div>
                 </div>
-                <h3 className="font-serif font-semibold text-foreground text-lg mb-3">{step.title}</h3>
-                <p className="text-muted-foreground text-sm">{step.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why ReSKN */}
+      {/* What You Get */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-14">
+              <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
+                What You Get
+              </h2>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="card-luxury p-6 text-center">
+                  <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mx-auto mb-4">
+                    <benefit.icon size={24} className="text-primary" />
+                  </div>
+                  <h3 className="font-medium text-foreground">{benefit.title}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Placeholder */}
       <section className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Why ReSKN
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="w-14 h-14 rounded-xl bg-purple/10 flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon size={24} className="text-purple" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
-                <p className="text-muted-foreground text-sm">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
               What Our Clients Say
             </h2>
             <div className="flex justify-center gap-1 mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={24} className="text-purple fill-purple" />
+                <Star key={i} size={24} className="text-primary fill-primary" />
               ))}
             </div>
             <p className="text-muted-foreground italic">Real reviews coming soon</p>
@@ -205,28 +209,33 @@ const SkinClinic = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-b from-purple/10 to-background">
+      {/* Pricing & Booking */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-background to-accent/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6">
-              Ready to Begin Your Skin Journey?
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-10">
+              Book your skin consultation
             </h2>
-            <p className="text-lg text-muted-foreground mb-10">
-              Take our free skin quiz or book a consultation today
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="btn-luxury text-white">
-                <Link to="/quiz">
-                  Take the Skin Quiz <ArrowRight className="ml-2" size={18} />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-purple text-purple hover:bg-purple/10">
+
+            <div className="card-luxury p-8 mb-8">
+              <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-6 mx-auto">
+                <Sparkles size={28} className="text-primary" />
+              </div>
+              <h3 className="font-serif font-semibold text-foreground text-2xl mb-2">Skin Consultation</h3>
+              <p className="text-muted-foreground mb-4">
+                Acne • Pigmentation • Sensitivity • Anti-ageing
+              </p>
+              <p className="text-primary text-xl font-medium mb-6">From £20</p>
+              <Button asChild size="lg" className="btn-luxury text-white w-full">
                 <Link to="/booking">
-                  Book Consultation
+                  Book Now <ArrowRight className="ml-2" size={18} />
                 </Link>
               </Button>
             </div>
+
+            <p className="text-muted-foreground text-sm">
+              Not sure what you need? <Link to="/quiz" className="text-primary hover:underline">Take our skin quiz</Link> or <Link to="/contact" className="text-primary hover:underline">get in touch</Link>.
+            </p>
           </div>
         </div>
       </section>
