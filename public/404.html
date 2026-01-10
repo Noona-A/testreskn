@@ -27,23 +27,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-
-    <!-- SPA routing script - redirects to index.html while preserving the path -->
-    <script>
-      // Store the current path and redirect to root with the path as a query parameter
-      // This allows the React app to pick up the route and navigate correctly
-      var pathSegmentsToKeep = 0;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
   </head>
   <body>
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for doesn't exist.</p>
     <noscript>JavaScript is required to view this page.</noscript>
   </body>
 </html>
