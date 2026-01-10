@@ -6,6 +6,7 @@ export interface ProductExample {
   name: string;
   description: string;
   link: string;
+  image?: string;
 }
 
 export interface IngredientData {
@@ -135,11 +136,15 @@ const IngredientPageTemplate = ({ ingredient }: IngredientPageTemplateProps) => 
             <p className="text-sm text-muted-foreground mb-6">
               Clinically curated examples featuring this ingredient. These are optional references to help guide your product research.
             </p>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {ingredient.productExamples.map((product, index) => (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {ingredient.productExamples.slice(0, 2).map((product, index) => (
                 <div key={index} className="card-luxury p-5 flex flex-col">
-                  <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center">
-                    <Package className="w-12 h-12 text-muted-foreground/40" />
+                  <div className="aspect-square bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                    {product.image ? (
+                      <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <Package className="w-12 h-12 text-muted-foreground/40" />
+                    )}
                   </div>
                   <h3 className="font-medium text-sm mb-2">{product.name}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed flex-grow mb-4">
