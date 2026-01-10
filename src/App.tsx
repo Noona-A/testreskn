@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,43 +8,44 @@ import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import Index from "./pages/Index";
-import SkinClinic from "./pages/SkinClinic";
-import Booking from "./pages/Booking";
-import Quiz from "./pages/Quiz";
-import QuizResults from "./pages/QuizResults";
-import ConcernsHub from "./pages/concerns/ConcernsHub";
-import Acne from "./pages/concerns/Acne";
-import Pigmentation from "./pages/concerns/Pigmentation";
-import Sensitivity from "./pages/concerns/Sensitivity";
-import Ingrowns from "./pages/concerns/Ingrowns";
-import AntiAgeing from "./pages/concerns/AntiAgeing";
-import ServicesHub from "./pages/services/ServicesHub";
-import OnlineConsultation from "./pages/services/OnlineConsultation";
-import InClinicConsultation from "./pages/services/InClinicConsultation";
-import PrescriptionAcne from "./pages/services/PrescriptionAcne";
-import LaserHairRemoval from "./pages/LaserHairRemoval";
-import IngredientsHub from "./pages/ingredients/IngredientsHub";
-import CentellaAsiatica from "./pages/ingredients/CentellaAsiatica";
-import Niacinamide from "./pages/ingredients/Niacinamide";
-import HyaluronicAcid from "./pages/ingredients/HyaluronicAcid";
-import Ceramides from "./pages/ingredients/Ceramides";
-import AzelaicAcid from "./pages/ingredients/AzelaicAcid";
-import SalicylicAcid from "./pages/ingredients/SalicylicAcid";
-import LacticAcid from "./pages/ingredients/LacticAcid";
-import VitaminC from "./pages/ingredients/VitaminC";
-import TranexamicAcid from "./pages/ingredients/TranexamicAcid";
-import Panthenol from "./pages/ingredients/Panthenol";
-import Squalane from "./pages/ingredients/Squalane";
-import Peptides from "./pages/ingredients/Peptides";
-import SnailMucin from "./pages/ingredients/SnailMucin";
-import Propolis from "./pages/ingredients/Propolis";
-import GreenTeaExtract from "./pages/ingredients/GreenTeaExtract";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import NotFound from "./pages/NotFound";
+
+// Lazy load pages for better performance (code-splitting)
+const Index = lazy(() => import("./pages/Index"));
+const SkinClinic = lazy(() => import("./pages/SkinClinic"));
+const Booking = lazy(() => import("./pages/Booking"));
+const Quiz = lazy(() => import("./pages/Quiz"));
+const QuizResults = lazy(() => import("./pages/QuizResults"));
+const ConcernsHub = lazy(() => import("./pages/concerns/ConcernsHub"));
+const Acne = lazy(() => import("./pages/concerns/Acne"));
+const Pigmentation = lazy(() => import("./pages/concerns/Pigmentation"));
+const Sensitivity = lazy(() => import("./pages/concerns/Sensitivity"));
+const Ingrowns = lazy(() => import("./pages/concerns/Ingrowns"));
+const AntiAgeing = lazy(() => import("./pages/concerns/AntiAgeing"));
+const OnlineConsultation = lazy(() => import("./pages/services/OnlineConsultation"));
+const InClinicConsultation = lazy(() => import("./pages/services/InClinicConsultation"));
+const PrescriptionAcne = lazy(() => import("./pages/services/PrescriptionAcne"));
+const LaserHairRemoval = lazy(() => import("./pages/LaserHairRemoval"));
+const IngredientsHub = lazy(() => import("./pages/ingredients/IngredientsHub"));
+const CentellaAsiatica = lazy(() => import("./pages/ingredients/CentellaAsiatica"));
+const Niacinamide = lazy(() => import("./pages/ingredients/Niacinamide"));
+const HyaluronicAcid = lazy(() => import("./pages/ingredients/HyaluronicAcid"));
+const Ceramides = lazy(() => import("./pages/ingredients/Ceramides"));
+const AzelaicAcid = lazy(() => import("./pages/ingredients/AzelaicAcid"));
+const SalicylicAcid = lazy(() => import("./pages/ingredients/SalicylicAcid"));
+const LacticAcid = lazy(() => import("./pages/ingredients/LacticAcid"));
+const VitaminC = lazy(() => import("./pages/ingredients/VitaminC"));
+const TranexamicAcid = lazy(() => import("./pages/ingredients/TranexamicAcid"));
+const Panthenol = lazy(() => import("./pages/ingredients/Panthenol"));
+const Squalane = lazy(() => import("./pages/ingredients/Squalane"));
+const Peptides = lazy(() => import("./pages/ingredients/Peptides"));
+const SnailMucin = lazy(() => import("./pages/ingredients/SnailMucin"));
+const Propolis = lazy(() => import("./pages/ingredients/Propolis"));
+const GreenTeaExtract = lazy(() => import("./pages/ingredients/GreenTeaExtract"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -58,6 +60,7 @@ const App = () => (
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-1">
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/booking" element={<Booking />} />
@@ -97,6 +100,7 @@ const App = () => (
               <Route path="/terms" element={<Terms />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </Suspense>
           </main>
           <Footer />
         </div>
