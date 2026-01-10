@@ -2,18 +2,42 @@ import IngredientPageTemplate, { IngredientData } from "@/components/ingredients
 
 const ingredient: IngredientData = {
   name: "Ceramides",
-  whatItIs: "Ceramides are lipids (fats) that make up over 50% of the skin's natural barrier. They act like mortar between the 'bricks' of skin cells, preventing water loss and protecting against environmental aggressors. As we age, our natural ceramide levels decline, which can lead to dryness, sensitivity, and a compromised barrier.",
+  whatItIs: "Ceramides are a family of sphingolipids constituting approximately 50% of the stratum corneum lipid matrix. They function as the 'mortar' within the brick-and-mortar model of the skin barrier, maintaining structural integrity and regulating transepidermal water loss (TEWL). At least twelve ceramide subclasses have been identified in human skin, with ceramides 1, 3, and 6-II being particularly critical for barrier homeostasis. Endogenous ceramide production declines with age and is disrupted in inflammatory dermatoses, contributing to barrier impairment.",
   whatItHelpsWith: [
-    "Restoring and strengthening the skin barrier",
-    "Preventing transepidermal water loss (TEWL)",
-    "Calming sensitive, reactive skin",
-    "Supporting skin during retinol or acid use",
-    "Improving skin texture and resilience"
+    "Restoring stratum corneum integrity and barrier function",
+    "Reducing transepidermal water loss (TEWL)",
+    "Improving skin hydration through enhanced water retention",
+    "Calming inflammation associated with barrier dysfunction",
+    "Mitigating irritation from retinoids, acids, and other active ingredients",
+    "Improving overall skin texture and resilience"
   ],
-  bestFor: ["Dry skin", "Sensitive skin", "Eczema-prone skin", "Ageing skin", "Compromised barriers"],
-  howItsUsed: "Ceramides are found in moisturisers, serums, and barrier repair treatments. They work best when combined with cholesterol and fatty acids in a ratio similar to natural skin (approximately 3:1:1). Apply after water-based serums and before heavier occlusives.",
-  pairsWellWith: ["Cholesterol", "Fatty acids", "Hyaluronic acid", "Niacinamide", "Centella asiatica"],
-  clinicNote: "Ceramides are non-negotiable for anyone with a compromised barrier, and we often recommend them as the foundation of a routine before introducing any active ingredients. If your skin is perpetually irritated or dehydrated despite using hydrating products, ceramides should be your first port of call. They're also essential when using retinoids or exfoliating acids.",
+  bestFor: ["Dry skin", "Sensitive skin", "Eczema-prone skin", "Mature skin", "Compromised barriers", "Retinoid users"],
+  howItsUsed: "Ceramides are formulated in moisturisers, serums, and barrier repair treatments. Optimal formulations include ceramides alongside cholesterol and free fatty acids in a physiological ratio (approximately 3:1:1), mimicking the natural stratum corneum lipid composition. Apply after water-based serums. Can be used morning and evening as part of a barrier-supportive regimen. Particularly important during retinoid therapy or when using exfoliating acids.",
+  pairsWellWith: ["Cholesterol", "Fatty acids", "Hyaluronic acid", "Niacinamide", "Centella asiatica", "Squalane"],
+  clinicNote: "Ceramides represent a non-negotiable component of any barrier repair protocol. We consistently observe that patients who incorporate ceramide-rich products tolerate active ingredients more successfully and experience fewer episodes of irritation or sensitivity. For patients presenting with chronic barrier dysfunction — often manifesting as persistent dryness, stinging, or reactivity — we prioritise barrier restoration with ceramide-based products before introducing therapeutic actives.",
+  clinicalSuitability: [
+    "Essential for patients with atopic dermatitis or eczema",
+    "Indicated during retinoid therapy to maintain barrier integrity",
+    "Beneficial for patients using hydroxy acids or other exfoliants",
+    "Appropriate for post-procedural skincare protocols",
+    "Safe during pregnancy and lactation"
+  ],
+  useWithCaution: [
+    "Some formulations contain additional ingredients that may not suit all skin types — review full INCI list",
+    "Not all ceramide products contain physiologically relevant concentrations or ratios"
+  ],
+  notIdealFor: [
+    "Those seeking treatment for specific concerns (acne, pigmentation) without complementary actives — ceramides support but don't treat",
+    "Products claiming ceramide benefits without appropriate concentration or supporting lipids"
+  ],
+  commonConcerns: [
+    "Barrier dysfunction",
+    "Chronic dryness",
+    "Retinoid-induced irritation",
+    "Eczema and atopic dermatitis",
+    "Sensitised skin states",
+    "Dehydration"
+  ],
   productExamples: [
     {
       name: "Barrier Repair Cream",

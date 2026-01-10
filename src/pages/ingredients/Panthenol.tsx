@@ -1,19 +1,43 @@
 import IngredientPageTemplate, { IngredientData } from "@/components/ingredients/IngredientPageTemplate";
 
 const ingredient: IngredientData = {
-  name: "Panthenol (Vitamin B5)",
-  whatItIs: "Panthenol is the provitamin form of vitamin B5 (pantothenic acid). When applied to skin, it converts to pantothenic acid, which plays a key role in healthy skin function. It's a humectant that draws moisture into the skin and has been shown to accelerate the skin's natural healing processes.",
+  name: "Panthenol (Provitamin B5)",
+  whatItIs: "Panthenol (dexpanthenol) is the alcohol form of pantothenic acid (vitamin B5), a water-soluble vitamin essential for coenzyme A synthesis. Upon topical application, panthenol is enzymatically converted to pantothenic acid within the epidermis, where it participates in fatty acid synthesis, lipid metabolism, and epithelial regeneration. Its dual humectant and emollient properties, combined with documented wound-healing enhancement, establish it as a foundational ingredient in barrier-supportive and post-procedural formulations.",
   whatItHelpsWith: [
-    "Deep hydration and moisture retention",
-    "Soothing irritated or inflamed skin",
-    "Accelerating wound healing",
-    "Supporting skin barrier function",
-    "Reducing redness and discomfort"
+    "Providing deep, lasting hydration through humectant action",
+    "Accelerating epithelial regeneration and wound closure",
+    "Reducing transepidermal water loss (TEWL)",
+    "Calming irritation and reducing subjective discomfort",
+    "Supporting lipid barrier synthesis and repair",
+    "Exhibiting mild anti-inflammatory effects"
   ],
-  bestFor: ["Dry skin", "Sensitive skin", "Irritated skin", "Post-procedure care", "Compromised barriers"],
-  howItsUsed: "Panthenol is found in a wide range of products from serums to heavy creams, typically at concentrations of 1-5%. It's extremely well-tolerated and can be used morning and night. It's often included in barrier repair products and post-treatment care formulations.",
-  pairsWellWith: ["Hyaluronic acid", "Ceramides", "Centella asiatica", "Aloe vera", "Niacinamide"],
-  clinicNote: "Panthenol is one of those unsung heroes that quietly improves almost every formulation it's in. We recommend it especially during times of skin stress — after treatments, during weather changes, or when introducing new actives. It's so gentle that even the most reactive skin types can benefit from it.",
+  bestFor: ["Dry skin", "Sensitive skin", "Irritated skin", "Post-procedure care", "Compromised barriers", "Nappy rash (in infants)"],
+  howItsUsed: "Panthenol is formulated across virtually all product categories — cleansers, toners, serums, moisturisers, and intensive treatments — typically at concentrations of 1-5%. Its excellent tolerability permits twice-daily application without concern for irritation. Particularly valuable during periods of skin stress: post-procedure, during retinoid initiation, following sun exposure, or when barrier function is compromised. Often included in formulations designed to offset the drying effects of active ingredients.",
+  pairsWellWith: ["Hyaluronic acid", "Ceramides", "Centella asiatica", "Allantoin", "Niacinamide", "Madecassoside"],
+  clinicNote: "Panthenol consistently earns its place in our post-procedural protocols and in regimens for patients with chronically reactive skin. Its ability to accelerate epithelial healing while simultaneously providing non-occlusive hydration makes it uniquely versatile. We recommend panthenol-containing products during retinoid initiation to mitigate dryness and irritation, and routinely advise patients to keep a panthenol-rich product on hand for periods of acute sensitivity.",
+  clinicalSuitability: [
+    "Indicated for post-procedural skincare (laser, peels, microneedling)",
+    "Appropriate during topical retinoid therapy",
+    "Suitable for patients with atopic tendencies",
+    "Beneficial for acute irritation from environmental factors",
+    "Safe during pregnancy and lactation"
+  ],
+  useWithCaution: [
+    "Rare reports of contact sensitisation exist — patch test if extensive history of allergic reactions",
+    "In occlusive formulations, may contribute to milia in susceptible individuals"
+  ],
+  notIdealFor: [
+    "Those expecting therapeutic action on specific concerns (acne, pigmentation) — panthenol supports but doesn't treat",
+    "Patients requiring aggressive exfoliation or active intervention"
+  ],
+  commonConcerns: [
+    "Barrier dysfunction",
+    "Post-procedural recovery",
+    "Retinoid-induced irritation",
+    "Environmental sensitivity",
+    "Dehydration",
+    "General skin comfort"
+  ],
   productExamples: [
     {
       name: "Soothing Recovery Serum",

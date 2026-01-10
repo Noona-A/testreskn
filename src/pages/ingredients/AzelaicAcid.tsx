@@ -2,18 +2,44 @@ import IngredientPageTemplate, { IngredientData } from "@/components/ingredients
 
 const ingredient: IngredientData = {
   name: "Azelaic Acid",
-  whatItIs: "Azelaic acid is a naturally occurring dicarboxylic acid found in grains like wheat and barley. In skincare, it's valued for its multi-functional properties — it's antibacterial, anti-inflammatory, and works to inhibit tyrosinase (an enzyme involved in melanin production). This makes it effective for both acne and pigmentation concerns.",
+  whatItIs: "Azelaic acid is a naturally occurring saturated dicarboxylic acid produced by Malassezia furfur yeast and found in cereal grains. It exhibits a multi-modal mechanism of action: competitive inhibition of tyrosinase (reducing melanin synthesis), antibacterial activity against Cutibacterium acnes, normalisation of keratinisation, and anti-inflammatory effects through inhibition of reactive oxygen species. This diverse pharmacological profile makes it uniquely suited for conditions where inflammation, hyperpigmentation, and abnormal keratinisation coexist.",
   whatItHelpsWith: [
-    "Treating mild to moderate acne",
-    "Fading post-inflammatory hyperpigmentation",
-    "Reducing redness from rosacea",
-    "Evening out skin tone",
-    "Unclogging pores without excessive dryness"
+    "Targeting Cutibacterium acnes and reducing comedone formation",
+    "Inhibiting melanin biosynthesis to fade hyperpigmentation",
+    "Modulating inflammatory pathways in rosacea and acne",
+    "Normalising follicular keratinisation without excessive desquamation",
+    "Reducing post-inflammatory erythema and discolouration",
+    "Providing antioxidant protection against free radical damage"
   ],
-  bestFor: ["Acne-prone skin", "Rosacea", "Hyperpigmentation", "Sensitive acne-prone skin", "Melasma (with guidance)"],
-  howItsUsed: "Azelaic acid is available in over-the-counter formulations (typically 10%) and prescription strengths (15-20%). Apply once or twice daily after cleansing. It can be layered under moisturiser. Some initial tingling is normal but should subside with continued use.",
-  pairsWellWith: ["Niacinamide", "Hyaluronic acid", "Salicylic acid", "Vitamin C", "Retinol (with caution)"],
-  clinicNote: "Azelaic acid is one of our favourite ingredients for acne and rosacea because it's effective yet gentle enough for sensitive skin types. Unlike some acne treatments, it rarely causes excessive dryness or irritation. For stubborn pigmentation or acne, we may recommend prescription-strength formulations during your consultation.",
+  bestFor: ["Acne vulgaris", "Rosacea", "Post-inflammatory hyperpigmentation", "Melasma", "Papulopustular conditions", "Sensitive acne-prone skin"],
+  howItsUsed: "Over-the-counter formulations typically contain 10% azelaic acid, while prescription preparations are available at 15-20%. Apply to cleansed skin once or twice daily, depending on tolerance. Initial mild stinging or itching is common and typically resolves within 2-4 weeks of continued use. Unlike many acne treatments, azelaic acid does not significantly increase photosensitivity, though SPF remains essential when treating pigmentation.",
+  pairsWellWith: ["Niacinamide", "Hyaluronic acid", "Salicylic acid", "Vitamin C", "Tranexamic acid", "Retinoids (with appropriate timing)"],
+  clinicNote: "Azelaic acid is among our most prescribed topical agents for patients presenting with acne and concurrent pigmentary concerns. Its favourable safety profile — including suitability during pregnancy — distinguishes it from many alternative treatments. For rosacea patients, we frequently recommend azelaic acid as first-line therapy due to its dual anti-inflammatory and antimicrobial properties. Prescription-strength formulations are often necessary for optimal outcomes in stubborn cases.",
+  clinicalSuitability: [
+    "First-line option for mild to moderate papulopustular rosacea",
+    "Suitable for acne treatment during pregnancy and lactation",
+    "Appropriate for Fitzpatrick skin types IV-VI due to lower hypopigmentation risk",
+    "Indicated for patients who cannot tolerate benzoyl peroxide or retinoids",
+    "Beneficial as maintenance therapy following successful acne treatment"
+  ],
+  useWithCaution: [
+    "Initial application may cause transient stinging, burning, or itching",
+    "Those with very sensitive skin should introduce gradually",
+    "Combination with other exfoliating agents may increase irritation potential"
+  ],
+  notIdealFor: [
+    "Primary treatment of comedonal acne (better addressed with retinoids or salicylic acid)",
+    "Those seeking rapid results — consistent use over weeks is required",
+    "Patients who experience persistent burning beyond the adjustment period"
+  ],
+  commonConcerns: [
+    "Acne vulgaris",
+    "Papulopustular rosacea",
+    "Post-inflammatory hyperpigmentation",
+    "Melasma",
+    "Acne-related erythema",
+    "Uneven skin tone"
+  ],
   productExamples: [
     {
       name: "Clarifying Azelaic Serum",
