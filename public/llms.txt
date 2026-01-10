@@ -1,0 +1,357 @@
+# ReSKN Clinic
+
+> Expert skin consultations, personalised treatment plans, and laser hair removal in Windsor, Berkshire. Evidence-informed skincare guidance by UK-registered pharmacists.
+
+## About ReSKN Clinic
+
+ReSKN Clinic is a skin health and confidence clinic based in Windsor, Berkshire. We combine medical expertise with a luxury, personalised approach to skincare. Our team is pharmacy-informed and committed to evidence-based practice. We believe great skin starts with understanding yours.
+
+Whether you're dealing with acne, pigmentation, sensitivity, or seeking laser hair removal, we're here to guide you on your journey to healthier, more confident skin.
+
+**Location:** Windsor, Berkshire, UK
+**Website:** https://www.resknclinic.co.uk
+**Email:** hello@resknclinic.co.uk
+
+---
+
+## Services
+
+### Online Skin Consultation
+- **Duration:** 30 minutes
+- **Price:** £45
+- Connect with our skin specialists via Zoom from the comfort of your home. Perfect for initial assessments and follow-ups.
+- **Book:** https://app.cal.eu/resknclinic/online-skin-consultation
+
+### In-Clinic Consultation
+- **Duration:** 45 minutes
+- **Price:** £65
+- Visit our luxury Windsor clinic for a comprehensive skin analysis with advanced diagnostic tools.
+- **Book:** https://app.cal.eu/resknclinic/in-clinic-skin-consultation
+
+### Prescription Acne Pathway
+- **Duration:** 20 minutes
+- **Price:** £35
+- Clinician assessment for prescription-strength treatments when over-the-counter options aren't enough. Antibiotics are prescribed for limited periods following stewardship guidelines. Regular follow-ups ensure treatment effectiveness and safety.
+- **Book:** https://app.cal.eu/resknclinic/prescription-acne-assessment
+
+### Laser Hair Removal
+- **Price:** From £25
+- Professional laser hair removal using medical-grade technology. Safe, effective treatments delivered by a UK-registered pharmacist.
+- Patch test required for new clients (£25, redeemable against treatment)
+- **Safety standards:** Medical-grade laser equipment, treatments delivered by UK-registered pharmacist, safety-first evidence-based protocols
+
+---
+
+## Skin Concerns We Treat
+
+### Acne
+Breakouts can affect anyone at any age. We help identify triggers and create effective treatment plans using evidence-based approaches.
+
+### Pigmentation
+Dark spots, melasma, and uneven skin tone can be effectively managed with the right approach including ingredients like tranexamic acid, vitamin C, and azelaic acid.
+
+### Sensitivity & Redness
+Reactive skin and rosacea require gentle, targeted care. We help calm and strengthen your skin barrier using ingredients like centella asiatica, ceramides, and niacinamide.
+
+### Ingrown Hairs
+Painful bumps from shaving or waxing? Laser hair removal offers a long-term solution by targeting hair at the root.
+
+### Anti-Ageing
+Fine lines, texture, and firmness can all be addressed with the right skincare routine featuring ingredients like peptides, retinoids, vitamin C, and hyaluronic acid.
+
+---
+
+## Skincare Ingredients Guide
+
+Evidence-informed guidance on skincare ingredients to help you understand what your skin needs and why.
+
+### Centella Asiatica (Cica / Tiger Grass)
+**What it is:** Centella asiatica is a herbaceous plant native to Asia containing active compounds called centelloids (asiaticoside, madecassoside, asiatic acid, and madecassic acid) which support skin healing and barrier function.
+
+**What it helps with:**
+- Calming redness and irritation
+- Supporting skin barrier repair
+- Reducing inflammation from breakouts
+- Soothing sensitised or compromised skin
+- Promoting wound healing and recovery post-treatment
+
+**Best for:** Sensitive skin, redness-prone skin, acne-prone skin, post-procedure recovery, compromised barriers
+
+**Pairs well with:** Hyaluronic acid, niacinamide, ceramides, panthenol, snail mucin
+
+**Clinic note:** Centella asiatica is one of our go-to recommendations for clients with reactive or sensitised skin. It's particularly valuable during recovery after procedures like laser treatments or chemical peels.
+
+---
+
+### Niacinamide (Vitamin B3)
+**What it is:** Niacinamide is a water-soluble vitamin that plays a crucial role in cellular energy production and DNA repair. It's valued for its versatility and compatibility with nearly all skin types.
+
+**What it helps with:**
+- Regulating excess oil production
+- Minimising the appearance of enlarged pores
+- Brightening uneven skin tone
+- Strengthening the skin barrier
+- Reducing redness and blotchiness
+
+**Best for:** Oily skin, combination skin, acne-prone skin, ageing concerns, uneven skin tone
+
+**Pairs well with:** Hyaluronic acid, salicylic acid, retinol, vitamin C, ceramides
+
+**Clinic note:** Niacinamide is a true workhorse ingredient we recommend to almost everyone. Its ability to address multiple concerns simultaneously makes it exceptionally versatile, and it rarely causes irritation.
+
+---
+
+### Hyaluronic Acid
+**What it is:** A naturally occurring glycosaminoglycan that acts like a molecular sponge, capable of holding up to 1,000 times its weight in water. Different molecular weights penetrate to different skin depths.
+
+**What it helps with:**
+- Intense hydration at multiple skin levels
+- Plumping fine lines and dehydration lines
+- Creating a dewy, healthy-looking complexion
+- Supporting other actives to penetrate better
+- Soothing and calming the skin
+
+**Best for:** All skin types, dehydrated skin, dry skin, ageing skin, post-treatment care
+
+**Pairs well with:** Ceramides, niacinamide, vitamin C, peptides, centella asiatica
+
+**Clinic note:** Hyaluronic acid is foundational to good hydration. Look for products with multiple molecular weights. Remember: HA is a humectant, not a moisturiser—it needs to be sealed in with an occlusive layer to be effective.
+
+---
+
+### Ceramides
+**What it is:** Lipids that make up over 50% of the skin's natural barrier, acting like mortar between skin cells, preventing water loss and protecting against environmental aggressors.
+
+**What it helps with:**
+- Restoring and strengthening the skin barrier
+- Preventing transepidermal water loss
+- Calming sensitive, reactive skin
+- Supporting skin during retinol or acid use
+- Improving skin texture and resilience
+
+**Best for:** Dry skin, sensitive skin, eczema-prone skin, ageing skin, compromised barriers
+
+**Pairs well with:** Cholesterol, fatty acids, hyaluronic acid, niacinamide, centella asiatica
+
+**Clinic note:** Ceramides are non-negotiable for anyone with a compromised barrier. We recommend them as the foundation of a routine before introducing active ingredients.
+
+---
+
+### Azelaic Acid
+**What it is:** A naturally occurring dicarboxylic acid found in grains. It's antibacterial, anti-inflammatory, and inhibits tyrosinase (involved in melanin production), making it effective for both acne and pigmentation.
+
+**What it helps with:**
+- Treating mild to moderate acne
+- Fading post-inflammatory hyperpigmentation
+- Reducing redness from rosacea
+- Evening out skin tone
+- Unclogging pores without excessive dryness
+
+**Best for:** Acne-prone skin, rosacea, hyperpigmentation, sensitive acne-prone skin, melasma
+
+**Pairs well with:** Niacinamide, hyaluronic acid, salicylic acid, vitamin C, retinol (with caution)
+
+**Clinic note:** Azelaic acid is one of our favourite ingredients for acne and rosacea because it's effective yet gentle enough for sensitive skin. For stubborn cases, we may recommend prescription-strength formulations.
+
+---
+
+### Salicylic Acid (BHA)
+**What it is:** A beta-hydroxy acid derived from willow bark. Unlike water-soluble AHAs, salicylic acid is oil-soluble, allowing it to penetrate pores and dissolve sebum and debris.
+
+**What it helps with:**
+- Unclogging pores and treating blackheads
+- Reducing active breakouts
+- Controlling excess oil production
+- Smoothing rough, bumpy texture
+- Preventing future congestion
+
+**Best for:** Oily skin, acne-prone skin, blackheads and whiteheads, congested pores, keratosis pilaris
+
+**Pairs well with:** Niacinamide, hyaluronic acid, azelaic acid, centella asiatica, tea tree oil
+
+**Clinic note:** Salicylic acid is our top recommendation for blackheads and persistent congestion. Its ability to work inside the pore makes it more effective than surface-level exfoliants. However, more isn't always better—over-exfoliation can trigger more breakouts.
+
+---
+
+### Lactic Acid (AHA)
+**What it is:** An alpha-hydroxy acid derived from milk (modern formulations are typically synthetic). One of the gentler AHAs with additional humectant properties.
+
+**What it helps with:**
+- Gently exfoliating dead skin cells
+- Improving skin texture and radiance
+- Fading dark spots and discolouration
+- Increasing hydration in outer skin layers
+- Smoothing fine lines over time
+
+**Best for:** Dry skin, sensitive skin, exfoliation beginners, uneven texture, dull complexion
+
+**Pairs well with:** Hyaluronic acid, niacinamide, ceramides, squalane, peptides
+
+**Clinic note:** We recommend lactic acid for clients new to chemical exfoliation or who find glycolic acid too harsh. Its larger molecular size means gentler penetration, and the hydrating benefit makes it ideal for dry or sensitive skin.
+
+---
+
+### Vitamin C
+**What it is:** L-ascorbic acid in its most potent form is a powerful antioxidant that neutralises free radicals, inhibits melanin production, and supports collagen synthesis.
+
+**What it helps with:**
+- Protecting against environmental damage
+- Brightening dull, tired-looking skin
+- Fading dark spots and sun damage
+- Supporting natural collagen production
+- Enhancing SPF protection
+
+**Best for:** Dull skin, sun-damaged skin, hyperpigmentation, ageing concerns, prevention-focused routines
+
+**Pairs well with:** Vitamin E, ferulic acid, hyaluronic acid, SPF, niacinamide
+
+**Clinic note:** Vitamin C is excellent for prevention and brightening. For sensitive skin, we recommend gentler derivatives like ascorbyl glucoside. If L-ascorbic acid causes persistent tingling, consider a gentler alternative.
+
+---
+
+### Tranexamic Acid
+**What it is:** A synthetic derivative of lysine that inhibits the interaction between skin cells and melanocytes, reducing melanin production at its source.
+
+**What it helps with:**
+- Treating stubborn hyperpigmentation
+- Addressing hormonal melasma
+- Fading post-inflammatory dark marks
+- Evening out blotchy skin tone
+- Preventing pigmentation recurrence
+
+**Best for:** Melasma, stubborn pigmentation, hormonal discolouration, post-inflammatory hyperpigmentation, melanin-rich skin
+
+**Pairs well with:** Niacinamide, vitamin C, azelaic acid, alpha arbutin, kojic acid
+
+**Clinic note:** Tranexamic acid has become one of our most-prescribed ingredients for pigmentation, particularly melasma. It addresses pigmentation at a deeper level by interrupting communication between skin cells and melanocytes.
+
+---
+
+### Panthenol (Vitamin B5)
+**What it is:** The provitamin form of vitamin B5 that converts to pantothenic acid when applied to skin. It's a humectant that accelerates the skin's natural healing processes.
+
+**What it helps with:**
+- Deep hydration and moisture retention
+- Soothing irritated or inflamed skin
+- Accelerating wound healing
+- Supporting skin barrier function
+- Reducing redness and discomfort
+
+**Best for:** Dry skin, sensitive skin, irritated skin, post-procedure care, compromised barriers
+
+**Pairs well with:** Hyaluronic acid, ceramides, centella asiatica, aloe vera, niacinamide
+
+**Clinic note:** Panthenol is an unsung hero that improves almost every formulation. We recommend it during times of skin stress—after treatments, during weather changes, or when introducing new actives.
+
+---
+
+### Squalane
+**What it is:** The stable, hydrogenated form of squalene—a lipid naturally produced by our skin. Modern squalane is typically derived from olives or sugarcane.
+
+**What it helps with:**
+- Providing lightweight, non-greasy moisture
+- Preventing moisture loss from the skin
+- Softening and smoothing skin texture
+- Balancing oil production in oily skin
+- Supporting the skin's lipid barrier
+
+**Best for:** All skin types, oily skin, dehydrated skin, ageing skin, those who dislike heavy creams
+
+**Pairs well with:** Hyaluronic acid, retinol, vitamin C, niacinamide, ceramides
+
+**Clinic note:** Squalane is a revelation for clients with oily skin who've been told to avoid all oils. Because it mimics what skin naturally produces, it's exceptionally lightweight and can help regulate sebum production.
+
+---
+
+### Peptides
+**What it is:** Short chains of amino acids that act as messengers, signalling skin cells to perform specific functions like stimulating collagen production or supporting healing.
+
+**What it helps with:**
+- Stimulating collagen and elastin production
+- Reducing the appearance of fine lines
+- Improving skin firmness and bounce
+- Supporting skin healing and repair
+- Strengthening the skin barrier
+
+**Best for:** Ageing concerns, loss of firmness, fine lines and wrinkles, barrier support, post-treatment recovery
+
+**Pairs well with:** Hyaluronic acid, niacinamide, vitamin C, retinol (different routines), ceramides
+
+**Clinic note:** Peptides are excellent supporting players in anti-ageing routines. We particularly recommend copper peptides for post-treatment healing and signal peptides like Matrixyl for those who can't tolerate retinol.
+
+---
+
+### Snail Mucin
+**What it is:** A complex blend of proteins, glycolic acid, hyaluronic acid, and glycoprotein enzymes collected from snails. Quality brands collect ethically without harming snails.
+
+**What it helps with:**
+- Deep, lasting hydration
+- Supporting skin healing and recovery
+- Smoothing and improving texture
+- Reducing the appearance of acne scars
+- Calming irritated or damaged skin
+
+**Best for:** Dry skin, damaged skin, acne scars, post-inflammatory marks, dehydrated skin
+
+**Pairs well with:** Hyaluronic acid, niacinamide, centella asiatica, ceramides, vitamin C
+
+**Clinic note:** Snail mucin is particularly effective for clients dealing with textural concerns or recovering from acne. The combination of hydrating and healing properties makes it versatile for most skin types.
+
+---
+
+### Propolis
+**What it is:** A resinous substance bees create from tree buds and sap. It offers natural antibacterial, anti-inflammatory, and antioxidant benefits.
+
+**What it helps with:**
+- Fighting acne-causing bacteria naturally
+- Soothing inflammation and redness
+- Supporting wound healing
+- Providing antioxidant protection
+- Nourishing and calming sensitive skin
+
+**Best for:** Acne-prone skin, sensitive skin, inflamed skin, those seeking natural antibacterial options, dull skin
+
+**Pairs well with:** Honey, centella asiatica, niacinamide, hyaluronic acid, green tea extract
+
+**Clinic note:** Propolis is wonderful for clients wanting to address acne or inflammation without harsh synthetic ingredients. Always patch test if you have bee allergies.
+
+---
+
+### Green Tea Extract
+**What it is:** Derived from Camellia sinensis leaves, rich in polyphenols (particularly EGCG). Has anti-inflammatory and sebum-regulating properties.
+
+**What it helps with:**
+- Providing powerful antioxidant protection
+- Calming redness and inflammation
+- Helping regulate excess oil production
+- Protecting against environmental aggressors
+- Supporting overall skin health
+
+**Best for:** Oily skin, sensitive skin, ageing concerns, environmental protection, acne-prone skin
+
+**Pairs well with:** Vitamin C, niacinamide, hyaluronic acid, vitamin E, caffeine
+
+**Clinic note:** Green tea extract is excellent daily antioxidant protection, particularly for oily or acne-prone skin who want protection without the potential irritation of vitamin C.
+
+---
+
+## Contact Information
+
+**ReSKN Clinic**
+Windsor, Berkshire, UK
+
+**Email:** hello@resknclinic.co.uk
+**Website:** https://www.resknclinic.co.uk
+
+**Opening Hours:**
+Monday - Friday: 9:00 AM - 6:00 PM
+
+**Social Media:**
+- Instagram: @resknclinic
+- Facebook: facebook.com/resknclinic
+
+---
+
+## Disclaimer
+
+The information provided is for educational purposes. Some links may be affiliate links; we may earn a commission at no extra cost to you. For personalised skincare advice, please book a consultation with our specialists.
