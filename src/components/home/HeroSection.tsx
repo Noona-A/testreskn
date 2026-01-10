@@ -73,8 +73,7 @@ const HeroSection = () => {
           <Button
             asChild
             size="lg"
-            variant="outline"
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-10 py-6 text-base font-medium min-w-[180px] bg-white/80 backdrop-blur-sm"
+            className="btn-luxury text-white px-10 py-6 text-base font-medium min-w-[180px]"
           >
             <Link to="/laser-hair-removal">
               Laser Hair Removal
