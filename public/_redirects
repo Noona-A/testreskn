@@ -1,1 +1,5 @@
+# Cloudflare Pages SPA Configuration
+# This ensures all routes are handled by React Router, not returning 404s
+
+# Serve index.html for all routes (SPA fallback)
 /*    /index.html   200

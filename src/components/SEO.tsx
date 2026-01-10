@@ -19,15 +19,15 @@ interface SEOProps {
  *   title="Page Title | ReSKN Clinic"
  *   description="Page description"
  *   keywords="specific, page, keywords, ReSKN"
- *   canonical="https://resknclinic.co.uk/page-url"
+ *   canonical="https://www.resknclinic.co.uk/page-url"
  * />
  */
 const SEO = ({
   title = "ReSKN Clinic | Personalised Skin Plans in Windsor, Berkshire",
   description = "Expert skin consultations, personalised treatment plans, and laser hair removal at ReSKN Clinic, Windsor. Book online or in-clinic appointments.",
   keywords = "ReSKN, ReSKN Clinic, skin clinic Windsor, laser hair removal, personalised skin plans",
-  canonical = "https://resknclinic.co.uk/",
-  ogImage = "https://resknclinic.co.uk/favicon.png",
+  canonical = "https://www.resknclinic.co.uk/",
+  ogImage = "https://www.resknclinic.co.uk/favicon.png",
   ogType = "website",
   noindex = false,
   structuredData,

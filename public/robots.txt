@@ -2,6 +2,9 @@
 User-agent: *
 Allow: /
 
+# Sitemap location
+Sitemap: https://www.resknclinic.co.uk/sitemap.xml
+
 # Google
 User-agent: Googlebot
 Allow: /
