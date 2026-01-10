@@ -13,7 +13,24 @@ const ingredient: IngredientData = {
   bestFor: ["Dry skin", "Sensitive skin", "Exfoliation beginners", "Uneven texture", "Dull complexion"],
   howItsUsed: "Lactic acid is available in concentrations from 5-12% for home use. Start with lower concentrations (5%) used 1-2 times per week, gradually increasing as tolerated. Apply in the evening and always follow with SPF the next day. Avoid mixing with retinol or vitamin C in the same routine.",
   pairsWellWith: ["Hyaluronic acid", "Niacinamide", "Ceramides", "Squalane", "Peptides"],
-  clinicNote: "We often recommend lactic acid for clients who are new to chemical exfoliation or have found glycolic acid too harsh. Its larger molecular size means gentler penetration, and the added hydrating benefit makes it ideal for those with dry or sensitive skin. That said, proper sun protection is essential when using any AHA."
+  clinicNote: "We often recommend lactic acid for clients who are new to chemical exfoliation or have found glycolic acid too harsh. Its larger molecular size means gentler penetration, and the added hydrating benefit makes it ideal for those with dry or sensitive skin. That said, proper sun protection is essential when using any AHA.",
+  productExamples: [
+    {
+      name: "Gentle Resurfacing Serum",
+      description: "Mild exfoliating serum that smooths texture and enhances radiance without compromising skin hydration.",
+      link: "#"
+    },
+    {
+      name: "Hydrating AHA Toner",
+      description: "Balanced formula combining gentle exfoliation with moisture-boosting properties for a brighter complexion.",
+      link: "#"
+    },
+    {
+      name: "Overnight Renewal Treatment",
+      description: "Nightly treatment designed to refine skin texture and fade discolouration while you sleep.",
+      link: "#"
+    }
+  ]
 };
 
 const LacticAcid = () => <IngredientPageTemplate ingredient={ingredient} />;

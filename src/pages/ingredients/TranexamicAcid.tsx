@@ -13,7 +13,24 @@ const ingredient: IngredientData = {
   bestFor: ["Melasma", "Stubborn pigmentation", "Hormonal discolouration", "Post-inflammatory hyperpigmentation", "Asian/melanin-rich skin"],
   howItsUsed: "Topical tranexamic acid is typically found in serums and essences at concentrations of 2-5%. It's gentle enough for twice-daily use and pairs well with other brightening ingredients. Unlike some brightening agents, it doesn't increase sun sensitivity, though SPF remains essential for treating pigmentation.",
   pairsWellWith: ["Niacinamide", "Vitamin C", "Azelaic acid", "Alpha arbutin", "Kojic acid"],
-  clinicNote: "Tranexamic acid has become one of our most-prescribed ingredients for pigmentation, particularly melasma, which is notoriously difficult to treat. What makes it special is its mechanism — by interrupting the communication between skin cells and melanocytes, it addresses pigmentation at a deeper level. For stubborn cases, we often combine topical TXA with other treatments in a comprehensive approach."
+  clinicNote: "Tranexamic acid has become one of our most-prescribed ingredients for pigmentation, particularly melasma, which is notoriously difficult to treat. What makes it special is its mechanism — by interrupting the communication between skin cells and melanocytes, it addresses pigmentation at a deeper level. For stubborn cases, we often combine topical TXA with other treatments in a comprehensive approach.",
+  productExamples: [
+    {
+      name: "Pigmentation Correcting Serum",
+      description: "Targeted treatment designed to fade stubborn dark spots and help prevent new pigmentation from forming.",
+      link: "#"
+    },
+    {
+      name: "Melasma Control Essence",
+      description: "Specialised formula that addresses hormonal discolouration and promotes a more even-toned complexion.",
+      link: "#"
+    },
+    {
+      name: "Brightening Intensive Ampoule",
+      description: "Concentrated treatment combining tranexamic acid with complementary brightening agents for visible results.",
+      link: "#"
+    }
+  ]
 };
 
 const TranexamicAcid = () => <IngredientPageTemplate ingredient={ingredient} />;

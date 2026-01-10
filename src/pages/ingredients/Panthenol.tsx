@@ -13,7 +13,24 @@ const ingredient: IngredientData = {
   bestFor: ["Dry skin", "Sensitive skin", "Irritated skin", "Post-procedure care", "Compromised barriers"],
   howItsUsed: "Panthenol is found in a wide range of products from serums to heavy creams, typically at concentrations of 1-5%. It's extremely well-tolerated and can be used morning and night. It's often included in barrier repair products and post-treatment care formulations.",
   pairsWellWith: ["Hyaluronic acid", "Ceramides", "Centella asiatica", "Aloe vera", "Niacinamide"],
-  clinicNote: "Panthenol is one of those unsung heroes that quietly improves almost every formulation it's in. We recommend it especially during times of skin stress — after treatments, during weather changes, or when introducing new actives. It's so gentle that even the most reactive skin types can benefit from it."
+  clinicNote: "Panthenol is one of those unsung heroes that quietly improves almost every formulation it's in. We recommend it especially during times of skin stress — after treatments, during weather changes, or when introducing new actives. It's so gentle that even the most reactive skin types can benefit from it.",
+  productExamples: [
+    {
+      name: "Soothing Recovery Serum",
+      description: "Gentle hydrating serum formulated to calm irritated skin and support the healing process.",
+      link: "#"
+    },
+    {
+      name: "Post-Treatment Comfort Cream",
+      description: "Rich moisturiser designed to nourish and protect skin recovering from professional treatments.",
+      link: "#"
+    },
+    {
+      name: "Hydrating B5 Mist",
+      description: "Refreshing spray that delivers instant hydration and comfort throughout the day.",
+      link: "#"
+    }
+  ]
 };
 
 const Panthenol = () => <IngredientPageTemplate ingredient={ingredient} />;
