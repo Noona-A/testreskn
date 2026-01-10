@@ -4,114 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ReSKN Clinic | Personalised Skin Plans in Windsor, Berkshire</title>
-    <meta name="description" content="Expert skin consultations, personalised treatment plans, and laser hair removal at ReSKN Clinic, Windsor. Book online or in-clinic appointments." />
-    
-    <!-- Brand Keywords - Prevents autocorrect of ReSKN -->
-    <meta name="keywords" content="ReSKN, ReSKN Clinic, ReSKN Windsor, Re-SKN, skin clinic Windsor, laser hair removal Windsor, personalised skin plans, skin treatment Berkshire" />
-    
-    <!-- AI Crawler Tags -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    
-    <!-- Brand Identity -->
-    <meta name="author" content="ReSKN Clinic" />
-    <meta name="copyright" content="ReSKN Clinic" />
-    <meta name="application-name" content="ReSKN Clinic" />
-    
-    <link rel="canonical" href="https://www.resknclinic.co.uk/" />
-
-    <meta property="og:title" content="ReSKN Clinic | Personalised Skin Plans" />
-    <meta property="og:description" content="Expert skin consultations, personalised treatment plans, and laser hair removal in Windsor, Berkshire." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.resknclinic.co.uk/" />
-    <meta property="og:image" content="https://www.resknclinic.co.uk/favicon.png" />
-    <meta property="og:site_name" content="ReSKN Clinic" />
-    <meta property="og:locale" content="en_GB" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@resknclinic" />
-    <meta name="twitter:image" content="https://www.resknclinic.co.uk/favicon.png" />
-
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    
-    <!-- Structured Data for Search Engines and AI -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "ReSKN Clinic",
-      "alternateName": ["Re-SKN", "ReSKN"],
-      "description": "Expert skin consultations, personalised treatment plans, and laser hair removal in Windsor, Berkshire. Evidence-informed skincare guidance.",
-      "url": "https://www.resknclinic.co.uk",
-      "logo": "https://www.resknclinic.co.uk/favicon.png",
-      "image": "https://www.resknclinic.co.uk/favicon.png",
-      "telephone": "+44 1234 567 890",
-      "email": "hello@resknclinic.co.uk",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Windsor",
-        "addressRegion": "Berkshire",
-        "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "addressCountry": "GB"
-      },
-      "priceRange": "££",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.instagram.com/resknclinic",
-        "https://www.facebook.com/resknclinic"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Skin Treatments",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Online Skin Consultation",
-              "description": "Personalised skincare consultation with evidence-informed recommendations"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Laser Hair Removal",
-              "description": "Professional laser hair removal treatment"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Prescription Acne Treatment",
-              "description": "Medical-grade acne treatment with prescription options"
-            }
-          }
-        ]
-      }
-    }
+    <script>
+      // GitHub Pages SPA redirect
+      // This script takes the current URL and converts the path and query
+      // string into just a query string, then redirects to index.html
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
-
-    <!-- Google Fonts: Playfair Display + Inter (preload for performance) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-
   </head>
-
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
