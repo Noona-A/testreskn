@@ -18,6 +18,14 @@
     "publisher": {"@type": "Organization", "name": "ReSKN Clinic", "url": "https://www.resknclinic.co.uk"}
   }
   </script>
+  <script>
+    (function() {
+      var bots = /bot|googlebot|crawler|spider|robot|crawling|bingbot|yandex|duckduckbot|slurp|baidu/i;
+      if (!bots.test(navigator.userAgent)) {
+        window.location.replace('/ingredients/vitamin-c');
+      }
+    })();
+  </script>
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 2rem; background: #fdfcfb; color: #1a1a1a; }
     h1 { font-family: Georgia, serif; font-size: 2.5rem; margin-bottom: 1rem; }
