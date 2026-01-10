@@ -1,4 +1,5 @@
 import IngredientPageTemplate, { IngredientData } from "@/components/ingredients/IngredientPageTemplate";
+import centellaSensitiveSerum from "@/assets/products/centella-sensitive-serum.jpg";
 
 const ingredient: IngredientData = {
   name: "Centella Asiatica",
@@ -16,18 +17,14 @@ const ingredient: IngredientData = {
   clinicNote: "Centella asiatica is one of our go-to recommendations for clients with reactive or sensitised skin. It's particularly valuable during the recovery phase after procedures like laser treatments or chemical peels. Its gentle yet effective profile makes it suitable for almost all skin types, including those who struggle to tolerate many active ingredients.",
   productExamples: [
     {
-      name: "Soothing Centella Serum",
-      description: "Lightweight serum formulated to support skin barrier repair and calm visible redness. Suitable for sensitive or reactive skin types.",
-      link: "#"
+      name: "Skin Chemists Sensitive Skin Serum – Calm & Repair 30ml",
+      description: "Lightweight serum formulated with Dragon's Blood, Centella Asiatica and Evening Primrose Oil to support skin comfort, balance and resilience. Designed for delicate or reactive skin types.",
+      link: "https://www.belantti.co.uk/products/sensitive-skin-serum-dragons-blood-centella-30ml?sca_ref=10398409.mtv59NQvcFqb1MU",
+      image: centellaSensitiveSerum
     },
     {
       name: "Cica Recovery Cream",
       description: "Rich moisturiser designed to strengthen the skin barrier and provide lasting comfort for compromised or post-treatment skin.",
-      link: "#"
-    },
-    {
-      name: "Calming Centella Toner",
-      description: "Gentle hydrating toner that helps reduce inflammation and prepare skin for subsequent skincare steps.",
       link: "#"
     }
   ]
