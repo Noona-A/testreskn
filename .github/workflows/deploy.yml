@@ -24,6 +24,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Install Playwright for prerendering
+        run: npx playwright install --with-deps chromium
+
+      - name: Prerender pages for SEO
+        run: node scripts/prerender.js
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
