@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Sparkles, Video, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "@/components/SEO";
 
 type ServiceType = "skin" | "laser" | null;
 type PaymentType = "full" | "deposit" | null;
@@ -104,6 +105,13 @@ const Booking = () => {
   const filteredAreas = laserAreas.filter(area => area.category === activeCategory);
 
   return (
+    <>
+      <SEO
+        title="Book an Appointment | ReSKN Clinic Windsor"
+        description="Book your skin consultation or laser hair removal appointment at ReSKN Clinic, Windsor. Online and in-clinic options available."
+        keywords="ReSKN, book appointment Windsor, skin consultation booking, laser hair removal booking, ReSKN Clinic"
+        canonical="https://resknclinic.co.uk/booking"
+      />
     <div className="min-h-screen bg-background pt-16 pb-16">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Progress Steps */}
@@ -455,6 +463,7 @@ const Booking = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,12 +1,26 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, MessageCircle, Search, ClipboardList, HeartHandshake, Shield, CheckCircle, Heart, BookOpen, Leaf, Star } from "lucide-react";
+import { ArrowRight, Sparkles, MessageCircle, Search, ClipboardList, HeartHandshake, Shield, CheckCircle, BookOpen, Leaf, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import skinClinicHeroImg from "@/assets/skin-clinic-hero.jpg";
+
 const SkinClinic = () => {
-  useEffect(() => {
-    document.title = "Skin Clinic | ReSKN Clinic Windsor";
-  }, []);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Skin Consultation",
+    "provider": {
+      "@type": "MedicalBusiness",
+      "name": "ReSKN Clinic",
+      "alternateName": ["Re-SKN", "ReSKN"]
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Windsor"
+    },
+    "description": "Personalised skin consultations and evidence-based treatment plans, led by a UK-registered pharmacist in Windsor, Berkshire."
+  };
+
   const steps = [{
     number: "1",
     icon: MessageCircle,
@@ -46,6 +60,13 @@ const SkinClinic = () => {
   }];
   const concerns = ["Acne & breakouts", "Pigmentation & melasma", "Sensitive or reactive skin", "Dullness & dehydration", "Early signs of ageing"];
   return <>
+      <SEO
+        title="Skin Clinic | Expert Consultations in Windsor | ReSKN Clinic"
+        description="Personalised skin consultations and evidence-based treatment plans for acne, pigmentation, sensitivity and more. Led by a UK-registered pharmacist in Windsor."
+        keywords="ReSKN, skin consultation Windsor, skin clinic Berkshire, acne treatment, pigmentation treatment, pharmacist skincare"
+        canonical="https://resknclinic.co.uk/skin-clinic"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-b from-lavender-light via-background to-background overflow-hidden md:py-[60px]">
         <div className="palm-shadow-overlay" />

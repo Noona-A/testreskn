@@ -1,9 +1,12 @@
+# ReSKN Clinic - robots.txt
+# https://resknclinic.co.uk
+
 # Allow all crawlers
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.resknclinic.co.uk/sitemap.xml
+Sitemap: https://resknclinic.co.uk/sitemap.xml
 
 # Google
 User-agent: Googlebot
@@ -23,7 +26,7 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# AI Crawlers
+# AI Crawlers - Allowed for visibility
 User-agent: GPTBot
 Allow: /
 
@@ -60,5 +63,8 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-# Sitemap location
-Sitemap: https://resknclinic.co.uk/sitemap.xml
+# Disallow specific paths
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/js/*.map

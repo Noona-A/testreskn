@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
+
 const ingredients = [{
   name: "Centella Asiatica",
   slug: "centella-asiatica",
@@ -63,7 +65,27 @@ const ingredients = [{
   benefit: "Antioxidant protection and calming benefits"
 }];
 const IngredientsHub = () => {
-  return <div className="pt-16 pb-16">
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Skincare Ingredients Guide",
+    "description": "Evidence-informed guidance on skincare ingredients to help you understand what your skin needs and why.",
+    "url": "https://resknclinic.co.uk/ingredients",
+    "publisher": {
+      "@type": "MedicalBusiness",
+      "name": "ReSKN Clinic"
+    }
+  };
+
+  return <>
+    <SEO
+      title="Skincare Ingredients Guide | ReSKN Clinic"
+      description="Evidence-informed guidance on skincare ingredients like niacinamide, vitamin C, hyaluronic acid, and more. Learn what your skin needs."
+      keywords="ReSKN, skincare ingredients, niacinamide, hyaluronic acid, vitamin C, salicylic acid, ceramides, skincare guide"
+      canonical="https://resknclinic.co.uk/ingredients"
+      structuredData={structuredData}
+    />
+    <div className="pt-16 pb-16">
       {/* Hero Section */}
       <div className="bg-section-gradient py-16 mb-12">
         <div className="container mx-auto px-4 text-center">
@@ -114,6 +136,7 @@ const IngredientsHub = () => {
           Some links may be affiliate links; we may earn a commission at no extra cost to you.
         </p>
       </div>
-    </div>;
+    </div>
+  </>;
 };
 export default IngredientsHub;
