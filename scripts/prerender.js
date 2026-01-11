@@ -96,6 +96,9 @@ async function prerenderPage(page, route) {
     timeout: 30000 
   });
   
+  // Extra wait time for homepage (has more components)
+  const waitTime = route === '/' ? 5000 : 3000;
+  
   // Wait for React to fully render (check for content in root div)
   await page.waitForFunction(
     () => {
@@ -108,7 +111,7 @@ async function prerenderPage(page, route) {
   });
   
   // Additional wait to ensure all components are mounted
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(waitTime);
   
   // Get the fully rendered HTML
   const html = await page.content();
@@ -116,6 +119,11 @@ async function prerenderPage(page, route) {
   // Verify we got actual content (not just empty root div)
   if (html.includes('<div id="root"></div>') && !html.includes('<div id="root"><')) {
     throw new Error('Page rendered but root div is empty');
+  }
+  
+  // For homepage, verify hero content is present
+  if (route === '/' && !html.includes('Medical-grade')) {
+    throw new Error('Homepage rendered but hero content missing');
   }
   
   // Determine output path
