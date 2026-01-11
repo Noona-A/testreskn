@@ -16,13 +16,108 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
+
+      - name: Install Playwright for prerendering
+        run: npx playwright install --with-deps chromium
+
+      - name: Prerender pages for SEO
+        run: |
+          node - <<'EOF'
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+          const path = require('path');
+          const http = require('http');
+          const handler = require('serve-handler');
+
+          const routes = [
+            '/',
+            '/laser-hair-removal',
+            '/skin-clinic',
+            '/ingredients',
+            '/booking',
+            '/about',
+            '/contact',
+            '/quiz',
+            '/services',
+            '/concerns',
+            '/concerns/acne',
+            '/concerns/pigmentation',
+            '/concerns/sensitivity',
+            '/concerns/ingrowns',
+            '/concerns/anti-ageing',
+            '/services/online-consultation',
+            '/services/in-clinic-consultation',
+            '/services/prescription-acne',
+            '/ingredients/niacinamide',
+            '/ingredients/hyaluronic-acid',
+            '/ingredients/vitamin-c',
+            '/ingredients/salicylic-acid',
+            '/ingredients/lactic-acid',
+            '/ingredients/azelaic-acid',
+            '/ingredients/tranexamic-acid',
+            '/ingredients/ceramides',
+            '/ingredients/squalane',
+            '/ingredients/peptides',
+            '/ingredients/centella-asiatica',
+            '/ingredients/green-tea-extract',
+            '/ingredients/panthenol',
+            '/ingredients/propolis',
+            '/ingredients/snail-mucin'
+          ];
+
+          (async () => {
+            // Start local server
+            const server = http.createServer((request, response) => {
+              return handler(request, response, { public: 'dist', cleanUrls: false });
+            });
+            
+            server.listen(3000, async () => {
+              console.log('Server running at http://localhost:3000');
+              
+              const browser = await chromium.launch();
+              const context = await browser.newContext();
+              
+              for (const route of routes) {
+                try {
+                  const page = await context.newPage();
+                  const url = `http://localhost:3000${route}`;
+                  
+                  console.log(`Prerendering: ${route}`);
+                  await page.goto(url, { waitUntil: 'networkidle' });
+                  await page.waitForTimeout(3000); // Wait for React to fully render
+                  
+                  const html = await page.content();
+                  
+                  const outputPath = route === '/' 
+                    ? path.join('dist', 'index.html')
+                    : path.join('dist', route, 'index.html');
+                  
+                  const outputDir = path.dirname(outputPath);
+                  if (!fs.existsSync(outputDir)) {
+                    fs.mkdirSync(outputDir, { recursive: true });
+                  }
+                  
+                  fs.writeFileSync(outputPath, html);
+                  console.log(`✓ Saved: ${outputPath}`);
+                  await page.close();
+                } catch (error) {
+                  console.error(`Error prerendering ${route}:`, error.message);
+                }
+              }
+              
+              await browser.close();
+              server.close();
+              console.log(`\n✓ Successfully prerendered ${routes.length} pages`);
+            });
+          })();
+          EOF
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
