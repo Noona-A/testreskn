@@ -6,7 +6,7 @@ const faqs = [
   { q: "What happens after I book?", a: "You'll receive a pre-consultation questionnaire to complete before your appointment." },
   { q: "Is prescription treatment safe?", a: "All prescriptions are clinician-assessed and include follow-up support. We follow antibiotic stewardship guidelines." },
   { q: "How does laser hair removal work?", a: "Our diode laser targets hair follicles with light energy, reducing hair growth over multiple sessions." },
-  { q: "Is laser suitable for my skin tone?", a: "Our technology is safe for all skin tones (Fitzpatrick I-VI). We always do a patch test first." },
+  { q: "Is laser suitable for my skin tone?", a: "Our 808nm diode laser is safe for Fitzpatrick skin types I–V. We always do a patch test first to ensure suitability." },
 ];
 
 const FAQSection = () => {

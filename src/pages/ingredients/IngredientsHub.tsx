@@ -63,7 +63,7 @@ const ingredients = [{
   benefit: "Antioxidant protection and calming benefits"
 }];
 const IngredientsHub = () => {
-  return <div className="pt-24 pb-16">
+  return <div className="pt-16 pb-16">
       {/* Hero Section */}
       <div className="bg-section-gradient py-16 mb-12">
         <div className="container mx-auto px-4 text-center">

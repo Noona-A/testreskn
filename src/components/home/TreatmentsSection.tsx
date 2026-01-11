@@ -40,8 +40,8 @@ const TreatmentsSection = () => {
                     <Shield size={20} className="text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Safe for All Skin Tones</h4>
-                    <p className="text-muted-foreground text-sm">Clinically proven safe across Fitzpatrick skin types I-VI</p>
+                    <h4 className="font-semibold text-foreground mb-1">Safe for Most Skin Tones</h4>
+                    <p className="text-muted-foreground text-sm">Clinically proven safe for Fitzpatrick skin types I–V</p>
                   </div>
                 </div>
               </div>

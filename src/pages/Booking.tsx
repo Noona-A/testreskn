@@ -104,7 +104,7 @@ const Booking = () => {
   const filteredAreas = laserAreas.filter(area => area.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-background pt-24 pb-16">
+    <div className="min-h-screen bg-background pt-16 pb-16">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Progress Steps */}
         <div className="flex items-center justify-center gap-2 mb-12">

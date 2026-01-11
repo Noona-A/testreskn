@@ -68,7 +68,7 @@ const Contact = () => {
       }));
     }
   };
-  return <div className="pt-24 pb-16">
+  return <div className="pt-16 pb-16">
       <div className="container mx-auto px-4 max-w-5xl">
         <h1 className="font-serif text-4xl md:text-5xl mb-4 text-center">Contact Us</h1>
         <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">

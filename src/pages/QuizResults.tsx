@@ -2,14 +2,11 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { profiles, ingredientSlugs } from "@/lib/quizScoring";
 import { CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
-
 const QuizResults = () => {
   const [params] = useSearchParams();
   const profileKey = params.get("profile") || "balanced";
   const profile = profiles[profileKey] || profiles.balanced;
-
-  return (
-    <div className="pt-24 pb-16">
+  return <div className="pt-16 pb-16">
       <div className="container mx-auto px-4 max-w-3xl">
         {/* Header */}
         <div className="text-center mb-10">
@@ -38,12 +35,10 @@ const QuizResults = () => {
             What this means for your skin
           </h2>
           <ul className="space-y-4">
-            {profile.whatThisMeans.map((point, index) => (
-              <li key={index} className="flex items-start gap-3">
+            {profile.whatThisMeans.map((point, index) => <li key={index} className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">{point}</span>
-              </li>
-            ))}
+              </li>)}
           </ul>
         </div>
 
@@ -56,19 +51,13 @@ const QuizResults = () => {
             These ingredients are particularly beneficial for your skin profile
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {profile.ingredientFocus.map((ingredient) => {
-              const slug = ingredientSlugs[ingredient];
-              return (
-                <Link
-                  key={ingredient}
-                  to={`/ingredients/${slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-accent hover:bg-accent/80 rounded-full text-sm font-medium transition-colors group"
-                >
+            {profile.ingredientFocus.map(ingredient => {
+            const slug = ingredientSlugs[ingredient];
+            return <Link key={ingredient} to={`/ingredients/${slug}`} className="inline-flex items-center gap-2 px-4 py-2 bg-accent hover:bg-accent/80 rounded-full text-sm font-medium transition-colors group">
                   {ingredient}
                   <ArrowRight className="w-3 h-3 opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                </Link>
-              );
-            })}
+                </Link>;
+          })}
           </div>
         </div>
 
@@ -103,8 +92,6 @@ const QuizResults = () => {
           Some links may be affiliate links; we may earn a commission at no extra cost to you.
         </p>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default QuizResults;
