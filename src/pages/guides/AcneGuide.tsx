@@ -242,7 +242,7 @@ const RoutineContent = () => <div className="space-y-6">
     </div>
 
     <div className="bg-card border border-border rounded-xl p-4">
-      <h3 className="font-semibold text-foreground text-sm mb-2">NICE-Recommended First-Line Approaches</h3>
+      <h3 className="font-semibold text-foreground text-sm mb-2">Recommended First-Line Approaches</h3>
       <div className="text-xs text-muted-foreground space-y-2">
         <p><strong>For Mild-Moderate:</strong> Adapalene 0.1% + Benzoyl Peroxide 2.5% combination (e.g., Differin + Acnecide) OR Benzoyl Peroxide + Azelaic Acid</p>
         <p><strong>For Moderate-Severe:</strong> Consider professional consultation for prescription options (oral antibiotics + topical combination)</p>
@@ -309,7 +309,7 @@ const MistakesContent = () => <div className="space-y-3">
     fix: "This causes scarring and spreads bacteria. Use hydrocolloid patches instead if tempted"
   }, {
     mistake: "Using antibiotics alone",
-    fix: "NICE guidelines say antibiotics should always be combined with topical treatments to prevent resistance"
+    fix: "Antibiotics should always be combined with topical treatments to prevent resistance"
   }].map((item, index) => <div key={index} className="bg-card border border-border rounded-xl p-3 flex gap-3">
         <XCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
         <div>
@@ -894,7 +894,7 @@ const BudgetContent = () => <div className="space-y-4">
         </div>
         <div>
           <p className="font-medium text-foreground">Adapalene (Retinoid)</p>
-          <p>Differin 0.1% Gel (£13-16, Boots/online) — NICE-recommended</p>
+          <p>Differin 0.1% Gel (£13-16, Boots/online) — recommended</p>
         </div>
         <div>
           <p className="font-medium text-foreground">Azelaic Acid</p>
@@ -1019,7 +1019,7 @@ const sectionContent: Record<string, {
   },
   treatments: {
     title: "Evidence-Based Treatments",
-    description: "NICE-recommended treatments including over-the-counter and prescription options.",
+    description: "Recommended treatments including over-the-counter and prescription options.",
     component: <TreatmentsContent />
   },
   routine: {
@@ -1221,7 +1221,7 @@ const AcneGuide = () => {
   const SectionIcon = sections.find(s => s.id === activeSection)?.icon || BookOpen;
   const currentIndex = sections.findIndex(s => s.id === activeSection);
   return <>
-      <SEO title="Complete Acne Guide | Evidence-Based Treatment | ReSKN Clinic" description="A comprehensive guide to understanding, treating, and managing acne. Learn about acne types, causes, NICE-recommended treatments, and build your evidence-based routine." keywords="acne guide, acne treatment UK, acne skincare routine, benzoyl peroxide, adapalene, retinoids, NICE guidelines acne, hormonal acne, PCOS acne, ReSKN Clinic" canonical="https://resknclinic.co.uk/guides/acne" structuredData={structuredData} />
+      <SEO title="Complete Acne Guide | Evidence-Based Treatment | ReSKN Clinic" description="A comprehensive guide to understanding, treating, and managing acne. Learn about acne types, causes, Recommended treatments, and build your evidence-based routine." keywords="acne guide, acne treatment UK, acne skincare routine, benzoyl peroxide, adapalene, retinoids, acne guidelines, hormonal acne, PCOS acne, ReSKN Clinic" canonical="https://resknclinic.co.uk/guides/acne" structuredData={structuredData} />
       <div className="pt-16">
         {/* Hero Section */}
         <div className="bg-gradient-to-br from-purple-deep via-purple to-purple-light py-10 md:py-14">
