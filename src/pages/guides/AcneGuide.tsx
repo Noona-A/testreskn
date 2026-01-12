@@ -1169,24 +1169,12 @@ const AcneGuide = () => {
       <SEO title="Complete Acne Guide | Evidence-Based Treatment | ReSKN Clinic" description="A comprehensive guide to understanding, treating, and managing acne. Learn about acne types, causes, Recommended treatments, and build your evidence-based routine." keywords="acne guide, acne treatment UK, acne skincare routine, benzoyl peroxide, adapalene, retinoids, acne guidelines, hormonal acne, PCOS acne, ReSKN Clinic" canonical="https://resknclinic.co.uk/guides/acne" structuredData={structuredData} />
       
       {/* Progress Bar */}
-      <div className="fixed top-16 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm border-b border-border">
+      <div className="fixed top-16 left-0 right-0 z-40">
         <div className="h-1 bg-muted">
           <div 
             className="h-full bg-gradient-to-r from-purple to-primary transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
-        </div>
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between text-xs text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <span className="font-medium text-foreground">Section {currentIndex + 1} of {sections.length}</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="hidden sm:inline">{currentContent.title}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <kbd className="hidden md:inline px-1.5 py-0.5 bg-muted rounded text-[10px] border border-border">←</kbd>
-            <kbd className="hidden md:inline px-1.5 py-0.5 bg-muted rounded text-[10px] border border-border">→</kbd>
-            <span className="hidden md:inline text-[10px]">to navigate</span>
-          </div>
         </div>
       </div>
 
