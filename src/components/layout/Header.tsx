@@ -11,6 +11,7 @@ const Header = () => {
     { href: "/skin-clinic", label: "Skin Clinic" },
     { href: "/laser-hair-removal", label: "Laser Hair Removal" },
     { href: "/quiz", label: "Skin Quiz" },
+    { href: "/guides", label: "Guides" },
     { href: "/ingredients", label: "Ingredients" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
