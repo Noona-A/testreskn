@@ -78,26 +78,26 @@ const sections = [{
 }];
 
 // Section content components
-const UnderstandingContent = () => <div className="space-y-6">
+const UnderstandingContent = () => <div className="space-y-3">
     <div>
-      <h3 className="font-semibold text-lg text-foreground mb-3">What Causes Acne?</h3>
-      <p className="text-muted-foreground mb-4 text-sm">
+      <h3 className="font-semibold text-base text-foreground mb-2">What Causes Acne?</h3>
+      <p className="text-muted-foreground mb-2 text-xs">
         Acne develops when four key factors come together:
       </p>
-      <div className="grid sm:grid-cols-2 gap-3">
-        <div className="bg-lavender-light/50 border-l-4 border-purple rounded-r-lg p-3">
+      <div className="grid sm:grid-cols-2 gap-2">
+        <div className="bg-lavender-light/50 border border-purple rounded-xl p-3">
           <h4 className="font-medium text-foreground text-sm mb-1">Excess oil production</h4>
           <p className="text-xs text-muted-foreground">Your skin produces too much oil, often triggered by hormones</p>
         </div>
-        <div className="bg-lavender-light/50 border-l-4 border-purple-light rounded-r-lg p-3">
+        <div className="bg-lavender-light/50 border border-purple-light rounded-xl p-3">
           <h4 className="font-medium text-foreground text-sm mb-1">Blocked pores</h4>
           <p className="text-xs text-muted-foreground">Dead skin cells don't shed properly and clog pores</p>
         </div>
-        <div className="bg-lavender-light/50 border-l-4 border-lavender-glow rounded-r-lg p-3">
+        <div className="bg-lavender-light/50 border border-lavender-glow rounded-xl p-3">
           <h4 className="font-medium text-foreground text-sm mb-1">Bacteria</h4>
           <p className="text-xs text-muted-foreground">Bacteria multiply in clogged pores, causing inflammation</p>
         </div>
-        <div className="bg-blush/30 border-l-4 border-pink-300 rounded-r-lg p-3">
+        <div className="bg-blush/30 border border-pink-300 rounded-xl p-3">
           <h4 className="font-medium text-foreground text-sm mb-1">Inflammation</h4>
           <p className="text-xs text-muted-foreground">Your body's immune response creates redness and swelling</p>
         </div>
@@ -155,16 +155,14 @@ const UnderstandingContent = () => <div className="space-y-6">
     </div>
   </div>;
 const TreatmentsContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      These treatments are recommended by UK clinical guidelines. Over-the-counter options can be very effective for mild-moderate acne.
-    </p>
+  
 
     <div className="bg-card border border-border rounded-xl p-4">
       <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
         <h3 className="font-semibold text-foreground text-sm">Benzoyl Peroxide (2.5-10%)</h3>
         <span className="bg-purple/10 text-purple-deep text-xs font-medium px-2 py-0.5 rounded-full">Gold Standard</span>
       </div>
-      <p className="text-xs text-muted-foreground mb-2">Kills acne-causing bacteria, reduces inflammation, and helps unclog pores. Start with 2.5% to minimise irritation, apply once daily.</p>
+      <p className="text-xs text-muted-foreground mb-2">Kills bacteria, reduces inflammation, and helps unclog pores. Start with 2.5% to minimise irritation, apply once daily.</p>
       <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-2 flex items-start gap-2">
         <AlertTriangle className="w-3 h-3 text-amber-600 flex-shrink-0 mt-0.5" />
         <p className="text-xs text-amber-800">Bleaches fabric — use white towels and pillowcases!</p>
@@ -250,14 +248,12 @@ const RoutineContent = () => <div className="space-y-6">
     </div>
   </div>;
 const PrescriptionContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground">
-      See your GP or dermatologist if over-the-counter treatments haven't worked after 12 weeks of consistent use.
-    </p>
+   
 
     <div className="bg-purple-50/80 border border-purple-200 rounded-xl p-4">
       <h3 className="font-semibold text-purple-900 mb-2 text-sm">When to Seek Professional Help</h3>
       <ul className="text-xs text-purple-800 space-y-1">
-        <li>• Moderate-severe acne not responding to over-the-counter products</li>
+        <li>• Moderate-severe acne not responding to over-the-counter products after 12 weeks of consistent use</li>
         <li>• Nodules or cysts present (deep, painful lumps)</li>
         <li>• Acne causing scarring</li>
         <li>• Significant impact on your mental health or confidence</li>
@@ -353,9 +349,7 @@ const ActionPlanContent = () => <div className="space-y-4">
       </div>)}
   </div>;
 const PurgingContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      One of the most confusing parts of starting treatment is knowing whether your skin is "purging" (a normal adjustment) or having a bad reaction.
-    </p>
+  
 
     <div className="grid sm:grid-cols-2 gap-4">
       <div className="bg-green-50/80 border border-green-200 rounded-xl p-4">
@@ -487,9 +481,7 @@ const LayeringContent = () => <div className="space-y-4">
     </div>
   </div>;
 const EmergencyContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      Got a big event and a spot appeared? Here's what actually works (and what doesn't).
-    </p>
+
 
     <div className="space-y-3">
       <div className="bg-card border border-border rounded-xl p-4">
@@ -537,9 +529,7 @@ const EmergencyContent = () => <div className="space-y-4">
     </div>
   </div>;
 const PregnancyContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      Some acne treatments are not safe during pregnancy. Here's what you can and can't use according to UK clinical guidelines.
-    </p>
+
 
     <div className="bg-green-50/80 border border-green-200 rounded-xl p-4">
       <h3 className="font-semibold text-green-900 text-sm mb-3 flex items-center gap-2">
@@ -602,9 +592,7 @@ const PregnancyContent = () => <div className="space-y-4">
     </div>
   </div>;
 const BodyAcneContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      Body acne ("bacne") on the back, chest, and shoulders is common. The skin is thicker here and constantly in contact with clothing, making it a bit trickier to treat.
-    </p>
+ 
 
     <div className="bg-card border border-border rounded-xl p-4">
       <h3 className="font-semibold text-foreground text-sm mb-2">Why Body Acne Is Different</h3>
@@ -648,9 +636,7 @@ const BodyAcneContent = () => <div className="space-y-4">
     </div>
   </div>;
 const HormonalContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      Up to 39% of women with adult acne have underlying PCOS. Hormonal acne often needs a different approach.
-    </p>
+
 
     <div className="bg-card border border-border rounded-xl p-4">
       <h3 className="font-semibold text-foreground text-sm mb-2">Signs of Hormonal Acne</h3>
@@ -672,7 +658,6 @@ const HormonalContent = () => <div className="space-y-4">
         <li>• Weight gain, difficulty losing weight</li>
         <li>• Darkening skin on neck, armpits, or groin</li>
       </ul>
-      <p className="text-xs text-pink-700 mt-2">If you have these symptoms, see your GP for blood tests.</p>
     </div>
 
     <div className="bg-card border border-border rounded-xl p-4">
@@ -684,26 +669,22 @@ const HormonalContent = () => <div className="space-y-4">
       </ul>
     </div>
 
-    <div className="space-y-3">
-      <h3 className="font-semibold text-foreground text-sm">Prescription Options (UK)</h3>
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h4 className="font-medium text-foreground text-sm">Combined Oral Contraceptive (COCP)</h4>
-        <p className="text-xs text-muted-foreground">First-line for hormonal acne in women. Options include Microgynon, Yasmin, or Dianette (specifically for acne). Takes 3-4 months to see improvement.</p>
-      </div>
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h4 className="font-medium text-foreground text-sm">Spironolactone</h4>
-        <p className="text-xs text-muted-foreground">Anti-androgen medication used off-label. 50-87% improvement in studies. Takes 3-6 months for full effect. NOT safe if pregnant or planning pregnancy.</p>
-      </div>
+     <div className="bg-card border border-border rounded-xl p-4">
+      <h3 className="font-semibold text-foreground text-sm mb-2">Prescription Options (UK)</h3>
+      <ul className="text-xs text-muted-foreground space-y-1">
+        <li>• Combined Oral Contraceptive (COCP) - Recommended for hormonal acne in women. Takes 3-4 months to see improvement.</li>
+        <li>• Spironolactone - Anti-androgen medication used off-label. Takes 3-6 months for full effect. NOT safe in pregnancy.</li>
+      </ul>
     </div>
+
+  
+     
 
     <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
       <p className="text-xs text-amber-800"><strong>When to see your GP:</strong> Suspected PCOS, hormonal acne not responding to topical treatments, or if you're considering prescription options.</p>
     </div>
   </div>;
 const MakeupContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      Makeup doesn't cause acne for everyone, but choosing the right products matters.
-    </p>
 
     <div className="bg-card border border-border rounded-xl p-4">
       <h3 className="font-semibold text-foreground text-sm mb-2">What to Look For</h3>
@@ -715,21 +696,6 @@ const MakeupContent = () => <div className="space-y-4">
       </ul>
     </div>
 
-    <div className="space-y-3">
-      <h3 className="font-semibold text-foreground text-sm">UK Product Recommendations</h3>
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h4 className="font-medium text-foreground text-sm">Foundation</h4>
-        <p className="text-xs text-muted-foreground">Bare Minerals Original (£30), La Roche-Posay Effaclar Duo+ Unifiant (£16 — contains acne treatment!), The Ordinary Serum Foundation (£7), Maybelline Fit Me Matte + Poreless (£8)</p>
-      </div>
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h4 className="font-medium text-foreground text-sm">Concealer</h4>
-        <p className="text-xs text-muted-foreground">Collection Lasting Perfection (£5 — non-comedogenic), NARS Radiant Creamy (£24)</p>
-      </div>
-      <div className="bg-card border border-border rounded-xl p-3">
-        <h4 className="font-medium text-foreground text-sm">Powder</h4>
-        <p className="text-xs text-muted-foreground">Rimmel Stay Matte (£5), BareMinerals Mineral Veil (£25)</p>
-      </div>
-    </div>
 
     <div className="bg-lavender-light/50 rounded-xl p-4">
       <h3 className="font-semibold text-foreground text-sm mb-2">Application Tips</h3>
@@ -757,30 +723,16 @@ const MakeupContent = () => <div className="space-y-4">
     </div>
   </div>;
 const MentalHealthContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      Acne can seriously affect how you feel. Studies show people with acne have rates of anxiety and depression similar to those with other chronic health conditions. Your feelings are valid.
-    </p>
+
 
     <div className="bg-lavender-light/50 rounded-xl p-4">
       <h3 className="font-semibold text-foreground text-sm mb-2">You're Not Alone</h3>
       <ul className="text-xs text-muted-foreground space-y-1">
-        <li>• Acne affects 9.4% of the world's population — over 640 million people</li>
         <li>• It's the 8th most common condition worldwide</li>
         <li>• Adult acne (25+) is increasingly common, especially in women</li>
-        <li>• The psychological impact is REAL and valid</li>
       </ul>
     </div>
 
-    <div className="bg-card border border-border rounded-xl p-4">
-      <h3 className="font-semibold text-foreground text-sm mb-2">How Acne Can Affect You</h3>
-      <ul className="text-xs text-muted-foreground space-y-1">
-        <li>• Social anxiety and avoiding situations</li>
-        <li>• Low mood or depression</li>
-        <li>• Low self-esteem and body image issues</li>
-        <li>• Impact on relationships and intimacy</li>
-        <li>• Confidence issues at work or school</li>
-      </ul>
-    </div>
 
     <div className="bg-purple-50/80 border border-purple-200 rounded-xl p-4">
       <h3 className="font-semibold text-purple-900 text-sm mb-2">When to Seek Help</h3>
@@ -800,7 +752,6 @@ const MentalHealthContent = () => <div className="space-y-4">
         <li>• <strong>IAPT services</strong> — you can self-refer for free NHS talking therapies</li>
         <li>• <strong>Samaritans:</strong> 116 123 (24/7, free, confidential)</li>
         <li>• <strong>Mind:</strong> Mental health charity with resources and helplines</li>
-        <li>• <strong>British Skin Foundation:</strong> Acne-specific support information</li>
       </ul>
     </div>
 
@@ -809,7 +760,6 @@ const MentalHealthContent = () => <div className="space-y-4">
       <ul className="text-xs text-green-800 space-y-1">
         <li>• Remember: Most people notice your acne far less than you do</li>
         <li>• Focus on what you CAN control (routine, sleep, stress)</li>
-        <li>• Avoid checking in mirrors constantly</li>
         <li>• Don't compare yourself to filtered social media</li>
         <li>• Talk to someone you trust</li>
         <li>• Consider therapy — CBT is particularly helpful</li>
@@ -817,7 +767,7 @@ const MentalHealthContent = () => <div className="space-y-4">
     </div>
 
     <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-3">
-      <p className="text-xs text-amber-800"><strong>Note:</strong> If you're on isotretinoin (Roaccutane), be aware it requires mental health monitoring. Report any mood changes to your prescriber immediately.</p>
+      <p className="text-xs text-amber-800"><strong>Note:</strong> If you're on isotretinoin (Roaccutane) report any mood changes to your prescriber immediately.</p>
     </div>
   </div>;
 const DietContent = () => <div className="space-y-4">
@@ -889,29 +839,10 @@ const BudgetContent = () => <div className="space-y-4">
       <h3 className="font-semibold text-foreground text-sm mb-2">UK Product Recommendations by Category</h3>
       <div className="space-y-3 text-xs text-muted-foreground">
         <div>
-          <p className="font-medium text-foreground">Benzoyl Peroxide</p>
-          <p>Acnecide 5% Gel (£9-12, Boots/Superdrug), PanOxyl 10% Wash (£10-15, good for body acne)</p>
+          <p className="font-medium text-foreground">Coming soon!</p>
+          <p></p>
         </div>
-        <div>
-          <p className="font-medium text-foreground">Adapalene (Retinoid)</p>
-          <p>Differin 0.1% Gel (£13-16, Boots/online) — recommended</p>
-        </div>
-        <div>
-          <p className="font-medium text-foreground">Azelaic Acid</p>
-          <p>The Ordinary 10% (£7), Facetheory 15% (£12), Skinoren 20% (£18-25, pharmacy)</p>
-        </div>
-        <div>
-          <p className="font-medium text-foreground">Niacinamide</p>
-          <p>The Ordinary Niacinamide 10% + Zinc 1% (£5) — best budget option</p>
-        </div>
-        <div>
-          <p className="font-medium text-foreground">Cleansers</p>
-          <p>CeraVe Hydrating Cleanser (£10-12), Cetaphil Gentle (£8-10), Simple Refreshing (£4)</p>
-        </div>
-        <div>
-          <p className="font-medium text-foreground">SPF</p>
-          <p>Altruist SPF50 (£7/500ml — best value!), Garnier Ambre Solaire Face Fluid (£8), La Roche-Posay Anthelios (£18)</p>
-        </div>
+    
       </div>
     </div>
 
@@ -937,9 +868,7 @@ const BudgetContent = () => <div className="space-y-4">
     </div>
   </div>;
 const TimelineContent = () => <div className="space-y-4">
-    <p className="text-sm text-muted-foreground mb-4">
-      One of the biggest mistakes is having unrealistic expectations. Here's what to actually expect.
-    </p>
+
 
     <div className="space-y-3">
       {[{
@@ -953,7 +882,7 @@ const TimelineContent = () => <div className="space-y-4">
     }, {
       time: "Week 6-8",
       status: "First improvements",
-      desc: "Fewer new breakouts, existing ones healing faster. You should see SOME improvement."
+      desc: "Fewer breakouts, existing ones healing faster. Should see SOME improvement."
     }, {
       time: "Week 10-12",
       status: "Visible progress",
@@ -966,43 +895,41 @@ const TimelineContent = () => <div className="space-y-4">
       time: "Ongoing",
       status: "Maintenance",
       desc: "Continue your routine to prevent recurrence. Acne is managed, not cured."
-    }].map((item, index) => <div key={index} className="bg-card border border-border rounded-xl p-3 flex gap-3">
-          <div className="bg-primary/10 text-primary text-xs font-medium px-2 py-1 rounded-full h-fit whitespace-nowrap">{item.time}</div>
-          <div>
-            <p className="text-sm font-medium text-foreground">{item.status}</p>
-            <p className="text-xs text-muted-foreground">{item.desc}</p>
-          </div>
+    }].map((item, index) => <div key={index} className="bg-card border border-border rounded-xl p-3 flex items-center gap-3">
+          <div className="bg-primary/10 text-primary text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap">{item.time}</div>
+          <div className="font-medium text-foreground text-sm whitespace-nowrap">{item.status}</div>
+          <div className="text-xs text-muted-foreground flex-1">{item.desc}</div>
         </div>)}
     </div>
 
-    <div className="bg-card border border-border rounded-xl p-4">
-      <h3 className="font-semibold text-foreground text-sm mb-2">What "Clear" Actually Means</h3>
-      <ul className="text-xs text-muted-foreground space-y-1">
-        <li>• Not zero spots forever — that's unrealistic</li>
-        <li>• 90%+ improvement from your baseline</li>
-        <li>• Occasional spot (especially hormonal) is normal</li>
-        <li>• Manageable with a maintenance routine</li>
-      </ul>
-    </div>
+    <div className="grid sm:grid-cols-2 gap-4">
+      <div className="bg-card border border-border rounded-xl p-4">
+        <h3 className="font-semibold text-foreground text-sm mb-2">What "Clear" Actually Means</h3>
+        <ul className="text-xs text-muted-foreground space-y-1">
+          <li>• Not zero spots forever — that's unrealistic</li>
+          <li>• 90%+ improvement from your baseline</li>
+          <li>• Occasional spot (especially hormonal) is normal</li>
+          <li>• Manageable with a maintenance routine</li>
+        </ul>
+      </div>
 
-    <div className="bg-red-50/80 border border-red-200 rounded-xl p-4">
-      <h3 className="font-semibold text-red-900 text-sm mb-2">Why Treatment Sometimes Fails</h3>
-      <ul className="text-xs text-red-800 space-y-1">
-        <li>• Not giving it enough time (stopping before 12 weeks)</li>
-        <li>• Inconsistent application</li>
-        <li>• Wrong product for your acne type</li>
-        <li>• Not addressing all factors (stress, hormones)</li>
-        <li>• Expecting perfection rather than improvement</li>
-      </ul>
+      <div className="bg-red-50/80 border border-red-200 rounded-xl p-4">
+        <h3 className="font-semibold text-red-900 text-sm mb-2">Why Treatment Sometimes Fails</h3>
+        <ul className="text-xs text-red-800 space-y-1">
+          <li>• Not giving it enough time (stopping before 12wks)</li>
+          <li>• Inconsistent application</li>
+          <li>• Wrong product for your acne type</li>
+          <li>• Not addressing all factors (stress, hormones)</li>
+        </ul>
+      </div>
     </div>
 
     <div className="bg-lavender-light/50 rounded-lg p-4">
       <h3 className="font-semibold text-foreground text-sm mb-2">Remember</h3>
       <ul className="text-xs text-muted-foreground space-y-1">
-        <li>• Progress isn't linear — you'll have good and bad days</li>
-        <li>• Hormonal flares are normal (week before period)</li>
-        <li>• Stress can trigger breakouts</li>
-        <li>• Take progress photos monthly — daily checking makes it hard to see change</li>
+        <li>• Progress isn't linear. You'll have good and bad days</li>
+        <li>• Hormonal flares stress induced breakouts are normal!</li>
+        <li>• Take progress photos monthly. Daily checking makes it hard to see change</li>
         <li className="font-medium text-primary">• Be patient. Be consistent. Trust the process. 💜</li>
       </ul>
     </div>
@@ -1130,6 +1057,22 @@ const AcneGuide = () => {
     }
   }, [activeSection]);
 
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        goToNextSection();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        goToPrevSection();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [goToNextSection, goToPrevSection]);
+
   useEffect(() => {
     const contentEl = contentRef.current;
     if (!contentEl) return;
@@ -1220,8 +1163,33 @@ const AcneGuide = () => {
   const currentContent = sectionContent[activeSection];
   const SectionIcon = sections.find(s => s.id === activeSection)?.icon || BookOpen;
   const currentIndex = sections.findIndex(s => s.id === activeSection);
+  const progress = ((currentIndex + 1) / sections.length) * 100;
+  
   return <>
       <SEO title="Complete Acne Guide | Evidence-Based Treatment | ReSKN Clinic" description="A comprehensive guide to understanding, treating, and managing acne. Learn about acne types, causes, Recommended treatments, and build your evidence-based routine." keywords="acne guide, acne treatment UK, acne skincare routine, benzoyl peroxide, adapalene, retinoids, acne guidelines, hormonal acne, PCOS acne, ReSKN Clinic" canonical="https://resknclinic.co.uk/guides/acne" structuredData={structuredData} />
+      
+      {/* Progress Bar */}
+      <div className="fixed top-16 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm border-b border-border">
+        <div className="h-1 bg-muted">
+          <div 
+            className="h-full bg-gradient-to-r from-purple to-primary transition-all duration-300"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between text-xs text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <span className="font-medium text-foreground">Section {currentIndex + 1} of {sections.length}</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="hidden sm:inline">{currentContent.title}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <kbd className="hidden md:inline px-1.5 py-0.5 bg-muted rounded text-[10px] border border-border">←</kbd>
+            <kbd className="hidden md:inline px-1.5 py-0.5 bg-muted rounded text-[10px] border border-border">→</kbd>
+            <span className="hidden md:inline text-[10px]">to navigate</span>
+          </div>
+        </div>
+      </div>
+
       <div className="pt-16">
         {/* Hero Section */}
         <div className="bg-gradient-to-br from-purple-deep via-purple to-purple-light py-10 md:py-14">
@@ -1266,44 +1234,42 @@ const AcneGuide = () => {
                 })}
                 </div>
 
-                {/* Content Area - matches nav height */}
+                {/* Content Area - fixed height without scroll */}
                 <div 
                   ref={contentRef}
-                  className="card-luxury p-6 md:p-8 md:h-[calc(18*2.5rem)] overflow-y-auto"
+                  className="card-luxury p-6 md:p-8 h-[800px] flex flex-col"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <SectionIcon className="w-5 h-5 text-primary" />
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <SectionIcon className="w-4 h-4 text-primary" />
                     </div>
-                    <div>
-                      <h3 className="font-serif text-xl">{currentContent.title}</h3>
-                      <p className="text-xs text-muted-foreground">{currentContent.description}</p>
+                    <div className="min-w-0">
+                      <h3 className="font-serif text-lg leading-tight">{currentContent.title}</h3>
+                      <p className="text-[10px] text-muted-foreground leading-tight">{currentContent.description}</p>
                     </div>
                   </div>
                   
-                  {currentContent.component}
-
-                  {/* Navigation hint */}
-                  <div className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
-                    {currentIndex > 0 && (
-                      <button 
-                        onClick={goToPrevSection}
-                        className="flex items-center gap-1 hover:text-primary transition-colors"
-                      >
-                        <ArrowLeft className="w-3 h-3" />
-                        {sections[currentIndex - 1].label}
-                      </button>
-                    )}
-                    <span className="flex-1" />
-                    {currentIndex < sections.length - 1 && (
-                      <button 
-                        onClick={goToNextSection}
-                        className="flex items-center gap-1 hover:text-primary transition-colors"
-                      >
-                        {sections[currentIndex + 1].label}
-                        <ChevronRight className="w-3 h-3" />
-                      </button>
-                    )}
+                  <div className="flex-1 overflow-y-auto pr-2 -mr-2">
+                    {currentContent.component}
+                  </div>
+                  
+                  {/* Progress dots at bottom */}
+                  <div className="mt-auto pt-4">
+                    <div className="flex items-center justify-center gap-1">
+                      {sections.map((_, idx) => (
+                        <div
+                          key={idx}
+                          className={`h-1 rounded-full transition-all cursor-pointer ${
+                            idx === currentIndex 
+                              ? 'w-8 bg-primary' 
+                              : idx < currentIndex 
+                              ? 'w-1.5 bg-primary/50' 
+                              : 'w-1.5 bg-muted'
+                          }`}
+                          onClick={() => setActiveSection(sections[idx].id)}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
