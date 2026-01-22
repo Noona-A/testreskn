@@ -2,49 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Main Pages -->
-  <url><loc>https://resknclinic.co.uk/</loc><lastmod>2026-01-11</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://resknclinic.co.uk/quiz</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://resknclinic.co.uk/booking</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://resknclinic.co.uk/about</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://resknclinic.co.uk/contact</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://resknclinic.co.uk/</loc><lastmod>2026-01-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://resknclinic.co.uk/quiz</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://resknclinic.co.uk/booking</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://resknclinic.co.uk/about</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://resknclinic.co.uk/contact</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Core Services -->
-  <url><loc>https://resknclinic.co.uk/skin-clinic</loc><lastmod>2026-01-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://resknclinic.co.uk/laser-hair-removal</loc><lastmod>2026-01-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-
-  <!-- Services Hub -->
-  <url><loc>https://resknclinic.co.uk/services</loc><lastmod>2026-01-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://resknclinic.co.uk/services/online-consultation</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://resknclinic.co.uk/services/in-clinic-consultation</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://resknclinic.co.uk/services/prescription-acne</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://resknclinic.co.uk/skin-clinic</loc><lastmod>2026-01-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://resknclinic.co.uk/laser-hair-removal</loc><lastmod>2026-01-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
   <!-- Skin Concerns -->
-  <url><loc>https://resknclinic.co.uk/concerns</loc><lastmod>2026-01-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://resknclinic.co.uk/concerns/acne</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://resknclinic.co.uk/concerns/pigmentation</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://resknclinic.co.uk/concerns/sensitivity</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://resknclinic.co.uk/concerns/ingrowns</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://resknclinic.co.uk/concerns/anti-ageing</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://resknclinic.co.uk/concerns</loc><lastmod>2026-01-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://resknclinic.co.uk/concerns/acne</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://resknclinic.co.uk/concerns/pigmentation</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://resknclinic.co.uk/concerns/sensitivity</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://resknclinic.co.uk/concerns/ingrowns</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://resknclinic.co.uk/concerns/anti-ageing</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Ingredients Hub -->
-  <url><loc>https://resknclinic.co.uk/ingredients</loc><lastmod>2026-01-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/centella-asiatica</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/niacinamide</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/hyaluronic-acid</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/ceramides</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/azelaic-acid</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/salicylic-acid</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/lactic-acid</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/vitamin-c</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/tranexamic-acid</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/panthenol</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/squalane</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/peptides</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/snail-mucin</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/propolis</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resknclinic.co.uk/ingredients/green-tea-extract</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients</loc><lastmod>2026-01-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/centella-asiatica</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/niacinamide</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/hyaluronic-acid</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/ceramides</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/azelaic-acid</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/salicylic-acid</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/lactic-acid</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/vitamin-c</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/tranexamic-acid</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/panthenol</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/squalane</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/peptides</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/snail-mucin</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/propolis</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resknclinic.co.uk/ingredients/green-tea-extract</loc><lastmod>2026-01-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Legal -->
-  <url><loc>https://resknclinic.co.uk/privacy</loc><lastmod>2026-01-11</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://resknclinic.co.uk/terms</loc><lastmod>2026-01-11</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://resknclinic.co.uk/privacy</loc><lastmod>2026-01-22</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://resknclinic.co.uk/terms</loc><lastmod>2026-01-22</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

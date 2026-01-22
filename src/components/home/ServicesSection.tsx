@@ -1,34 +1,16 @@
 import { Link } from "react-router-dom";
-import { Video, MapPin, Pill, ArrowRight } from "lucide-react";
+import { Video, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
     icon: Video,
     title: "Online Skin Consultation",
-    description: "Connect with our specialists from anywhere via video call. Perfect for routine check-ins and initial assessments.",
+    description: "Connect with our specialists from anywhere via video call. Perfect for routine check-ins, initial assessments, and ongoing skin support.",
     duration: "30 mins",
     price: "£45",
-    href: "/services/online-consultation",
+    href: "/skin-clinic",
     bookingLink: "https://app.cal.eu/resknclinic/online-skin-consultation",
-  },
-  {
-    icon: MapPin,
-    title: "In-Clinic Consultation",
-    description: "Visit our luxury Windsor clinic for a comprehensive skin analysis with advanced diagnostic tools.",
-    duration: "45 mins",
-    price: "£65",
-    href: "/services/in-clinic-consultation",
-    bookingLink: "https://app.cal.eu/resknclinic/in-clinic-skin-consultation",
-  },
-  {
-    icon: Pill,
-    title: "Prescription Acne Pathway",
-    description: "Clinician-led assessment for prescription-strength treatments when over-the-counter options aren't enough.",
-    duration: "20 mins",
-    price: "£35",
-    href: "/services/prescription-acne",
-    bookingLink: "https://app.cal.eu/resknclinic/prescription-acne-assessment",
   },
 ];
 
@@ -45,7 +27,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="max-w-lg mx-auto">
           {services.map((service) => (
             <div 
               key={service.title} 
@@ -90,10 +72,10 @@ const ServicesSection = () => {
 
         <div className="text-center mt-12">
           <Link
-            to="/services"
+            to="/laser-hair-removal"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
           >
-            View all services
+            View Laser Hair Removal
             <ArrowRight size={16} />
           </Link>
         </div>

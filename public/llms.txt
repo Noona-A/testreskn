@@ -1,5 +1,5 @@
 # ReSKN Clinic
-> Last updated: 2026-01-11
+> Last updated: 2026-01-22
 
 ## About
 
@@ -25,18 +25,14 @@ Whether you're dealing with acne, pigmentation, sensitivity, ingrown hairs, or s
 ## Services
 
 ### Skin Consultations
-- **Online Skin Consultation** (30 min, £35): Video consultation from the comfort of your home
+- **Online Skin Consultation** (30 min, £45): Video consultation from the comfort of your home
 - **Follow-up Review** (15 min, £20): Check progress and adjust your plan
 
 ### Laser Hair Removal
 - **Technology**: 808nm diode laser with 4 wavelengths
 - **Suitable for**: Fitzpatrick skin types I–V
 - **Prices**: From £25 (varies by treatment area)
-- **Patch test required**: £25 (redeemable against treatment)
-
-### Prescription Acne Pathway
-- Clinician assessment for prescription-strength treatments
-- Duration: 20 minutes | Price: £35
+- **Patch test required**: Free (redeemable against treatment)
 
 ---
 
@@ -77,10 +73,11 @@ Full ingredient guides: https://resknclinic.co.uk/ingredients
 ## Contact Information
 
 **ReSKN Clinic**
-Windsor, Berkshire, UK
+16 Dower Park, Windsor, SL4 4BQ, UK
 
 - **Website**: https://resknclinic.co.uk
 - **Email**: hello@resknclinic.co.uk
+- **Phone**: +44 7887 630 676
 - **Booking**: https://resknclinic.co.uk/booking
 
 **Opening Hours**: Monday–Friday, 9:00 AM – 6:00 PM

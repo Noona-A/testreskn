@@ -1,4 +1,4 @@
-import { X, Video, MapPin, Pill, Sparkles } from "lucide-react";
+import { X, Video, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface BookingModalProps {
@@ -14,22 +14,6 @@ const bookingOptions = [
     duration: "30 mins",
     price: "£45",
     href: "https://app.cal.eu/resknclinic/online-skin-consultation",
-  },
-  {
-    title: "In-Clinic Consultation",
-    description: "45-minute in-person consultation at our Windsor clinic",
-    icon: MapPin,
-    duration: "45 mins",
-    price: "£65",
-    href: "https://app.cal.eu/resknclinic/in-clinic-skin-consultation",
-  },
-  {
-    title: "Prescription Acne Assessment",
-    description: "Clinician assessment for prescription-strength treatments",
-    icon: Pill,
-    duration: "20 mins",
-    price: "£35",
-    href: "https://app.cal.eu/resknclinic/prescription-acne-assessment",
   },
   {
     title: "Laser Patch Test",

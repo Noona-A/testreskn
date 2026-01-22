@@ -24,9 +24,9 @@ interface SEOProps {
  */
 const SEO = ({
   title = "ReSKN Clinic | Personalised Skin Plans in Windsor, Berkshire",
-  description = "Expert skin consultations, personalised treatment plans, and laser hair removal at ReSKN Clinic, Windsor. Book online or in-clinic appointments.",
+  description = "Expert skin consultations, personalised treatment plans, and laser hair removal at ReSKN Clinic, Windsor. Book your online consultation today.",
   keywords = "ReSKN, ReSKN Clinic, skin clinic Windsor, laser hair removal, personalised skin plans",
-  canonical = "https://www.resknclinic.co.uk/",
+  canonical = "https://resknclinic.co.uk/",
   ogImage = "https://www.resknclinic.co.uk/favicon.png",
   ogType = "website",
   noindex = false,

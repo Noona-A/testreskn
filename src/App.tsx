@@ -20,6 +20,7 @@ const LaserHairRemoval = lazy(() => import("./pages/LaserHairRemoval"));
 const SkinClinic = lazy(() => import("./pages/SkinClinic"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
+const FAQ = lazy(() => import("./pages/FAQ"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Concerns
@@ -54,6 +55,10 @@ const SnailMucin = lazy(() => import("./pages/ingredients/SnailMucin"));
 const GuidesHub = lazy(() => import("./pages/guides/GuidesHub"));
 const AcneGuide = lazy(() => import("./pages/guides/AcneGuide"));
 
+// Forms
+const MedicalConsentForm = lazy(() => import("./pages/forms/MedicalConsentForm"));
+const SkinAssessmentForm = lazy(() => import("./pages/forms/SkinAssessmentForm"));
+
 const queryClient = new QueryClient();
 
 // Loading component
@@ -86,6 +91,7 @@ const App = () => (
                   <Route path="/skin-clinic" element={<SkinClinic />} />
                   <Route path="/privacy" element={<Privacy />} />
                   <Route path="/terms" element={<Terms />} />
+                  <Route path="/faq" element={<FAQ />} />
                   
                   
                   {/* Concerns */}
@@ -117,6 +123,10 @@ const App = () => (
                   {/* Guides */}
                   <Route path="/guides" element={<GuidesHub />} />
                   <Route path="/guides/acne" element={<AcneGuide />} />
+                  
+                  {/* Forms */}
+                  <Route path="/forms/medical-consent" element={<MedicalConsentForm />} />
+                  <Route path="/forms/skin-assessment" element={<SkinAssessmentForm />} />
                   
                   {/* Catch-all */}
                   <Route path="*" element={<NotFound />} />

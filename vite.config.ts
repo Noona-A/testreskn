@@ -37,6 +37,7 @@ const prerenderRoutes = [
   "/ingredients/snail-mucin",
   "/guides",
   "/guides/acne",
+  "/faq",
 ];
 
 // https://vitejs.dev/config/

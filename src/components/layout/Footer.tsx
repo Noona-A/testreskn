@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-4">Quick Links</h4>
+            <h3 className="font-serif text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/quiz" className="text-background/70 hover:text-primary transition-colors text-sm">
@@ -47,7 +47,7 @@ const Footer = () => {
 
           {/* Skin Concerns */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-4">Skin Concerns</h4>
+            <h3 className="font-serif text-lg font-semibold mb-4">Skin Concerns</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/concerns/acne" className="text-background/70 hover:text-primary transition-colors text-sm">
@@ -79,7 +79,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-4">Contact Us</h4>
+            <h3 className="font-serif text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
@@ -87,7 +87,18 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary flex-shrink-0" />
-                <a href="mailto:hello@resknclinic.co.uk" className="text-background/70 hover:text-primary transition-colors text-sm">Nori@resknclinic.co.uk</a>
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const user = 'Nori';
+                    const domain = 'resknclinic.co.uk';
+                    window.location.href = `mailto:${user}@${domain}`;
+                  }}
+                  className="text-background/70 hover:text-primary transition-colors text-sm"
+                >
+                  <span aria-label="Email address">Nori<span className="hidden">-no-spam-</span>@resknclinic.co.uk</span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary flex-shrink-0" />

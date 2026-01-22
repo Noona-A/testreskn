@@ -86,7 +86,7 @@ export const profiles: Record<string, SkinProfile> = {
       "Hydration is still essential — overstripping can trigger more oil"
     ],
     ingredientFocus: ["Niacinamide", "Salicylic acid", "Azelaic acid", "Green tea extract", "Centella asiatica"],
-    bookingUrl: "https://app.cal.eu/resknclinic/prescription-acne-assessment"
+    bookingUrl: "https://app.cal.eu/resknclinic/online-skin-consultation"
   },
   "sensitive-redness": {
     key: "sensitive-redness",

@@ -2,7 +2,7 @@ import { ClipboardList, Video, FileText, RefreshCw } from "lucide-react";
 
 const steps = [
   { icon: ClipboardList, title: "Take the Quiz", description: "Answer a few questions about your skin to discover your skin profile and get personalised recommendations." },
-  { icon: Video, title: "Book a Consultation", description: "Meet with our skin specialists online or at our Windsor clinic for an in-depth assessment." },
+  { icon: Video, title: "Book a Consultation", description: "Meet with our pharmacist online via video call for an in-depth skin assessment." },
   { icon: FileText, title: "Get Your Plan", description: "Receive a tailored skincare routine and treatment plan designed specifically for your needs." },
   { icon: RefreshCw, title: "Review & Refine", description: "Regular check-ins ensure your plan evolves with your skin, with ongoing support along the way." },
 ];

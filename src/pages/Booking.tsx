@@ -108,7 +108,7 @@ const Booking = () => {
     <>
       <SEO
         title="Book an Appointment | ReSKN Clinic Windsor"
-        description="Book your skin consultation or laser hair removal appointment at ReSKN Clinic, Windsor. Online and in-clinic options available."
+        description="Book your skin consultation or laser hair removal appointment at ReSKN Clinic, Windsor. Online consultations available."
         keywords="ReSKN, book appointment Windsor, skin consultation booking, laser hair removal booking, ReSKN Clinic"
         canonical="https://resknclinic.co.uk/booking"
       />
