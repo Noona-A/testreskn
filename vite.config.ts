@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 import { copyFileSync, mkdirSync, writeFileSync, readFileSync, existsSync } from "fs";
 
 // Routes to prerender for SEO
@@ -49,8 +48,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
-    react(), 
-    mode === "development" && componentTagger(),
+    react(),
     // Post-build: Copy CNAME and create prerendered route directories
     {
       name: "post-build-seo",
