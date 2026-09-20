@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -68,7 +69,9 @@ const Contact = () => {
       }));
     }
   };
-  return <div className="pt-16 pb-16">
+  return <>
+    <SEO title="Contact ReSKN Clinic | Windsor Skin Clinic" description="Get in touch with ReSKN Clinic in Windsor, Berkshire. Questions about online skin consultations or laser hair removal? Email, call or use the contact form." canonical="/contact" />
+    <div className="pt-16 pb-16">
       <div className="container mx-auto px-4 max-w-5xl">
         <h1 className="font-serif text-4xl md:text-5xl mb-4 text-center">Contact Us</h1>
         <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
@@ -149,6 +152,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div></>;
 };
 export default Contact;

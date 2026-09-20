@@ -173,7 +173,7 @@ const MedicalConsentForm: React.FC = () => {
   if (isSubmitted) {
     return (
       <>
-        <SEO 
+        <SEO noindex
           title="Form Submitted | ReSKN Clinic"
           description="Your medical consent form has been submitted successfully."
         />
@@ -210,7 +210,7 @@ const MedicalConsentForm: React.FC = () => {
 
   return (
     <>
-      <SEO 
+      <SEO noindex
         title="Medical Consent Form | ReSKN Clinic"
         description="Complete your medical consent form for laser hair removal. Required for safety screening before your treatment."
       />

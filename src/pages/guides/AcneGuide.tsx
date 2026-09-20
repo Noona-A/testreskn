@@ -1,10 +1,16 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, AlertTriangle, CheckCircle, XCircle, Clock, Sparkles, ShieldCheck, Heart, AlertCircle, Pill, Droplets, Sun, Moon, ChevronRight, ChevronDown, BookOpen, FlaskConical, Calendar, Zap, ShoppingBag, Timer, Baby, Shirt, Stethoscope, Palette, HeartHandshake, Apple } from "lucide-react";
 import SEO from "@/components/SEO";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useIsMobile } from "@/hooks/use-mobile";
+import AuthorByline from "@/components/AuthorByline";
+import AffiliateLink from "@/components/AffiliateLink";
+import AdSlot from "@/components/AdSlot";
+import VideoEmbed from "@/components/VideoEmbed";
+import ConsultCTA, { StickyConsultBar } from "@/components/ConsultCTA";
+import { amazonSearch } from "@/lib/affiliates";
+import { canonicalFor, authorSchema, publisherSchema, CONTENT_LAST_REVIEWED } from "@/lib/site";
 const sections = [{
   id: "understanding",
   label: "Understanding Acne",
@@ -174,9 +180,9 @@ const TreatmentsContent = () => <div className="space-y-4">
     <div className="bg-card border border-border rounded-xl p-4">
       <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
         <h3 className="font-semibold text-foreground text-sm">Adapalene (Retinoid) 0.1%</h3>
-        <span className="bg-purple/10 text-purple-deep text-xs font-medium px-2 py-0.5 rounded-full"> Recommended</span>
+        <span className="bg-purple/10 text-purple-deep text-xs font-medium px-2 py-0.5 rounded-full"> Recommended</span>
       </div>
-      <p className="text-xs text-muted-foreground mb-2">Normalises skin cell turnover and prevents clogged pores. Start 2-3x weekly at night, use a pea-sized amount. Expect some dryness initially.</p>
+      <p className="text-xs text-muted-foreground mb-2">Prescription only in the UK, usually combined with benzoyl peroxide. Normalises skin cell turnover and prevents clogged pores. Start 2-3x weekly at night, use a pea-sized amount. Expect some dryness initially.</p>
       <div className="bg-red-50/80 border border-red-200 rounded-lg p-2 flex items-start gap-2">
         <XCircle className="w-3 h-3 text-red-600 flex-shrink-0 mt-0.5" />
         <p className="text-xs text-red-800">Not safe during pregnancy. You must use SPF daily as it increases sun sensitivity.</p>
@@ -860,10 +866,7 @@ const BudgetContent = () => <div className="space-y-4">
     <div className="bg-card border border-border rounded-xl p-4">
       <h3 className="font-semibold text-foreground text-sm mb-2">UK Product Recommendations by Category</h3>
       <div className="space-y-3 text-xs text-muted-foreground">
-        <div>
-          <p className="font-medium text-foreground">Coming soon!</p>
-          <p></p>
-        </div>
+        <UKProductRecommendations />
     
       </div>
     </div>
@@ -1052,159 +1055,183 @@ const sectionContent: Record<string, {
     component: <TimelineContent />
   }
 };
+/**
+ * Evidence-based UK product examples for the budget section. Each entry names the
+ * active and strength that the evidence supports, not a brand promise. Links are
+ * Amazon UK searches so the reader can compare prices; they become affiliate links
+ * automatically once VITE_AMAZON_TAG is configured, and are labelled as such.
+ */
+const ukProductPicks: { category: string; evidence: string; picks: { name: string; query: string; note: string }[] }[] = [
+  {
+    category: "Treatment: benzoyl peroxide",
+    evidence: "First-line in NICE NG198. Kills C. acnes without resistance.",
+    picks: [
+      { name: "Acnecide 5% Gel", query: "Acnecide 5% gel benzoyl peroxide", note: "Pharmacy medicine. Start every other day." },
+      { name: "Acnecide Wash 5%", query: "Acnecide face wash 5% benzoyl peroxide", note: "Good for body acne and very oily skin." },
+    ],
+  },
+  {
+    category: "Treatment: azelaic acid",
+    evidence: "Alternative first-line in NICE NG198. Also fades dark marks. Safe in pregnancy.",
+    picks: [
+      { name: "The Ordinary Azelaic Acid Suspension 10%", query: "The Ordinary Azelaic Acid Suspension 10%", note: "Once daily, can be used with benzoyl peroxide on alternate days." },
+    ],
+  },
+  {
+    category: "Cleanser: salicylic acid",
+    evidence: "Helps unblock pores. Useful alongside a treatment, not a replacement for one.",
+    picks: [
+      { name: "CeraVe Blemish Control Cleanser", query: "CeraVe Blemish Control Cleanser salicylic acid", note: "2% salicylic acid with niacinamide." },
+      { name: "La Roche-Posay Effaclar Purifying Foaming Gel", query: "La Roche-Posay Effaclar Purifying Foaming Gel", note: "Gentler option for combination skin." },
+    ],
+  },
+  {
+    category: "Support: niacinamide",
+    evidence: "Reduces sebum and inflammation at 2% to 5%. Pairs with everything.",
+    picks: [
+      { name: "The Ordinary Niacinamide 10% + Zinc 1%", query: "The Ordinary Niacinamide 10% Zinc 1%", note: "Morning or evening. Mix into moisturiser if 10% tingles." },
+    ],
+  },
+  {
+    category: "Moisturiser: non-comedogenic",
+    evidence: "Reduces irritation from actives so you can stay on treatment. Adherence is what clears acne.",
+    picks: [
+      { name: "CeraVe Moisturising Lotion", query: "CeraVe Moisturising Lotion", note: "Ceramides, fragrance-free." },
+      { name: "Simple Kind to Skin Light Moisturiser", query: "Simple Kind to Skin Hydrating Light Moisturiser", note: "Budget option, fragrance-free." },
+    ],
+  },
+  {
+    category: "SPF: broad spectrum, oil-free",
+    evidence: "Essential with retinoids and benzoyl peroxide, and the main way to stop marks darkening.",
+    picks: [
+      { name: "Altruist Face Fluid SPF 50", query: "Altruist Face Fluid SPF 50", note: "Dermatologist-founded, very good value." },
+      { name: "La Roche-Posay Anthelios UVMune 400 Oil Control SPF 50+", query: "La Roche-Posay Anthelios UVMune 400 Oil Control", note: "Matte finish for oily skin." },
+    ],
+  },
+];
+
+const UKProductRecommendations = () => (
+  <div className="space-y-4">
+    {ukProductPicks.map((group) => (
+      <div key={group.category} className="rounded-lg border border-border p-3">
+        <p className="font-medium text-sm text-foreground">{group.category}</p>
+        <p className="text-xs text-muted-foreground mb-2">{group.evidence}</p>
+        <ul className="space-y-1.5">
+          {group.picks.map((p) => (
+            <li key={p.name} className="text-sm">
+              <AffiliateLink href={amazonSearch(p.query)} className="font-medium text-sm">
+                {p.name}
+              </AffiliateLink>
+              <span className="block text-xs text-muted-foreground">{p.note}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+    <p className="text-xs text-muted-foreground">
+      Adapalene (Differin) is prescription only in the UK and is not sold over the counter. Ask about a
+      prescription if benzoyl peroxide alone is not enough after 12 weeks. Most products above are also
+      stocked by Boots and Superdrug, often on 3-for-2. Links marked "affiliate" may earn us a small
+      commission at no extra cost to you.
+    </p>
+  </div>
+);
+
+/**
+ * Optional explainer videos per section. Add a YouTube ID here once a video is published
+ * and it will render (with VideoObject schema) at the top of that section.
+ */
+const sectionVideos: Record<string, { youtubeId: string; uploadDate?: string }> = {
+  // understanding: { youtubeId: "", uploadDate: "2026-10-01" },
+};
+
 const AcneGuide = () => {
   const [activeSection, setActiveSection] = useState("understanding");
-  const [mobileAccordionValue, setMobileAccordionValue] = useState<string>("understanding");
-  const contentRef = useRef<HTMLDivElement>(null);
-  const isScrollingRef = useRef(false);
+  const [tocOpen, setTocOpen] = useState(false);
   const isMobile = useIsMobile();
-  
-  const goToNextSection = useCallback(() => {
-    const currentIndex = sections.findIndex(s => s.id === activeSection);
-    if (currentIndex < sections.length - 1) {
-      setActiveSection(sections[currentIndex + 1].id);
-      // Scroll content back to top
-      if (contentRef.current) {
-        contentRef.current.scrollTop = 0;
-      }
-    }
-  }, [activeSection]);
 
-  const goToPrevSection = useCallback(() => {
-    const currentIndex = sections.findIndex(s => s.id === activeSection);
-    if (currentIndex > 0) {
-      setActiveSection(sections[currentIndex - 1].id);
-      // Scroll content to bottom to allow scrolling up for previous
-      if (contentRef.current) {
-        contentRef.current.scrollTop = contentRef.current.scrollHeight;
-      }
-    }
-  }, [activeSection]);
-
-  // Keyboard navigation
+  // Scroll-spy: highlight the section currently in view. All sections are always in the
+  // DOM so search engines and readers see the full guide; this only drives the nav state.
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        goToNextSection();
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        goToPrevSection();
-      }
-    };
+    if (typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: "-25% 0px -65% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goToNextSection, goToPrevSection]);
-
-  useEffect(() => {
-    const contentEl = contentRef.current;
-    if (!contentEl) return;
-
-    const handleScroll = () => {
-      if (isScrollingRef.current) return;
-      
-      const { scrollTop, scrollHeight, clientHeight } = contentEl;
-      const isAtBottom = scrollTop + clientHeight >= scrollHeight - 10;
-      const isAtTop = scrollTop <= 10;
-
-      if (isAtBottom) {
-        isScrollingRef.current = true;
-        goToNextSection();
-        setTimeout(() => {
-          isScrollingRef.current = false;
-        }, 500);
-      } else if (isAtTop && scrollTop === 0) {
-        // Only trigger prev section on deliberate scroll up at top
-        // We'll handle this with wheel event instead
-      }
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-      if (isScrollingRef.current) return;
-      
-      const { scrollTop, scrollHeight, clientHeight } = contentEl;
-      const isAtTop = scrollTop <= 5;
-      const isAtBottom = scrollTop + clientHeight >= scrollHeight - 5;
-
-      // Scrolling up at top of content
-      if (e.deltaY < 0 && isAtTop) {
-        const currentIndex = sections.findIndex(s => s.id === activeSection);
-        if (currentIndex > 0) {
-          e.preventDefault();
-          isScrollingRef.current = true;
-          goToPrevSection();
-          setTimeout(() => {
-            isScrollingRef.current = false;
-          }, 500);
-        }
-      }
-      // Scrolling down at bottom of content
-      else if (e.deltaY > 0 && isAtBottom) {
-        const currentIndex = sections.findIndex(s => s.id === activeSection);
-        if (currentIndex < sections.length - 1) {
-          e.preventDefault();
-          isScrollingRef.current = true;
-          goToNextSection();
-          setTimeout(() => {
-            isScrollingRef.current = false;
-          }, 500);
-        }
-      }
-    };
-
-    contentEl.addEventListener('scroll', handleScroll);
-    contentEl.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => {
-      contentEl.removeEventListener('scroll', handleScroll);
-      contentEl.removeEventListener('wheel', handleWheel);
-    };
-  }, [activeSection, goToNextSection, goToPrevSection]);
-
-  // Reset scroll position when section changes
-  useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.scrollTop = 0;
-    }
-  }, [activeSection]);
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Complete Acne Guide - Evidence-Based Treatment & Management",
-    "description": "A comprehensive guide to understanding, treating, and managing acne with evidence-based approaches following UK clinical guidelines.",
-    "url": "https://resknclinic.co.uk/guides/acne",
-    "publisher": {
-      "@type": "MedicalBusiness",
-      "name": "ReSKN Clinic"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "ReSKN Clinic"
-    }
+  const jumpTo = (id: string) => {
+    setTocOpen(false);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  const currentContent = sectionContent[activeSection];
-  const SectionIcon = sections.find(s => s.id === activeSection)?.icon || BookOpen;
-  const currentIndex = sections.findIndex(s => s.id === activeSection);
-  const progress = ((currentIndex + 1) / sections.length) * 100;
-  
-  return <>
-      <SEO title="Complete Acne Guide | Evidence-Based Treatment | ReSKN Clinic" description="A comprehensive guide to understanding, treating, and managing acne. Learn about acne types, causes, Recommended treatments, and build your evidence-based routine." keywords="acne guide, acne treatment UK, acne skincare routine, benzoyl peroxide, adapalene, retinoids, acne guidelines, hormonal acne, PCOS acne, ReSKN Clinic" canonical="https://resknclinic.co.uk/guides/acne" structuredData={structuredData} />
-      
-      {/* Progress Bar - Desktop only */}
-      {!isMobile && (
-        <div className="fixed top-16 left-0 right-0 z-40">
-          <div className="h-1 bg-muted">
-            <div 
-              className="h-full bg-gradient-to-r from-purple to-primary transition-all duration-300"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-        </div>
-      )}
 
-      <div className="pt-16">
+  const currentIndex = Math.max(0, sections.findIndex((s) => s.id === activeSection));
+  const progress = ((currentIndex + 1) / sections.length) * 100;
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      headline: "The Complete Acne Guide: evidence-based treatment and management",
+      description:
+        "A comprehensive guide to understanding, treating, and managing acne with evidence-based approaches following UK clinical guidelines (NICE NG198).",
+      url: canonicalFor("/guides/acne"),
+      inLanguage: "en-GB",
+      about: { "@type": "MedicalCondition", name: "Acne vulgaris" },
+      lastReviewed: CONTENT_LAST_REVIEWED,
+      reviewedBy: authorSchema(),
+      author: authorSchema(),
+      publisher: publisherSchema(),
+      hasPart: sections.map((s) => ({
+        "@type": "WebPageElement",
+        name: sectionContent[s.id].title,
+        url: `${canonicalFor("/guides/acne")}#${s.id}`,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: canonicalFor("/") },
+        { "@type": "ListItem", position: 2, name: "Guides", item: canonicalFor("/guides") },
+        { "@type": "ListItem", position: 3, name: "Acne", item: canonicalFor("/guides/acne") },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      <SEO
+        title="Complete Acne Guide | Evidence-Based Treatment | ReSKN Clinic"
+        description="A pharmacist's complete guide to acne: what causes it, the treatments that work under UK guidelines, routines, a 12-week plan, purging, scars, hormonal acne and more."
+        keywords="acne guide, acne treatment UK, acne skincare routine, benzoyl peroxide, adapalene, retinoids, acne guidelines, hormonal acne, PCOS acne, ReSKN Clinic"
+        canonical="/guides/acne"
+        ogType="article"
+        structuredData={structuredData}
+      />
+
+      {/* Reading progress */}
+      <div className="fixed top-16 md:top-20 left-0 right-0 z-40 pointer-events-none">
+        <div className="h-1 bg-muted/60">
+          <div
+            className="h-full bg-gradient-to-r from-purple to-primary transition-all duration-300"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      </div>
+
+      <div className="pt-16 pb-16 md:pb-0">
         {/* Hero Section */}
         <div className="bg-gradient-to-br from-purple-deep via-purple to-purple-light py-10 md:py-14">
           <div className="container mx-auto px-4 max-w-5xl">
@@ -1212,125 +1239,126 @@ const AcneGuide = () => {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Guides
             </Link>
-            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-3 text-white">
-              The Complete Acne Guide
-            </h1>
-            <p className="text-base md:text-lg text-white/90 max-w-2xl">Treatment following UK clinical guidelines.</p>
-            <p className="text-xs text-white/60 mt-2">
-              Based on NICE NG198 & British Association of Dermatologists Guidelines
+            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-3 text-white">The Complete Acne Guide</h1>
+            <p className="text-base md:text-lg text-white/90 max-w-2xl">
+              Everything that actually works for acne, following UK clinical guidelines, written by a pharmacist
+              and independent prescriber.
             </p>
+            <p className="text-xs text-white/60 mt-2">Based on NICE NG198 and British Association of Dermatologists guidance</p>
+            <AuthorByline tone="onDark" className="mt-4" />
           </div>
         </div>
 
-        {/* Main Content with Tab Layout */}
         <section className="py-10 md:py-14 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-8">
-                <span className="inline-block px-4 py-2 bg-accent rounded-full text-sm mb-3">
-                  Comprehensive Guide
-                </span>
-                <h2 className="font-serif text-2xl md:text-3xl font-medium text-foreground mb-3">
-                  Everything you need to know
-                </h2>
-                <p className="text-muted-foreground text-sm max-w-xl mx-auto">Select a topic below to learn more.</p>
-              </div>
+              {/* Mobile: collapsible table of contents */}
+              {isMobile && (
+                <div className="sticky top-16 z-30 -mx-4 px-4 py-2 bg-background/95 backdrop-blur border-b border-border mb-6">
+                  <button
+                    type="button"
+                    onClick={() => setTocOpen((o) => !o)}
+                    className="w-full flex items-center justify-between text-sm font-medium"
+                    aria-expanded={tocOpen}
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      <BookOpen className="w-4 h-4 text-primary" />
+                      {sections[currentIndex].label}
+                      <span className="text-xs text-muted-foreground">
+                        {currentIndex + 1}/{sections.length}
+                      </span>
+                    </span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${tocOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {tocOpen && (
+                    <nav aria-label="Guide sections" className="mt-2 max-h-[60vh] overflow-y-auto grid grid-cols-1 gap-1 pb-2">
+                      {sections.map((s) => {
+                        const Icon = s.icon;
+                        return (
+                          <button
+                            key={s.id}
+                            type="button"
+                            onClick={() => jumpTo(s.id)}
+                            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-left text-sm ${
+                              activeSection === s.id ? "bg-primary text-white" : "hover:bg-accent"
+                            }`}
+                          >
+                            <Icon className="w-3.5 h-3.5 flex-shrink-0" />
+                            {s.label}
+                          </button>
+                        );
+                      })}
+                    </nav>
+                  )}
+                </div>
+              )}
 
-              {/* Mobile: Accordion Layout */}
-              {isMobile ? (
-                <Accordion 
-                  type="single" 
-                  collapsible 
-                  value={mobileAccordionValue}
-                  onValueChange={setMobileAccordionValue}
-                  className="space-y-2"
-                >
-                  {sections.map(section => {
-                    const Icon = section.icon;
-                    const content = sectionContent[section.id];
-                    return (
-                      <AccordionItem 
-                        key={section.id} 
-                        value={section.id}
-                        className="border border-border rounded-xl overflow-hidden bg-card"
-                      >
-                        <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-accent/50 [&[data-state=open]]:bg-primary [&[data-state=open]]:text-white">
-                          <div className="flex items-center gap-3">
-                            <Icon className="w-4 h-4 flex-shrink-0" />
-                            <span className="font-medium text-sm text-left">{section.label}</span>
-                          </div>
-                        </AccordionTrigger>
-                        <AccordionContent className="px-4 pb-4 pt-2">
-                          <div className="mb-3 pb-3 border-b border-border">
-                            <h3 className="font-serif text-base font-medium">{content.title}</h3>
-                            <p className="text-xs text-muted-foreground">{content.description}</p>
-                          </div>
-                          {content.component}
-                        </AccordionContent>
-                      </AccordionItem>
-                    );
-                  })}
-                </Accordion>
-              ) : (
-                /* Desktop: Side-by-side Tab Layout */
-                <div className="grid md:grid-cols-[220px_1fr] gap-6 items-start">
-                  {/* Tab Buttons - Vertical */}
-                  <div className="flex flex-col gap-1 md:h-fit">
-                    {sections.map(section => {
-                      const Icon = section.icon;
+              <div className="grid md:grid-cols-[220px_1fr] gap-6 items-start">
+                {/* Desktop: sticky sidebar navigation */}
+                {!isMobile && (
+                  <nav aria-label="Guide sections" className="hidden md:flex flex-col gap-1 sticky top-28">
+                    {sections.map((s) => {
+                      const Icon = s.icon;
+                      const active = activeSection === s.id;
                       return (
-                        <button 
-                          key={section.id} 
-                          onClick={() => setActiveSection(section.id)} 
-                          className={`flex items-center gap-2 px-3 py-2 rounded-lg text-left transition-all duration-200 ${activeSection === section.id ? 'bg-primary text-white shadow-md' : 'bg-card hover:bg-accent text-foreground border border-border'}`}
+                        <button
+                          key={s.id}
+                          type="button"
+                          onClick={() => jumpTo(s.id)}
+                          className={`flex items-center gap-2 px-3 py-2 rounded-lg text-left transition-all duration-200 ${
+                            active ? "bg-primary text-white shadow-md" : "bg-card hover:bg-accent text-foreground border border-border"
+                          }`}
                         >
-                          <Icon className={`w-3.5 h-3.5 flex-shrink-0 ${activeSection === section.id ? 'text-white' : 'text-primary'}`} />
-                          <span className="font-medium text-xs whitespace-nowrap">{section.label}</span>
+                          <Icon className={`w-3.5 h-3.5 flex-shrink-0 ${active ? "text-white" : "text-primary"}`} />
+                          <span className="font-medium text-xs whitespace-nowrap">{s.label}</span>
                         </button>
                       );
                     })}
-                  </div>
+                  </nav>
+                )}
 
-                  {/* Content Area */}
-                  <div 
-                    ref={contentRef}
-                    className="card-luxury p-6 md:p-8 h-[800px] flex flex-col"
-                  >
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <SectionIcon className="w-4 h-4 text-primary" />
-                      </div>
-                      <div className="min-w-0">
-                        <h3 className="font-serif text-lg leading-tight">{currentContent.title}</h3>
-                        <p className="text-[10px] text-muted-foreground leading-tight">{currentContent.description}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex-1 overflow-y-auto pr-2 -mr-2">
-                      {currentContent.component}
-                    </div>
-                    
-                    {/* Progress dots at bottom */}
-                    <div className="mt-auto pt-4">
-                      <div className="flex items-center justify-center gap-1">
-                        {sections.map((_, idx) => (
-                          <div
-                            key={idx}
-                            className={`h-1 rounded-full transition-all cursor-pointer ${
-                              idx === currentIndex 
-                                ? 'w-8 bg-primary' 
-                                : idx < currentIndex 
-                                ? 'w-1.5 bg-primary/50' 
-                                : 'w-1.5 bg-muted'
-                            }`}
-                            onClick={() => setActiveSection(sections[idx].id)}
+                {/* All sections, always rendered */}
+                <div className="min-w-0 space-y-6">
+                  {sections.map((s, idx) => {
+                    const content = sectionContent[s.id];
+                    const Icon = s.icon;
+                    const video = sectionVideos[s.id];
+                    return (
+                      <div key={s.id}>
+                        <section id={s.id} className="card-luxury p-6 md:p-8 scroll-mt-28">
+                          <header className="flex items-center gap-3 mb-4">
+                            <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                              <Icon className="w-4 h-4 text-primary" />
+                            </div>
+                            <div className="min-w-0">
+                              <h2 className="font-serif text-xl md:text-2xl leading-tight">{content.title}</h2>
+                              <p className="text-xs text-muted-foreground leading-tight">{content.description}</p>
+                            </div>
+                          </header>
+                          {video && (
+                            <VideoEmbed
+                              youtubeId={video.youtubeId}
+                              uploadDate={video.uploadDate}
+                              title={`${content.title} explained`}
+                              description={content.description}
+                            />
+                          )}
+                          {content.component}
+                        </section>
+                        {/* Consultation prompt after the prescription section, ad slots spaced through the guide */}
+                        {s.id === "prescription" && (
+                          <ConsultCTA
+                            className="mt-6"
+                            heading="Think you need prescription treatment?"
+                            body="Book a 30 minute online consultation. As an independent prescriber I can assess your acne, advise on the right treatment route, and tell you honestly if you need a GP or dermatology referral. £45."
                           />
-                        ))}
+                        )}
+                        {(idx === 2 || idx === 8 || idx === 14) && <AdSlot />}
                       </div>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </section>
@@ -1338,11 +1366,9 @@ const AcneGuide = () => {
         {/* CTA Section */}
         <section className="py-10 md:py-14 bg-section-gradient">
           <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
-              Need personalised advice?
-            </h2>
+            <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4">Need personalised advice?</h2>
             <p className="text-muted-foreground mb-6 text-sm">
-              Book a consultation to discuss your skin concerns with our team.
+              Book a consultation to discuss your skin concerns with a GPhC-registered pharmacist.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="btn-luxury">
@@ -1351,14 +1377,15 @@ const AcneGuide = () => {
                 </Link>
               </Button>
               <Button asChild variant="outline">
-                <Link to="/guides">
-                  Explore More Guides
-                </Link>
+                <Link to="/guides">Explore More Guides</Link>
               </Button>
             </div>
           </div>
         </section>
       </div>
-    </>;
+
+      <StickyConsultBar />
+    </>
+  );
 };
 export default AcneGuide;

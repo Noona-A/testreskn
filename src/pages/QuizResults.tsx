@@ -2,11 +2,14 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { profiles, ingredientSlugs } from "@/lib/quizScoring";
 import { CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 const QuizResults = () => {
   const [params] = useSearchParams();
   const profileKey = params.get("profile") || "balanced";
   const profile = profiles[profileKey] || profiles.balanced;
-  return <div className="pt-16 pb-16">
+  return <>
+    <SEO title="Your Skin Quiz Results | ReSKN Clinic" description="Personalised skincare profile and recommended ingredients from the ReSKN skin quiz." noindex />
+    <div className="pt-16 pb-16">
       <div className="container mx-auto px-4 max-w-3xl">
         {/* Header */}
         <div className="text-center mb-10">
@@ -92,6 +95,6 @@ const QuizResults = () => {
           Some links may be affiliate links; we may earn a commission at no extra cost to you.
         </p>
       </div>
-    </div>;
+    </div></>;
 };
 export default QuizResults;

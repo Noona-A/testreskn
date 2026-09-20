@@ -90,7 +90,7 @@ const SkinAssessmentForm: React.FC = () => {
   if (isSubmitted) {
     return (
       <>
-        <SEO 
+        <SEO noindex
           title="Form Submitted | ReSKN Clinic"
           description="Your skin assessment form has been submitted successfully."
         />
@@ -129,7 +129,7 @@ const SkinAssessmentForm: React.FC = () => {
 
   return (
     <>
-      <SEO 
+      <SEO noindex
         title="Skin Assessment Form | ReSKN Clinic"
         description="Complete your Fitzpatrick skin type assessment. This helps us determine safe and effective laser settings for your treatment."
       />

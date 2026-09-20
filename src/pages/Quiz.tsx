@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ChevronLeft } from "lucide-react";
+import SEO from "@/components/SEO";
 import { determineProfile, QuizAnswers } from "@/lib/quizScoring";
 const questions = [{
   id: "oiliness",
@@ -82,7 +83,9 @@ const Quiz = () => {
   }, [step, isTransitioning]);
   const progress = (step + 1) / questions.length * 100;
   const current = questions[step];
-  return <div className="pt-16 pb-16 min-h-[80vh] flex items-center">
+  return <>
+    <SEO title="Free Skin Quiz | Find Your Skin Type and Routine | ReSKN Clinic" description="Answer a few questions and get a personalised skin profile with ingredient recommendations from a GPhC-registered pharmacist. Free, two minutes." canonical="/quiz" />
+    <div className="pt-16 pb-16 min-h-[80vh] flex items-center">
       <div className="container mx-auto px-4 max-w-2xl">
         {/* Progress Section */}
         <div className="mb-8">
@@ -129,6 +132,6 @@ const Quiz = () => {
           Your answers help us understand your skin better. This quiz provides cosmetic guidance only.
         </p>
       </div>
-    </div>;
+    </div></>;
 };
 export default Quiz;
