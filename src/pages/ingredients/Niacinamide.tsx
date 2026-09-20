@@ -1,6 +1,6 @@
 import IngredientPageTemplate, { IngredientData } from "@/components/ingredients/IngredientPageTemplate";
+import { belantti } from "@/lib/affiliates";
 import hydromineralCream from "@/assets/products/hydromineral-cream-h2o.jpg";
-import niacinamideToner from "@/assets/products/niacinamide-hydrating-toner.png";
 
 const ingredient: IngredientData = {
   name: "Niacinamide (Vitamin B3)",
@@ -46,14 +46,13 @@ const ingredient: IngredientData = {
     {
       name: "Hydromineral Cream H2O 50ml",
       description: "Lightweight hydrating cream formulated to deliver deep moisture while supporting skin barrier function. Suitable for all skin types seeking balanced hydration.",
-      link: "https://www.belantti.co.uk/products/hydromineral-face-cream-h2o?sca_ref=10398409.mtv59NQvcFqb1MU",
+      link: belantti("hydromineral-face-cream-h2o"),
       image: hydromineralCream
     },
     {
-      name: "SUGAR + PHA/AHA + Niacinamide – Mild Hydrating Toner 200ml",
-      description: "Gentle hydrating toner combining niacinamide with PHA and AHA acids to refine skin texture, minimise pores and maintain optimal moisture balance for face, neck and décolleté.",
-      link: "https://www.belantti.co.uk/products/sugar-pha-aha-niacinamide-hydrating-toner?sca_ref=10398409.mtv59NQvcFqb1MU",
-      image: niacinamideToner
+      name: "The Ordinary Niacinamide 10% + Zinc 1% 30ml",
+      description: "Widely available, well-studied niacinamide serum. 10% is at the upper end of the evidence range, so mix a few drops into moisturiser if it tingles.",
+      link: belantti("the-ordinary-niacinamide-10-zinc-1-30ml")
     }
   ]
 };

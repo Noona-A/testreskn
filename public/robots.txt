@@ -1,32 +1,16 @@
 # ReSKN Clinic - robots.txt
 # https://resknclinic.co.uk
 
-# Allow all crawlers
 User-agent: *
 Allow: /
+# Private, personalised or form pages: rendered for users but not for search.
+Disallow: /forms/
+Disallow: /quiz/results
 
-# Sitemap location
+# Sitemap (generated at build time from the route list in scripts/prerender.mjs)
 Sitemap: https://resknclinic.co.uk/sitemap.xml
 
-# Google
-User-agent: Googlebot
-Allow: /
-
-# Bing
-User-agent: Bingbot
-Allow: /
-
-# Social Media
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# AI Crawlers - Allowed for visibility
+# AI crawlers are welcome so the guides can be cited.
 User-agent: GPTBot
 Allow: /
 
@@ -36,22 +20,16 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: Claude-Web
 Allow: /
 
 User-agent: Anthropic-AI
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
 Allow: /
 
 User-agent: Applebot-Extended
@@ -62,9 +40,3 @@ Allow: /
 
 User-agent: Meta-ExternalAgent
 Allow: /
-
-# Disallow specific paths
-User-agent: *
-Disallow: /api/
-Disallow: /_next/
-Disallow: /static/js/*.map

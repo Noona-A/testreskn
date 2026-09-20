@@ -32,10 +32,19 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                
+                <Link to="/guides" className="text-background/70 hover:text-primary transition-colors text-sm">
+                  Skincare Guides
+                </Link>
               </li>
               <li>
-                
+                <Link to="/ingredients" className="text-background/70 hover:text-primary transition-colors text-sm">
+                  Ingredient Guides
+                </Link>
+              </li>
+              <li>
+                <Link to="/skin-clinic" className="text-background/70 hover:text-primary transition-colors text-sm">
+                  Online Consultations
+                </Link>
               </li>
               <li>
                 <Link to="/booking" className="text-background/70 hover:text-primary transition-colors text-sm">
@@ -102,7 +111,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary flex-shrink-0" />
-                <a href="tel:+441234567890" className="text-background/70 hover:text-primary transition-colors text-sm">+44 (0) 7887 630 676</a>
+                <a href="tel:+447887630676" className="text-background/70 hover:text-primary transition-colors text-sm">+44 (0) 7887 630 676</a>
               </li>
             </ul>
           </div>

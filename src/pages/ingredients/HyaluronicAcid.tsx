@@ -49,7 +49,7 @@ const ingredient: IngredientData = {
     {
       name: "WELLAGE Hyaluronic Acid Ampoule – Intensive Hydration Serum",
       description: "Fast-absorbing Korean skincare ampoule formulated to deliver intense hydration. Helps skin feel plumper and look smoother without heaviness. Suitable for dehydrated, tight-feeling or dull-looking skin.",
-      link: "https://www.belantti.co.uk/products/wellage-hyaluronic-acid-ampoule?_pos=2&_sid=1eb9d0a3c&_ss=r&variant=52534320890120&sca_ref=10398409.mtv59NQvcFqb1MU",
+      link: "https://www.belantti.co.uk/products/wellage-hyaluronic-acid-ampoule-100ml?sca_ref=10398409.mtv59NQvcFqb1MU",
       image: "https://www.belantti.co.uk/cdn/shop/files/WellageRealHyaluronicBlueAmpoule100ml-IntenseMoisture_HydrationAmpouleClearly.jpg?v=1738842116&width=600"
     }
   ]

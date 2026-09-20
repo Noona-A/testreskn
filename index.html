@@ -3,39 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Page-specific metadata (title, description, canonical, Open Graph, robots)
+      is injected per route by src/components/SEO.tsx. Do not add static copies
+      here: duplicates made every page look like a copy of the homepage to Google.
+    -->
     <title>ReSKN Clinic | Personalised Skin Plans in Windsor, Berkshire</title>
-    <meta name="description" content="Expert skin consultations, personalised treatment plans, and laser hair removal at ReSKN Clinic, Windsor. Book your online consultation today." />
-    
-    <!-- Brand Keywords - Prevents autocorrect of ReSKN -->
-    <meta name="keywords" content="ReSKN, ReSKN Clinic, ReSKN Windsor, Re-SKN, skin clinic Windsor, laser hair removal Windsor, personalised skin plans, skin treatment Berkshire" />
-    
-    <!-- AI Crawler Tags -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    
+
     <!-- Brand Identity -->
     <meta name="author" content="ReSKN Clinic" />
     <meta name="copyright" content="ReSKN Clinic" />
     <meta name="application-name" content="ReSKN Clinic" />
-    
-    <!-- Canonical URL - Standardized without www -->
-    <link rel="canonical" href="https://resknclinic.co.uk/" />
-
-    <meta property="og:title" content="ReSKN Clinic | Personalised Skin Plans" />
-    <meta property="og:description" content="Expert skin consultations, personalised treatment plans, and laser hair removal in Windsor, Berkshire." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://resknclinic.co.uk/" />
-    <meta property="og:image" content="https://resknclinic.co.uk/favicon.png" />
-    <meta property="og:site_name" content="ReSKN Clinic" />
-    <meta property="og:locale" content="en_GB" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@resknclinic" />
-    <meta name="twitter:image" content="https://resknclinic.co.uk/favicon.png" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
-    
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XS80ZCM9TL"></script>
     <script>
@@ -44,15 +25,16 @@
       gtag('js', new Date());
       gtag('config', 'G-XS80ZCM9TL');
     </script>
-    
-    <!-- Structured Data for Search Engines and AI -->
+
+    <!-- Organisation structured data (site-wide) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
+      "@id": "https://resknclinic.co.uk/#organisation",
       "name": "ReSKN Clinic",
       "alternateName": ["Re-SKN", "ReSKN"],
-      "description": "Expert skin consultations, personalised treatment plans, and laser hair removal in Windsor, Berkshire. Evidence-informed skincare guidance.",
+      "description": "Expert skin consultations, personalised treatment plans, and laser hair removal in Windsor, Berkshire. Evidence-informed skincare guidance from a GPhC-registered pharmacist.",
       "url": "https://resknclinic.co.uk",
       "logo": "https://resknclinic.co.uk/favicon.png",
       "image": "https://resknclinic.co.uk/favicon.png",
@@ -64,10 +46,6 @@
         "addressLocality": "Windsor",
         "postalCode": "SL4 4BQ",
         "addressRegion": "Berkshire",
-        "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
         "addressCountry": "GB"
       },
       "priceRange": "££",

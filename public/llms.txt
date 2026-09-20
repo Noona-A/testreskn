@@ -1,5 +1,5 @@
 # ReSKN Clinic
-> Last updated: 2026-01-22
+> Last updated: 2026-09-20
 
 ## About
 
@@ -16,7 +16,10 @@ Whether you're dealing with acne, pigmentation, sensitivity, ingrown hairs, or s
 - **Skin Quiz**: https://resknclinic.co.uk/quiz
 - **Skin Clinic (Consultations)**: https://resknclinic.co.uk/skin-clinic
 - **Laser Hair Removal**: https://resknclinic.co.uk/laser-hair-removal
-- **Skincare Ingredients Guide**: https://resknclinic.co.uk/ingredients
+- **Skincare Guides**: https://resknclinic.co.uk/guides/
+- **The Complete Acne Guide**: https://resknclinic.co.uk/guides/acne/
+- **Skin Concerns**: https://resknclinic.co.uk/concerns/
+- **Skincare Ingredients Guide**: https://resknclinic.co.uk/ingredients/
 - **About Us**: https://resknclinic.co.uk/about
 - **Contact**: https://resknclinic.co.uk/contact
 

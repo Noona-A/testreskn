@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import SEO from "@/components/SEO";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -76,6 +77,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          {/* Fallback metadata; pages override by rendering their own <SEO />. */}
+          <SEO />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1 pt-16 md:pt-20">

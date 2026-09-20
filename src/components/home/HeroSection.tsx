@@ -44,7 +44,7 @@ const HeroSection = () => {
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-foreground leading-tight mb-4">
             Medical-grade skin & laser care, tailored to you
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">Personalised skin consultations and safe, effective laser hair removal  delivered by a UK-registered pharmacist in Windsor.</p>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">Personalised skin consultations and safe, effective laser hair removal  delivered by a UK-registered pharmacist in Windsor.</p>
         </motion.div>
 
         {/* Two CTA Buttons */}
